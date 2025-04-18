@@ -15,12 +15,15 @@ body {
 .Connexion, .Creation-compte {
     background-color: rgba(245, 233, 220, 0.95); 
     border-radius: 15px;
-    min-height: 30vh;
+    min-height: 50vh;
     padding: 20px;
     text-align: center;
 }
 .Mail label{
-    display: block;  /* Force l'input à occuper toute la largeur */
+    display: block; /* ! Les <label> sont des éléments en ligne(inline) Cela signifie qu'ils ne commencent pas sur une nouvelle
+    ! ligne et ne peuvent pas avoir de marges verticales (margin-top ou margin-bottom) ça ne s'applique qu'aux éléments de type bloc
+    ! en le convertissant en élément bloc je peux lui permettre de commencer sur une nouvelle ligne  */
+
     margin-bottom: 5px; /* Ajoute un espace entre le label et l'input */
 }
 .Mail input {
@@ -31,6 +34,18 @@ body {
 }
 /* display: block: Cela force les éléments (labels et inputs) à s'afficher sur une nouvelle ligne */
 /* width: 100% Va me permettre à l'input de s'étendre sur toute la largeur de leur conteneur*/
+
+.MDP label{
+    display: block;
+    margin-bottom: 5px;
+}
+.MDP input{
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+
+}
 footer{
     margin-top: 50px;
     text-align: center;
