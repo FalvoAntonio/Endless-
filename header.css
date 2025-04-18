@@ -1,0 +1,86 @@
+header {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.9) 0%,
+      rgba(240, 240, 240, 0.8) 15%,
+      rgba(230, 230, 230, 0.8) 25%,
+      rgba(245, 245, 245, 0.85) 35%,
+      rgba(250, 250, 250, 0.9) 50%,
+      rgba(235, 235, 235, 0.85) 65%,
+      rgba(225, 225, 225, 0.8) 75%,
+      rgba(240, 240, 240, 0.9) 100%
+    );
+  }
+  
+  .Menu {
+    display: grid;
+    grid-template-columns: 60px auto 60px; /* 3 colonnes : gauche, centre, droite */
+    align-items: center; /* Aligne les éléments verticalement au centre */
+    /* justify-items: center; */
+    padding: 10px 10px;
+    border-bottom: 2px solid #ddd; /* Ligne en bas */
+  }
+  
+  .Logo-Menu {
+    /* grid-column: 1; Place le logo dans la première colonne */
+    text-align: left; /* Aligne le texte à gauche */
+  }
+  
+  .Menu-Titre {
+    grid-column: 2;
+    text-align: center;
+    grid-row: 1/2;
+  }
+  .Menu-Titre h1 {
+    font-family: "Pacifico", cursive;
+    font-size: 1.5em;
+    margin-bottom: 8px; /*Ajoute un espace de 8px sous le <h1> */
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(45deg, #fcd774, #e6a00a);
+    background-clip: text; /* Spécifie que l'arrière-plan (le dégradé) doit être "découpé pour ne
+      s'afficher qu'à l'intérieur des lettres. */
+    -webkit-background-clip: text; /* Ajoute la compatibilité pour les navigateurs basés sur WebKit */
+    color: transparent;
+    position: relative;
+  
+  }
+  .Menu-Titre h1::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #ebae2a, transparent);
+  }
+  .Menu-Titre p {
+    font-weight: bold;
+    font-size: 12px;
+    color: transparent;
+    background: linear-gradient(45deg, #fcd774, #e6a00a);
+    background-clip: text;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  
+  .icons-menu {
+    grid-column: 1/-1;
+    grid-row: 1/2;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-around; */
+    text-align: right;
+  }
+  .icon {
+    width: 24px; /* Taille des icônes */
+    height: 24px;
+    margin-left: 5px; /* Espacement entre les icônes */
+    cursor: pointer; /* Change le curseur pour indiquer que c'est cliquable */
+  }
+  
+  .icon-recherche {
+    margin-right: auto;
+  }

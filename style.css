@@ -1,0 +1,67 @@
+*[class] {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #ffffff;
+}
+
+.introduction h2{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+.introduction p{
+    font-style: italic;
+    letter-spacing: 1px;
+}
+.formations-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #ffffff;
+  gap: 15px;
+  width: 100%;
+  margin-top: 50px;
+}
+.formation {
+    border-radius: 15px;
+    width: 80%;
+    min-height: 30vh;
+    background-color: rgba(245, 233, 220, 0.95);  /* beige doux */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px; 
+    transition: transform 0.2s ease-in-out;
+}
+.formation:hover {
+    transform: translateY(-5px);
+  }
+.main-content{
+    text-align: center;
+}
+footer{
+    margin-top: 50px;
+    text-align: center;
+    background-color: rgba(245, 233, 220, 0.95);
+    padding: 20px;
+    font-size: 14px;
+    color: #5f4b32;
+    border-top: 1px solid #ddd;
+}
+.button-formation{
+
+        background-color: #e6c79c;
+        color: white;
+        border: none;
+        letter-spacing: 1px;
+        border-radius: 25px;
+        padding: 10px 20px;
+        margin-top: 15px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 1s ease;
+      }
+      .formation button:hover {
+        background-color: #d6b88c;
+      }

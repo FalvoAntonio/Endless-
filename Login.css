@@ -1,0 +1,55 @@
+*, ::before, ::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #ffffff;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr 1fr auto;
+    gap:  10%;
+}
+
+.Connexion, .Creation-compte {
+    background-color: rgba(245, 233, 220, 0.95); 
+    border-radius: 15px;
+    min-height: 30vh;
+    padding: 20px;
+    text-align: center;
+}
+.Mail label{
+    display: block;  /* Force l'input à occuper toute la largeur */
+    margin-bottom: 5px; /* Ajoute un espace entre le label et l'input */
+}
+.Mail input {
+    display: block; /* Force l'input à occuper toute la largeur */
+    width: 100%; /* Optionnel : ajuste la largeur de l'input  */
+    padding: 8px; /* Permet d'agrandir mon input */
+    margin-bottom: 15px; /* Ajoute un espace entre les inputs */
+}
+/* display: block: Cela force les éléments (labels et inputs) à s'afficher sur une nouvelle ligne */
+/* width: 100% Va me permettre à l'input de s'étendre sur toute la largeur de leur conteneur*/
+footer{
+    margin-top: 50px;
+    text-align: center;
+    background-color: rgba(245, 233, 220, 0.95);
+    padding: 20px;
+    font-size: 14px;
+    color: #5f4b32;
+    border-top: 1px solid #ddd;
+}
+.error-message{
+    color: red;
+}
+
+.LogoEyes1,  .LogoEyes2 { 
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+.LogoEyes1 {
+    display: none;
+}
+
