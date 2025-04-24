@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="form.css">
+    <script src="prefix.js" defer></script>
+    
+    <script type="module" defer>
+        import { polyfillCountryFlagEmojis } from "https://cdn.skypack.dev/country-flag-emoji-polyfill";
+        polyfillCountryFlagEmojis();
+      </script>
+        <!-- ! Cet import me permet de convertir la police qui se transforme en icone flag pour tous les moteurs de recherche  -->
+
+    <title>Création de compte</title>
+</head>
+<body>
+    <header>
+        <nav class="Menu">
+          <div class="Menu-Titre">
+          <h1>Endless Beauty Nails </h1>
+          <p>Centre de formation</p>
+          </div>
+  
+          <div class="icons-menu">
+           <img class="icon Logo-Menu"src="./Images/Menu.svg" alt="Menu Burger">
+           <img class="icon icon-recherche" src="./Images/Recherche.svg" alt="Ma Recherche">
+           <a href="./Login.html">
+           <img class="icon icon-login" src="./Images/Login.png" alt="Identifiant" >
+          </a>
+            <img class="icon icon-panier" src="./Images/Panier.png" alt="Mon Panier">
+          </div>
+        </nav>
+      </header>
+    <div class="container">
+        <h1>Créez votre compte</h1>
+        <form id="signup-form" action="" method="POST">
+            <div class="form-groupe">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="votreemail@exemple.com" required>
+            </div>
+            
+            <div class="form-groupe">
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" name="password" placeholder="Choisissez un mot de passe sécurisé" required>
+            </div>
+            
+            <div class="form-groupe">
+                <label for="firstname">Prénom</label>
+                <input type="text" id="firstname" name="firstname" placeholder="Votre prénom" required>
+            </div>
+            
+            <div class="form-groupe">
+                <label for="lastname">Nom</label>
+                <input type="text" id="lastname" name="lastname" placeholder="Votre nom" required>
+            </div>
+            
+            <div class="form-groupe">
+                <label for="phone">Numéro de téléphone</label>
+                <div class="input-tel">
+                    <select id="prefix" name="prefix" class="tel-prefix" required>
+                    </select>
+                    <input type="tel" id="phone" name="phone" placeholder="6 12 34 56 78" class="tel-input" required>
+                </div>
+            </div>
+            
+            <button type="submit" class="btn-form">Créer un compte</button>
+        </form>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Nails Endless Beauty</div>
+            <div class="contact-info">
+                <p>Email: contact@nailsendlessbeauty.fr</p>
+                <p>Téléphone: 01 23 45 67 89</p>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Nails Endless Beauty - Tous droits réservés
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

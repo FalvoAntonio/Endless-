@@ -40,15 +40,7 @@ body {
 .main-content{
     text-align: center;
 }
-footer{
-    margin-top: 50px;
-    text-align: center;
-    background-color: rgba(245, 233, 220, 0.95);
-    padding: 20px;
-    font-size: 14px;
-    color: #5f4b32;
-    border-top: 1px solid #ddd;
-}
+
 .button-formation{
 
         background-color: #e6c79c;
@@ -65,3 +57,5 @@ footer{
       .formation button:hover {
         background-color: #d6b88c;
       }
+
+  

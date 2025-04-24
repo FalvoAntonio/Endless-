@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 header {
     background: linear-gradient(
       135deg,
@@ -83,4 +84,8 @@ header {
   
   .icon-recherche {
     margin-right: auto;
+  }
+  .menu-titre-link {
+    text-decoration: none;
+    color: inherit;
   }

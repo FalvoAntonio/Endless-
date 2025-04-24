@@ -1,0 +1,47 @@
+*, ::before, ::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+  h2 {
+    color:#ad7520;
+    margin-bottom: 20px;
+  }
+
+  p {
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+
+  input{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  button, .button-accueil
+  {
+    font-family: Arial;
+  }
+  button {
+    margin: 10px 0;
+
+  }
+
+  button:hover {
+    background-color: #e6bd85;
+  }
+  .button-accueil{ 
+    padding: 12px 20px;
+    margin-top: 10px;
+}
+
+.button-accueil:hover {
+    background-color: #e6bd85;
+}

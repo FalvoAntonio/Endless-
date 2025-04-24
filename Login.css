@@ -1,24 +1,15 @@
-*, ::before, ::after
-{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body {
-    background-color: #ffffff;
-    min-height: 100vh;
-    display: grid;
-    grid-template-rows: auto 1fr 1fr auto;
-    gap:  10%;
-}
+
 
 .Connexion, .Creation-compte {
     background-color: rgba(245, 233, 220, 0.95); 
-    border-radius: 15px;
-    min-height: 50vh;
+    width: auto;
+    margin: 35px;
     padding: 20px;
-    text-align: center;
+  }
+.Creation-compte h1,.Creation-compte p{
+    margin: 10px;
 }
+
 .Mail label{
     display: block; /* ! Les <label> sont des éléments en ligne(inline) Cela signifie qu'ils ne commencent pas sur une nouvelle
     ! ligne et ne peuvent pas avoir de marges verticales (margin-top ou margin-bottom) ça ne s'applique qu'aux éléments de type bloc
@@ -46,25 +37,59 @@ body {
     margin-bottom: 15px;
 
 }
-footer{
-    margin-top: 50px;
-    text-align: center;
-    background-color: rgba(245, 233, 220, 0.95);
-    padding: 20px;
-    font-size: 14px;
-    color: #5f4b32;
-    border-top: 1px solid #ddd;
-}
 .error-message{
     color: red;
 }
 
 .LogoEyes1,  .LogoEyes2 { 
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height: 20px;
     cursor: pointer;
 }
 .LogoEyes1 {
     display: none;
 }
 
+#loginForm{
+padding: 15px;
+}
+.Connexion :where(h1,p)
+/* ça revient à faire ça --->  .Connexion h1,.Connexion p */
+{
+padding: 10px;
+}
+
+p{
+    color: #555;
+}
+h1{
+    color: #ad7520;
+}
+/* input[type="submit"] {
+        width: 100%;
+        padding: 12px;
+        background-color: #e6c79c;
+        color: white;
+        font-size: 16px;
+        border: none;
+        border-radius: 15px;
+        cursor: pointer;
+        font-weight: bold;
+        margin: 10px;
+    
+      } */
+    
+      button:hover {
+        background-color: #e6bd85;
+      }
+.Creation-compte input{
+    margin-top: 25px
+}
+.Connexion input{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}

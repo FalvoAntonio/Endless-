@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Login.css">
     <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="/Login.css">
+    
     <script src="./login.js" defer></script>
     <title>Formulaire</title>
 </head>
@@ -14,10 +17,10 @@
           
           
   
-          <div class="Menu-Titre">
-          <h1>Endless Beauty Nails </h1>
-          <p>Centre de formation</p>
-          </div>
+        <div class="Menu-Titre">
+        <a href="index.html" class="menu-titre-link"><h1>Endless Beauty Nails</h1>
+        <p>Centre de formation</p></a>
+        </div>
   
           <div class="icons-menu">
            <img class="icon Logo-Menu"src="./Images/Menu.svg" alt="Menu Burger">
@@ -31,7 +34,7 @@
         </nav>
       </header>
     
-    <section class="Connexion">
+    <section class="Connexion container">
 
         <h1>Se connecter</h1>
         <p>Accédez à votre espace beauté en toute simplicité.</p>
@@ -52,15 +55,15 @@
             </div>
             <p class="error-message"></pclass></p>
         </div>
-        <input type="submit" value="Connectez-vous" >
-       <a href="#mdp"><p>Mot de passe oublié ? </p></a></form>
+        <input type="submit" value="Connectez-vous" class="btn-form">
+       <a href="/MDP-oublie.html"><p>Mot de passe oublié ? </p></a></form>
     </section>
 
-    <section class="Creation-compte">
+    <section class="Creation-compte container">
         <h1>Création d'un compte</h1>
         <p>Vous n’avez pas encore de compte ? Rejoignez notre communauté de passionnés de beauté.</p>
         <p>Créez votre compte et commencez votre voyage vers l’expertise esthétique.</p>
-        <input type="submit" value="Je crée mon compte">
+        <a href="Creation-Compte.html"><input class="INPUT btn-form" type="submit" value="Je crée mon compte"></a>
     </section>
     
     <footer>
