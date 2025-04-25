@@ -5,7 +5,7 @@
 prefixtel();
 async function prefixtel()
 {
-    const response = await fetch("prefixtel.json");
+    const response = await fetch("/JSON/prefixtel.json");
     // console.log(response);
     if(!response.ok)return;
     // await ne gère pas, le catch, donc on utilisera généralement un "try catch"
