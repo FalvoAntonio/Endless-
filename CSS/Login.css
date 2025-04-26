@@ -1,7 +1,7 @@
 
 
 .Connexion, .Creation-compte {
-    background-color: rgba(245, 233, 220, 0.95); 
+    background-color: rgba(247, 225, 165, 0.95); 
     width: auto;
     margin: 35px;
     padding: 20px;
@@ -65,26 +65,12 @@ p{
 h1{
     color: #ad7520;
 }
-/* input[type="submit"] {
-        width: 100%;
-        padding: 12px;
-        background-color: #e6c79c;
-        color: white;
-        font-size: 16px;
-        border: none;
-        border-radius: 15px;
-        cursor: pointer;
-        font-weight: bold;
-        margin: 10px;
-    
-      } */
-    
+
+
       button:hover {
         background-color: #e6bd85;
       }
-.Creation-compte input{
-    margin-top: 25px
-}
+
 .Connexion input{
     width: 100%;
     padding: 12px;
@@ -92,4 +78,34 @@ h1{
     border-radius: 5px;
     font-size: 16px;
     margin-bottom: 20px;
+}
+
+  
+.Creation-compte input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.Creation-compte :where(h1,p){
+    padding: 10px;
+}
+
+/* Style pour le lien "Mot de passe oublié" */
+.Connexion a {
+
+    color: #ad7520;
+    text-decoration: none; /* Supprime le soulignement par défaut */
+    margin-top: 10px; /* Ajoute un espace au-dessus du lien */
+    padding: 5px; /* Ajoute un peu d'espace autour du lien */
+    transition: color 0.3s ease;  /* Ajoute une transition douce pour le changement de couleur */
+}
+
+.Connexion a:hover {
+    color: #e6bd85;
+    text-decoration: underline; /* Ajoute un soulignement au survol */
 }

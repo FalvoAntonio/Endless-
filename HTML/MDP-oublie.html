@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="/CSS/form.css">
     <link rel="stylesheet" href="/CSS/footer.CSS">
     <link rel="stylesheet" href="/CSS/MDP-oublie.css">
+    <link rel="stylesheet" href="/CSS/Modal-Panier.css">
+    <script src="/JS/Modal-Panier.js" defer></script>
     <title>Mot de passe oublié</title>
 </head>
 <body>
@@ -19,12 +21,12 @@
         </div>
 
           <div class="icons-menu">
-           <img class="icon Logo-Menu"src="./Images/Menu.svg" alt="Menu Burger">
-           <img class="icon icon-recherche" src="./Images/Recherche.svg" alt="Ma Recherche">
+           <img class="icon Logo-Menu"src="/Images/Menu.svg" alt="Menu Burger">
+           <img class="icon icon-recherche" src="/Images/Recherche.svg" alt="Ma Recherche">
            <a href="/HTML/Login.html">
-           <img class="icon icon-login" src="./Images/Login.png" alt="Identifiant" >
+           <img class="icon icon-login" src="/Images/Login.png" alt="Identifiant" >
           </a>
-            <img class="icon icon-panier" src="./Images/Panier.png" alt="Mon Panier">
+            <img class="icon icon-panier" src="/Images/Panier.png" alt="Mon Panier">
           </div>
         </nav>
       </header>
@@ -41,6 +43,14 @@
         </form>
       </div>
 
+      <div class="overlay-modal">
+        <div class="Modal-container">
+           <button class="button-close">X</button>
+           <h1>Mon panier</h1>
+           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias vel impedit nisi magnam placeat? Quia optio beatae ducimus. Unde voluptates eum enim quo corrupti omnis corporis nihil aliquid et reiciendis!</p>
+           <button class="btn-form">Paiement</button>
+        </div>
+    </div>
 
       <footer>
         <div class="footer-content">

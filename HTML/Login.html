@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="/CSS/form.css">
     <link rel="stylesheet" href="/CSS/footer.css">
     <link rel="stylesheet" href="/CSS/Login.css">
-    
+    <link rel="stylesheet" href="/CSS/Modal-Panier.css">
+    <script src="/JS/Modal-Panier.js" defer></script>
     <script src="/JS/login.js" defer></script>
+
     <title>Formulaire</title>
 </head>
 <body>
@@ -64,7 +66,16 @@
         <p>Créez votre compte et commencez votre voyage vers l’expertise esthétique.</p>
         <a href="Creation-Compte.html"><input class="INPUT btn-form" type="submit" value="Je crée mon compte"></a>
     </section>
-    
+
+    <div class="overlay-modal">
+        <div class="Modal-container">
+           <button class="button-close">X</button>
+           <h1>Mon panier</h1>
+           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias vel impedit nisi magnam placeat? Quia optio beatae ducimus. Unde voluptates eum enim quo corrupti omnis corporis nihil aliquid et reiciendis!</p>
+           <button class="btn-form">Paiement</button>
+        </div>
+    </div>
+
     <footer>
         <div class="footer-content">
             <div class="footer-logo">Nails Endless Beauty</div>

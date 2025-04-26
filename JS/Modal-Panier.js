@@ -10,3 +10,12 @@ function clickPanier(){
     modal.style.transform = "translate(0)";
 
 }
+  
+const closeButton = document.querySelector(".button-close");
+closeButton.addEventListener("click", closeModal);
+
+function closeModal(){
+    visibility.style.visibility = "hidden"
+    modal.style.transform = "translate(100%)";
+
+}
