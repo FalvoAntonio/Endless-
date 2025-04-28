@@ -58,34 +58,71 @@ body{
     font-family: "Twemoji Country Flags", "Helvetica", "Comic Sans", serif;
   }
 
-  .button-close{
-    position: absolute;   
-    right: 10px;
-    top: 5px;
-    padding: 4px 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
-    color: white;
-    cursor: pointer;
-    background: red;
+
+  /* Applique un effet de scale sur les logos */
+.icons-menu .icon {
+  transition: transform 0.3s ease; /* Animation fluide */
 }
 
-.Modal-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: fixed;
-    top: 0;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    text-align: center;
-    background-color: #ffffff;
-    padding: 40px;
-    width: 45%;
-    right: 0;
-    bottom: 0;
-    transform: translate(100%,0);
-    /* translate: 100% 0; */
-    transition: transform 0.5s ease;
-  }
+.icons-menu .icon:hover {
+  transform: scale(1.2); /* Agrandit le logo à 120% */
+}
+
+
+
+
+
+
+
+.Menu-Titre ul {
+
+
+    display: flex; 
+    justify-content: center; /* Centre les éléments horizontalement dans le conteneur flex */
+    flex-direction: column; /* Empile les éléments verticalement au lieu de les aligner horizontalement */
+    padding: 30px 0;     /* Ajoute 30px d'espace en haut et en bas, 0px sur les côtés */
+    list-style-type: none;
+    gap: 30px; /* Espace de 30px entre chaque élément de la liste */
+    background-color: rgba(230, 199, 156, 0.95); /* Fond légèrement transparent avec la couleur secondaire */
+    width: 250px;
+    height: auto; /* Permet au conteneur de s'adapter à la hauteur de son contenu */
+    transform: scale(1, 0); /* Rétrécit le menu verticalement à 0 (le cache) par défaut */
+    transform-origin: top;  /* Définit le point d'origine de la transformation au sommet du menu */
+    transition: transform 0.5s ease;  /* Animation douce de 0.5 seconde lors de l'apparition/disparition du menu */
+    position: absolute;  /* Place le menu en position absolue (sort du flux normal du document) */
+    left: 0;  /* Positionne le menu à 0px du bord gauche de son parent positionné */
+    top: 87px;
+    border-bottom-right-radius: 15px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Ajoute une ombre légère pour donner de la profondeur */
+  
+  
+}
+
+.Menu-Titre ul li a {
+  color: #333;
+  font-family: 'Playfair Display', serif; 
+  font-size: 1.1rem;   /* Taille de police légèrement agrandie (1.1 fois la taille normale) */
+  text-decoration: none; /* Supprime le soulignement par défaut des liens */
+  display: block; /* Transforme le lien en bloc pour qu'il prenne toute la largeur disponible */
+  padding: 5px 30px; /* Espace intérieur: 5px en haut/bas, 30px à gauche/droite */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.Menu-Titre ul li a:hover {
+  color: #ad7520; /* Change la couleur du texte en doré au survol */
+  transform: translateX(5px);  /* Déplace légèrement le texte vers la droite (effet d'animation) */
+}
+.logomenuburger span{
+    display: block;  
+    width: 20px;
+    height: 2px;
+    background-color: rgb(0, 0, 0);
+    margin: 5px 0;
+    transition: 1s;
+  
+}
+.icone-panier{
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+}

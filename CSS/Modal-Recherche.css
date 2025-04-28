@@ -1,0 +1,77 @@
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.button-close{
+    position: absolute;     
+    right: 10px;
+    top: 5px;
+    padding: 4px 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    background: red;
+}
+
+.Modal-Recherche{
+    display: flex;
+    flex-direction: column; 
+    gap: 25px;
+    position: fixed;
+    top: 0;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    background-color: #ffffff;
+    padding: 40px;
+    width: 45%;
+    right: 0;
+    bottom: 0;
+    transform: translate(100%,0);  
+    /* translate: 100% 0; */
+    transition: transform 0.5s ease;
+  }
+
+  .overlay-modal {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #333333d3;
+    visibility: hidden;
+    transition: visibility 0.5s ease;
+    
+  }
+
+  /* Style pour l'input de recherche */
+
+#rechercheInput {
+    width: 100%;  
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /*Ajoute un effet d'ombre interne pour donner un aspect légèrement enfoncé. */
+    /* inset : définit que l'ombre est interne à l'élément */
+    /* 1er valeur : décalage horizontal de l'ombre, 2eme : décalage vertical de l'ombre, 3eme : représente le flou */
+    /* rgba(0, 0, 0, 0.1) : couleur de l'ombre avec une opacité de 10% */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    /* Ajoute une transition douce pour les changements de couleur de bordure et d'ombre */
+}
+
+/* Effet au focus */
+#rechercheInput:focus {
+    border-color: #ad7520; /* Couleur similaire à vos autres styles */
+    box-shadow: 0 0 5px rgba(173, 117, 32, 0.5);
+    outline: none; /* Supprime le contour par défaut du navigateur */
+    /*  est utilisé pour supprimer l'affichage du contour (outline) autour d'un élément. Un contour est souvent utilisé pour indiquer un élément qui a le focus 
+    (par exemple, lorsqu'on clique sur un champ de formulaire ou un bouton). */
+}
