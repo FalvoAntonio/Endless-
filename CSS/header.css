@@ -47,11 +47,11 @@ header {
   
   }
   .Menu-Titre h1::after {
-      content: "";
-      position: absolute;
-      bottom: -5px;
-      left: 50%;
-      transform: translateX(-50%);
+      content: ""; /* Nécessaire pour créer un pseudo-élément */
+      position: absolute; /* Positionne le pseudo-élément par rapport au parent */
+      bottom: -5px; /* Positionne le trait en bas du titre */
+      left: 50%;  /* Centre le trait horizontalement */
+      transform: translateX(-50%); /* Centre le trait horizontalement */
       width: 60%;
       height: 1px;
       background: linear-gradient(to right, transparent, #ebae2a, transparent);
@@ -88,4 +88,9 @@ header {
   .menu-titre-link {
     text-decoration: none;
     color: inherit;
+  }
+
+  
+  .icon:hover {
+    transform: scale(1.2); /* Agrandit l'icône au survol */
   }

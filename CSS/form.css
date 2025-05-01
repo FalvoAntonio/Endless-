@@ -39,8 +39,8 @@ body{
   {
     padding: 12px;
     border: none;
-    width: 100%;
-    cursor: pointer;
+    width: 100%; 
+    cursor: pointer; 
     font-weight: bold;
     background-color: #e6c79c;
     color: white;
