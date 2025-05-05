@@ -1,6 +1,20 @@
 "use strict";
 
-const logomenuburger = document.querySelector(".logomenuburger")
+// ! Je vais chercher le menu burger dans le fichier header.html
+// ! Ici c'est différent vu que le header est déjà dans le body je n'ai pas besoin de le rechercher commme avec les autres :(document.body.appendChild(modalContainer);)
+// ! Je n'ai donc pas besoin de créer un div pour le header
+// ! Je vais juste le chercher dans le body et je vais le remplacer par le contenu de header.html
+// ! Je vais donc chercher le header dans le body et je vais le remplacer par le contenu de header.html
+fetch("/HTML/module/header.html")
+.then((response) => response.text())
+.then((data) => {
+    const menuContainer = document.querySelector("header");
+    menuContainer.innerHTML = data;
+    startMenuBurger();
+})
+
+
+function startMenuBurger(){const logomenuburger = document.querySelector(".logomenuburger")
  console.log(".logomenuburger span")
 
 
@@ -35,4 +49,5 @@ const logomenuburger = document.querySelector(".logomenuburger")
 
 
         }
-    }
+    }}
+
