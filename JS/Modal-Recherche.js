@@ -8,19 +8,21 @@
 // ! Ensuite nous allons créer un élément div et y insérer le contenu du fichier HTML
 // ! Enfin nous allons ajouter cet élément div au body du document.
 // ! Ensuite nous allons appeler la fonction startModalRecherche() pour initialiser la modale de recherche.
-
-fetch("/HTML/module/Modal-Recherche.html")
-.then((response) => response.text())
-.then((data) => {
-    const modalContainer = document.createElement("div");
-    modalContainer.innerHTML = data;
-    document.body.appendChild(modalContainer);
-    startModalRecherche();
-})
+export function fetchModalRecherche() {
+    fetch("/HTML/module/Modal-Recherche.html")
+    .then((response) => response.text())
+    .then((data) => {
+        const modalContainer = document.createElement("div");
+        modalContainer.innerHTML = data;
+        document.body.append(modalContainer.firstChild);
+        startModalRecherche();
+    })
+    
+}
 
 // Fonction pour afficher la modale de recherche
 
-function startModalRecherche() 
+export function startModalRecherche() 
 {
     const modalrecherche = document.querySelector(".Modal-Recherche");
     const recherche = document.querySelector(".icon-recherche");
@@ -37,7 +39,7 @@ function startModalRecherche()
     }
     
     
-    function closeModalRecherche(){
+     function closeModalRecherche(){
         visibilite.style.visibility = "hidden"
         modalrecherche.style.transform = "translate(100%)";
     

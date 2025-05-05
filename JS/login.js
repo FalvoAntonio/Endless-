@@ -3,9 +3,9 @@
 const MessageErrorMail = document.querySelector(".Mail .error-message")
 const MessageErrorMDP = document.querySelector(".MDP .error-message")
 
- document.getElementById("loginForm").addEventListener('submit',ValidationDesChamps)
+ document.getElementById("loginForm")?.addEventListener('submit',ValidationDesChamps)
 
-function ValidationDesChamps(event)
+export function ValidationDesChamps(event)
 {
 const email = document.getElementById("email").value
 const mdp = document.getElementById("mdp").value
@@ -29,13 +29,13 @@ const eyeClosed = document.querySelector('.LogoEyes2'); // ? Récupère l'icone 
 
 // TODO Ajout d'écouteurs d'évenements sur les deux icônes
 // TODO Les deux déclenchent la même fonction quand on clique dessus 
-eyeOpen.addEventListener("click",MDPvisible)
-eyeClosed.addEventListener("click",MDPvisible)
-
+eyeOpen?.addEventListener("click",MDPvisible)
+eyeClosed?.addEventListener("click",MDPvisible)
+// ? Si tu trouves "eyeClosed" alors tu lances la fonction "MDPvisible" sinon t'arrêtes la (L'utilité de "?" est de ne pas faire planter le code si l'élément n'existe pas dans le DOM)
 /* * Fonction qui bascule la visibilité du mot de passe
  * Elle change le type du champ (password/text) et alterne les icônes */
 
-function MDPvisible(){
+export function MDPvisible(){
     console.log("test");
      // ! Si le champ est vide, on sort de la fonction et on ne fait rien
     if(passwordInput.value === "")return;
