@@ -1,0 +1,28 @@
+{
+	"folders": [
+		{
+			"path": "../../Documents/AFCI"
+		},
+		{
+			"path": "../../Documents/DWWM2025"
+		},
+		{
+			"path": "../SITE"
+		},
+		{
+			"path": "../../Documents/PORTFOLIO"
+		},
+		{
+			"path": "../../Documents/TRAIN JS"
+		},
+		{
+			"path": "../../Documents/Exercice maquettes"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Endless-"
+	}
+}
