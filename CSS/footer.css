@@ -9,9 +9,9 @@
 footer{
     margin-top: 50px; 
     text-align: center;
-    background-color: rgba(245, 233, 220, 0.95);
+    background-color: #333333;
     padding: 20px; 
     font-size: 14px;
-    color: #5f4b32; 
-    border-top: 1px solid #ddd;
+    color: #f5f5f5; 
+    border-top: 1px solid #b08d57;
 }

@@ -7,8 +7,9 @@
 
 
   h2 {
-    color:#ad7520; 
+    color: #333333;
     margin-bottom: 20px;
+    
   }
 
   p {
@@ -24,6 +25,7 @@
     border-radius: 5px;
     font-size: 16px;
     margin-bottom: 20px;
+    
   }
   button, .button-accueil
   {
@@ -35,7 +37,7 @@
   }
 
   button:hover {
-    background-color: #e6bd85;
+    background-color: #555555;
   }
   .button-accueil{ 
     padding: 12px 20px;
@@ -43,5 +45,5 @@
 }
 
 .button-accueil:hover {
-    background-color: #e6bd85;
+   background-color: #555555;
 }

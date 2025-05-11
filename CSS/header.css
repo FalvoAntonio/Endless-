@@ -1,16 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 header {
-    background: linear-gradient(
+   background: linear-gradient(
       135deg,
-      rgba(255, 255, 255, 0.9) 0%,
-      rgba(240, 240, 240, 0.8) 15%,
-      rgba(230, 230, 230, 0.8) 25%,
-      rgba(245, 245, 245, 0.85) 35%,
-      rgba(250, 250, 250, 0.9) 50%,
-      rgba(235, 235, 235, 0.85) 65%,
-      rgba(225, 225, 225, 0.8) 75%,
-      rgba(240, 240, 240, 0.9) 100%
+      rgba(255, 255, 255, 0.95) 0%,
+      rgba(245, 245, 245, 0.9) 15%,
+      rgba(240, 240, 240, 0.9) 25%,
+      rgba(245, 245, 245, 0.9) 35%,
+      rgba(250, 250, 250, 0.95) 50%,
+      rgba(245, 245, 245, 0.9) 65%,
+      rgba(240, 240, 240, 0.9) 75%,
+      rgba(245, 245, 245, 0.95) 100%
     );
+    border-bottom: 2px solid #b08d57;
   }
   
   .Menu {
@@ -37,8 +38,8 @@ header {
     font-size: 1.5em;
     margin-bottom: 8px; /*Ajoute un espace de 8px sous le <h1> */
     letter-spacing: 1px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-    background: linear-gradient(45deg, #fcd774, #e6a00a);
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(45deg, #d4af37, #b08d57, #d4af37);
     background-clip: text; /* Spécifie que l'arrière-plan (le dégradé) doit être "découpé pour ne
       s'afficher qu'à l'intérieur des lettres. */
     -webkit-background-clip: text; /* Ajoute la compatibilité pour les navigateurs basés sur WebKit */
@@ -53,15 +54,17 @@ header {
       left: 50%;  /* Centre le trait horizontalement */
       transform: translateX(-50%); /* Centre le trait horizontalement */
       width: 60%;
-      height: 1px;
-      background: linear-gradient(to right, transparent, #ebae2a, transparent);
+      height: 2px;
+
+      background: linear-gradient(to right, transparent, #b08d57, transparent);
   }
   .Menu-Titre p {
     font-weight: bold;
     font-size: 12px;
     color: transparent;
-    background: linear-gradient(45deg, #fcd774, #e6a00a);
+    background: linear-gradient(45deg, #d4af37, #b08d57);
     background-clip: text;
+    -webkit-background-clip: text;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -74,6 +77,7 @@ header {
     flex-direction: row;
     /* justify-content: space-around; */
     text-align: right;
+    
   }
   .icon {
     width: 24px; /* Taille des icônes */
@@ -94,3 +98,6 @@ header {
   .icon:hover {
     transform: scale(1.2); /* Agrandit l'icône au survol */
   }
+
+
+  

@@ -9,26 +9,28 @@ body{
 }
 .container {
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     text-align: center;
     background-color: #ffffff;
     padding: 40px;
     width: 80%;
     margin: 20px auto 0 auto;
+    border: 1px solid #b08d57;
   }
 
   .container2 {
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     text-align: center;
-    background-color: rgba(240, 213, 184, 0.95); 
+    background-color: rgba(225, 225, 225, 0.95);  
     padding: 40px;
     width: 80%;
     margin: 20px auto 0 auto;
+    border: 1px solid #b08d57;
   }
 
   .container h1 {
-    color: #ad7520;
+    color:#333333;
     font-family: 'Playfair Display', serif;
     font-weight: 500;
     letter-spacing: 1px;
@@ -42,17 +44,20 @@ body{
     width: 100%; 
     cursor: pointer; 
     font-weight: bold;
-    background-color: #e6c79c;
+    background: linear-gradient(to right, #b08d57, #d4af37, #b08d57);
     color: white;
     font-size: 16px;
     text-align: center;
     text-decoration: none; /* Supprime le soulignement par défaut des liens */
     border-radius: 15px;
     display: inline-block; /* Permet au lien de se comporter comme un bouton */
+    transition: all 0.3s ease;
   }
 
   .btn-form:hover {
-    background-color: #e6bd85;
+    background: linear-gradient(to right, #d4af37, #b08d57, #d4af37);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
   }
   .tel-prefix{
     font-family: "Twemoji Country Flags", "Helvetica", "Comic Sans", serif;
@@ -83,7 +88,9 @@ body{
     padding: 30px 0;     /* Ajoute 30px d'espace en haut et en bas, 0px sur les côtés */
     list-style-type: none;
     gap: 30px; /* Espace de 30px entre chaque élément de la liste */
-    background-color: rgba(230, 199, 156, 0.95); /* Fond légèrement transparent avec la couleur secondaire */
+    background-color: rgba(255, 255, 255, 0.95);  /* Fond légèrement transparent avec la couleur secondaire */
+    border-right: 2px solid #b08d57;
+    border-bottom: 2px solid #b08d57;
     width: 250px;
     height: auto; /* Permet au conteneur de s'adapter à la hauteur de son contenu */
     transform: scale(1, 0); /* Rétrécit le menu verticalement à 0 (le cache) par défaut */
@@ -109,7 +116,7 @@ body{
 }
 
 .Menu-Titre ul li a:hover {
-  color: #ad7520; /* Change la couleur du texte en doré au survol */
+   color: #b08d57;/* Change la couleur du texte en doré au survol */
   transform: translateX(5px);  /* Déplace légèrement le texte vers la droite (effet d'animation) */
 }
 .logomenuburger span{

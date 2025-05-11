@@ -29,13 +29,15 @@ body {
     border-radius: 15px;
     width: 80%;
     min-height: 30vh;
-    background-color: rgba(245, 233, 220, 0.95);  /* beige doux */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+     background-color: #f5f5f5;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     padding: 20px; 
     transition: transform 0.2s ease-in-out;
+     border: 1px solid #b08d57;
 }
 .formation:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   }
 .main-content{
     text-align: center;
@@ -43,7 +45,7 @@ body {
 
 .button-formation{
 
-        background-color: #e6c79c;
+        background: linear-gradient(to right, #b08d57, #d4af37, #b08d57);
         color: white;
         border: none;
         letter-spacing: 1px;
@@ -52,10 +54,12 @@ body {
         margin-top: 15px;
         font-weight: bold;
         cursor: pointer;
-        transition: background-color 1s ease;
+        transition: all 1s ease;
       }
       .formation button:hover {
-        background-color: #d6b88c;
+        background: linear-gradient(to right, #d4af37, #b08d57, #d4af37);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
       }
 
       .main-content p{
@@ -63,11 +67,25 @@ body {
       }
        
       .main-content h2{
-        font-family: 'Playfair Display', serif;     
-        color: #ad7520;   
-        font-weight: 500;   
-        letter-spacing: 1px;  
-        margin-top: 20px;   
+      
+        font-family: 'Playfair Display', serif;
+        color: #333333;
+        font-weight: 500;
+        letter-spacing: 1px;
+        margin-top: 20px;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        /* Position et display pour permettre l'apparition du surlignement lorsque va utilsier en dessous ::after */
+        position: relative;
+        display: inline-block;
+        padding-bottom: 10px;
       }
 
-
+.main-content h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    width: 50%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #b08d57, transparent);
+}
