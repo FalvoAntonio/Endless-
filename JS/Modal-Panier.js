@@ -1,8 +1,10 @@
 "use strict";
-
+// ! J'ai utilisé la méthode fetch pour récupérer le contenu de la modale panier dans le fichier Modal-Panier.html
+// ! Je récupère donc le contenu HTML pour éviter de le copier coller sur chaque page HTML que ja vais créer
+// ! Donc juste avec le fichier script.js je vais pouvoir afficher la modale panier sur chaque page HTML
 export function fetchPanier() {
 
-    fetch("/HTML/module/Modal-Panier.html")
+    fetch("../HTML/module/Modal-Panier.html")
     .then((response) => response.text())
     .then((data) => {
         const modalContainer = document.createElement("div");

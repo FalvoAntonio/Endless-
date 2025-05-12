@@ -1,5 +1,9 @@
 "use strict";
 
+// ! J'ai utilisé la méthode fetch pour récupérer le contenu de la modale Recherche dans le fichier Modal-recherche.html
+// ! Je récupère donc le contenu HTML pour éviter de le copier coller sur chaque page HTML que ja vais créer
+// ! Donc juste avec le fichier script.js je vais pouvoir afficher la modale Recherche sur chaque page HTML
+
 // Chargement du contenu de la modale de recherche depuis le fichier HTML
 
 // ! ICI : Il faut que le fichier HTML soit dans le même dossier que le fichier JS
@@ -9,7 +13,7 @@
 // ! Enfin nous allons ajouter cet élément div au body du document.
 // ! Ensuite nous allons appeler la fonction startModalRecherche() pour initialiser la modale de recherche.
 export function fetchModalRecherche() {
-    fetch("/HTML/module/Modal-Recherche.html")
+    fetch("../HTML/module/Modal-Recherche.html")
     .then((response) => response.text())
     .then((data) => {
         const modalContainer = document.createElement("div");
