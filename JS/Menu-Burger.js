@@ -16,7 +16,7 @@ import {fetchPanier} from "./Modal-Panier.js";
 fetch("../HTML/module/header.html")
 .then((response) => response.text())
 .then((data) => {
-    // Selection du conteneur du menu, la page doit donc contenir un header vide
+    // Selection du conteneur du menu, la page doit donc contenir un header vide c'est à dire " <header></header> ""
     const menuContainer = document.querySelector("header");
     menuContainer.innerHTML = data;
     startMenuBurger();
