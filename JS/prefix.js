@@ -14,8 +14,8 @@ prefixtel();
     if(!select)return;
     // Si tu trouves select, tu lances la fonction sinon tu t'arrêtes là, c'est à dire que tu ne fais rien
     // Sinon sans cette ligne  le code va faire planter les autres pages JS
-    const prefix = window.location.href.includes("HTML")? "../" : "./";
-    const response = await fetch(prefix+"JSON/prefixtel.json");
+    // const prefix = window.location.href.includes("HTML")? "../" : "./";
+    const response = await fetch("./JSON/prefixtel.json");
     // console.log(response);
     if(!response.ok)return;
     // ! On vérifie si la réponse est ok, c'est à dire que le fichier a bien été trouvé et qu'il n'y a pas eu d'erreur 404 ou autre

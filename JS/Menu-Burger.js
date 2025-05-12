@@ -12,8 +12,9 @@ import {fetchPanier} from "./Modal-Panier.js";
 // ! Je n'ai donc pas besoin de créer un div pour le header
 // ! Je vais juste le chercher dans le body et je vais le remplacer par le contenu de header.html
 // ! Je vais donc chercher le header dans le body et je vais le remplacer par le contenu de header.html
-const prefix = window.location.href.includes("HTML")? "./" : "./HTML/";
-fetch(prefix+"module/header.html")
+// const prefix = window.location.href.includes("HTML")? "./" : "./HTML/";
+//     console.log(prefix, window.location.href);
+fetch("./HTML/module/header.html")
 .then((response) => response.text())
 .then((data) => {
     // Selection du conteneur du menu, la page doit donc contenir un header vide c'est à dire " <header></header> ""

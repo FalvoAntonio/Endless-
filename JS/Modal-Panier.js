@@ -3,8 +3,9 @@
 // ! Je récupère donc le contenu HTML pour éviter de le copier coller sur chaque page HTML que ja vais créer
 // ! Donc juste avec le fichier script.js je vais pouvoir afficher la modale panier sur chaque page HTML
 export function fetchPanier() {
-    const prefix = window.location.href.includes("HTML")?"./" : "./HTML/";
-    fetch(prefix+"module/Modal-Panier.html")
+    // const prefix = window.location.href.includes("HTML")?"./" : "./HTML/";
+    
+    fetch("./HTML/module/Modal-Panier.html")
     .then((response) => response.text())
     .then((data) => {
         const modalContainer = document.createElement("div");
