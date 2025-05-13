@@ -14,7 +14,7 @@
 // ! Ensuite nous allons appeler la fonction startModalRecherche() pour initialiser la modale de recherche.
 export function fetchModalRecherche() {
     // const prefix = window.location.href.includes("HTML")? "./" : "./HTML/";
-    fetch("./HTML/module/Modal-Recherche.html")
+    fetch("./HTML/module/modal-recherche.html")
     .then((response) => response.text())
     .then((data) => {
         const modalContainer = document.createElement("div");

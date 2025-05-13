@@ -101,7 +101,9 @@ body{
     top: 87px;
     border-bottom-right-radius: 15px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Ajoute une ombre légère pour donner de la profondeur */
-  
+    /* On ajoute le z-index pour éviter que sur la page d'accueil la position relative du surlignement du h2 le fasse passer au dessus
+    (Avec le ::after)  */
+    z-index: 1;
   
 }
 

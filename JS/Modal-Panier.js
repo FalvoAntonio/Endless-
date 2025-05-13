@@ -5,7 +5,7 @@
 export function fetchPanier() {
     // const prefix = window.location.href.includes("HTML")?"./" : "./HTML/";
     
-    fetch("./HTML/module/Modal-Panier.html")
+    fetch("./HTML/module/modal-panier.html")
     .then((response) => response.text())
     .then((data) => {
         const modalContainer = document.createElement("div");
