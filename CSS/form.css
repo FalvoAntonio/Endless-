@@ -7,6 +7,16 @@ body{
     justify-content: space-between;
     min-height: 100vh;
 }
+
+ /* ! Ici j'ai ajouté une class "bodyabout" à mon body pour la page HTML QuiSommesNous ainsi qu'un main qui enveloppe 
+ ! tout le contenu de la page sinon ça ne fonctionne pas,
+ ! Car sinon ça prendrais le style du body juste au dessus avec le space-between, ce qui me convient pas
+ ! pour cette page HTML car je veux que mon introduction commence directement en haut de la page */
+.bodyabout main{
+  flex-grow: 1; /* Permet au main de prendre tout l'espace restant */
+  /* Si je mets le flex-grow: à 0 cela ne marcherara pas bien entendu */
+   
+}
 .container {
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
