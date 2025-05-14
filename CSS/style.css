@@ -90,3 +90,24 @@ body {
     background: linear-gradient(to right, transparent, #b08d57, transparent);
 }
 
+.formation-image {
+  margin: auto;
+  width: 100%;
+  margin-bottom: 15px;
+  overflow: hidden;
+    /* garantit que l'image respecte les coins arrondis du conteneur et garantit que l'image respecte les coins arrondis du conteneur.*/
+    /* Tout ce qui dépasse du container est caché : Ce qui évite que la photo lorsqu'elle sort du container on à l'impression qu'elle est 
+    à l'intérieur visuellement */
+  border-radius: 10px;
+}
+
+.formation-image img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover; 
+  transition: transform 0.5s ease;
+}
+
+.formation:hover .formation-image img {
+  transform: scale(1.05);
+}
