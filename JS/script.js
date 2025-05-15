@@ -8,7 +8,7 @@ import {createlist} from "./prefix.js";
 import {startMenuBurger} from "./Menu-Burger.js";  // Le menu burger se trouve dans le fichier header.html avec le fetch et les modales
 // Donc avec Menu-Burger On va pouvoir retrouver le header,les modales et le menu burger
 import { ValidationDesChamps,MDPvisible } from "./login.js";
-import { SliderImage } from "./Slider-Accueil.js";
+import { SliderImage } from "./Slider.js";
 
 
 const images = ["IMG_3863.jpeg","IMG_3865.jpeg","IMG_3866.jpeg","IMG_3867.jpeg","IMG_3868.jpeg"]
@@ -27,3 +27,4 @@ if(aboutMain) // S'il trouve le main dans la page QuiSommesNous. Alors tu peux l
     aboutMain.append(AppelDuSlider) // J'appel donc ma fonction pour faire apparaitre mon slider dans ma page
     // HTML QuiSommesNous
 }
+
