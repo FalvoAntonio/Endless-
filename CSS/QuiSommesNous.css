@@ -7,140 +7,105 @@
 }
 
 /* Style CSS pour la présentation (Titre/Texte/Logo) */
+
+/* Style pour le texte de présentation  */
 .container p {
     font-size: 1.2rem;      
     line-height: 1.5;    
     color: #333;
 }
+/*  Style pour le titre de la page */
 .main, h1 {
     color: #333;
     font-family: 'Playfair Display', serif;
     text-align: center; 
     padding: 20px; 
 }
-
+/* Style pour le logo */
 .container img {
     padding-top: 10px; 
 }
 
-/*  */
+/* Style CSS pour tout le slider */
 
 /* Styles pour le slider */
 .slider-container {
-    position: relative;
-    width: 80%;
-    margin: 30px auto;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
+    position: relative; /* Permet de positionner les éléments enfants en absolu par rapport à ce conteneur, comme ça les images iront se placer dans 
+    ? le container */
+    width: 80%; /* Largeur du slider à 80% de son conteneur parent (body) */
+    margin: 30px auto;  /* marge de 30px haut et bas / et un margin auto pour droit et gauche pour qu'il soit centré*/
+    border-radius: 15px; /* Coins arrondis*/
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* 0: l'ombre décallée à droite / 5px: l'ombre décallée vers le bas / 15px: diffusion de l'ombre */
+    /* La dernière valeur du rgba correspond à l'opacité de l'ombre ici 0.2 équivaut à 20% */
+    overflow: hidden; /* Cache tout ce qui dépasse du conteneur, notamment les images qui sortiraient des bords arrondis */
     border: 1px solid #b08d57;
 }
 
 /* Style des images dans le slider */
 .slide {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    display: block;
-    transition: opacity 0.5s ease;
+    width: 100%; /* L'image prend toute la largeur du conteneur */
+    height: 500px; /* Hauteur fixe pour toutes les images */
+    object-fit: cover; /* Élimine l'espace blanc sous l'image (comportement par défaut des images inline) *//* Élimine l'espace blanc sous l'image (comportement par défaut des images inline) *//* Élimine l'espace blanc sous l'image (comportement par défaut des images inline) */
+    display : block; /* Élimine l'espace blanc sous l'image (comportement par défaut des images inline) */
+    transition: opacity 0.5s ease; /* Animation douce lors du changement d'image */
 }
 
 /* Container pour les flèches de navigation */
 .Fleches-container {
-    position: absolute;
-    width: 100%;
+    position: absolute; /* Positionnement absolu par rapport au conteneur parent (qui est en position relative) */
+    width: 100%;  /* Prend toute la largeur du conteneur parent */
     top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    justify-content: space-between;
-    padding: 0 20px;
-    box-sizing: border-box;
-    z-index: 10;
+     transform: translateY(-50%);  /* Décale le conteneur vers le haut de 50% de sa propre hauteur pour un centrage vertical parfait */
+    display: flex; /* Utilise flexbox pour placer les flèches gauche et droite */
+    justify-content: space-between;  /* Place les flèches aux extrémités gauche et droite */
+    padding: 0 20px; /* Espace de 20px à gauche et à droite pour que les flèches ne soient pas collées aux bords et 0 pour haut et bas*/
 }
 
 /* Style des flèches */
 .fleche-gauche, .right-arrow {
-    width: 40px;
-    height: 40px;
-    background-color: rgba(255, 255, 255, 0.7);
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    padding: 8px;
+    
+    width: 40px;  /* Largeur fixe pour les flèches */
+    height: 40px;  /* Hauteur fixe pour les flèches */
+    background-color: rgba(255, 255, 255, 0.7); /* Fond blanc semi-transparent */
+    border-radius: 50%;  /* Forme parfaitement ronde */
+    cursor: pointer; 
+    transition: all 0.3s ease; /* Animation douce pour tous les changements de propriétés */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Légère ombre pour donner du relief */
+    padding: 8px; /* Espace intérieur pour que l'image de flèche ne touche pas les bords */
 }
 
 .fleche-gauche:hover, .right-arrow:hover {
-    background-color: rgba(255, 255, 255, 0.9);
-    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.9); /* Fond plus opaque au survol, la couleur change au survol */
+    transform: scale(1.1);  /* Agrandit légèrement la flèche au survol (effet zoom) */
 }
 
-/* Container pour les points de navigation */
-.boutons-container {
-    position: absolute;
-    bottom: 20px;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    z-index: 10;
-}
 
-/* Style des points de navigation */
-.bouton-selection-image {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.5);
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.bouton-selection-image.active {
-    background-color: #b08d57;
-    transform: scale(1.2);
-}
-
-.bouton-selection-image:hover {
-    background-color: rgba(176, 141, 87, 0.8);
-}
-
-/* Animation au survol du slider */
-.slider-container:hover .fleche-gauche,
-.slider-container:hover .right-arrow {
-    opacity: 1;
-}
 
 /* Effet de transition pour les images */
 @keyframes fadeIn {
     from {
-        opacity: 0;
+        /* opacity: 0; L'image commence invisible / On voit la couleur blanche du body quand elle est invisible */
     }
     to {
-        opacity: 1;
+        opacity: 1;   /* L'image devient complètement visible */
     }
 }
 
 .slide {
-    animation: fadeIn 0.5s ease;
+    animation: fadeIn 0.5s ease;  /* Applique l'animation de fondu aux images */
 }
 
 /* Style responsive pour les écrans plus petits */
 @media (max-width: 768px) {
     .slider-container {
-        width: 95%;
+        width: 95%; /* Augmente la largeur du slider sur petit écran pour maximiser l'espace */
     }
     
     .slide {
-        height: 300px;
+        height: 300px;  /* Réduit légèrement la hauteur des images sur petit écran */
     }
     
-    .fleche-gauche, .right-arrow {
+    .fleche-gauche, .right-arrow {  /* Flèches légèrement plus petites sur petit écran */
         width: 35px;
         height: 35px;
     }
