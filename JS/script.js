@@ -11,7 +11,7 @@ import { ValidationDesChamps,MDPvisible } from "./login.js";
 import { SliderImage } from "./Slider.js";
 
 
-const images = ["IMG_3863.jpeg","IMG_3865.jpeg","IMG_3866.jpeg","IMG_3867.jpeg","IMG_3868.jpeg"]
+const images = ["OPX05236.jpg","OPX05238.jpg","OPX05253.jpg","OPX05257.jpg","OPX05267.jpg","OPX05269.jpg","IMG_3863.jpeg","IMG_3865.jpeg"]
 /* J'insère directement mon tableau d'images, pour faciliter mon code, car si je veux
 enlever une photo ou ajouer le code s'applique automatiquement */
 
