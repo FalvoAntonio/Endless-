@@ -19,8 +19,9 @@
 }
 
 .Photo-de-equipe img {
-    max-width: 400px; /* Limite la taille maximale, sinon la photo prend toute la taille du container, ça permet
+    max-width: 100%; /* Limite la taille maximale, sinon la photo prend toute la taille du container, ça permet
     de limiter la taille sur grands écrans (Sinon autre solution : max-width: 600px;) */
+    width: 400px; /* Largeur souhaitée sur desktop */
     height: auto; /* Maintient les proportions */
     border-radius: 50%; /* Pour un effet portrait circulaire (Sinon autre solution: 10px) */ 
     box-shadow: 0 3px 10px rgba(0,0,0,0.15);
