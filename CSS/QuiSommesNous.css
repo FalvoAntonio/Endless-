@@ -29,6 +29,31 @@
     object-fit: cover; /* Assure un bon recadrage si nécessaire */
 }
 
+/* Responsive pour tablettes */
+@media (max-width: 768px) {
+    .Photo-de-equipe {
+        width: 70%; /* Container plus large sur tablette */
+    }
+    
+    .Photo-de-equipe img {
+        width: 300px; /* Image un peu plus petite */
+        max-width: 100%; /* Toujours contrainte par le container */
+    }
+}
+
+/* Responsive pour mobiles */
+@media (max-width: 480px) {
+    .Photo-de-equipe {
+        width: 90%; /* Container encore plus large sur mobile */
+        padding: 15px; /* Padding réduit */
+    }
+    
+    .Photo-de-equipe img {
+        width: 250px; /* Image plus petite sur mobile */
+        max-width: 100%; /* L'image ne dépassera jamais du container */
+    }
+}
+
 /* Effet hover sur la photo */
 .Photo-de-equipe img:hover {
     transform: scale(1.02); /* Léger zoom au survol */
