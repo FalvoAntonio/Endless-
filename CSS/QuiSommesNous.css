@@ -79,7 +79,7 @@
     color: #333;
 }
 /*  Style pour le titre de la page */
-.main, h1{
+.main > h1,h2{
     color: #333;
     font-family: 'Playfair Display', serif;
     text-align: center; 
