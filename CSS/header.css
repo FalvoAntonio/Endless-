@@ -1,19 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+
 header {
-   background: linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.95) 0%,
-      rgba(245, 245, 245, 0.9) 15%,
-      rgba(240, 240, 240, 0.9) 25%,
-      rgba(245, 245, 245, 0.9) 35%,
-      rgba(250, 250, 250, 0.95) 50%,
-      rgba(245, 245, 245, 0.9) 65%,
-      rgba(240, 240, 240, 0.9) 75%,
-      rgba(245, 245, 245, 0.95) 100%
-    );
-    border-bottom: 2px solid #b08d57;
-  }
-  
+  background: linear-gradient(135deg, #f9f7f4 0%, #ffffff 50%, #f5f3ed 100%);
+  border-bottom: 3px solid #b08d57;
+  box-shadow: 0 3px 12px rgba(176, 141, 87, 0.15);
+}
+
   .Menu {
     display: grid;
     grid-template-columns: 60px auto 60px; /* 3 colonnes : gauche, centre, droite */
@@ -33,42 +26,48 @@ header {
     text-align: center;
     grid-row: 1/2;
   }
-  .Menu-Titre h1 {
-    font-family: "Pacifico", cursive;
-    font-size: 1.5em;
-    margin-bottom: 8px; /*Ajoute un espace de 8px sous le <h1> */
-    letter-spacing: 1px;
-    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(45deg, #d4af37, #b08d57, #d4af37);
-    background-clip: text; /* Spécifie que l'arrière-plan (le dégradé) doit être "découpé pour ne
-      s'afficher qu'à l'intérieur des lettres. */
-    -webkit-background-clip: text; /* Ajoute la compatibilité pour les navigateurs basés sur WebKit */
-    color: transparent;
-    position: relative;
-  
-  }
-  .Menu-Titre h1::after {
-      content: ""; /* Nécessaire pour créer un pseudo-élément */
-      position: absolute; /* Positionne le pseudo-élément par rapport au parent */
-      bottom: -5px; /* Positionne le trait en bas du titre */
-      left: 50%;  /* Centre le trait horizontalement */
-      transform: translateX(-50%); /* Centre le trait horizontalement */
-      width: 60%;
-      height: 2px;
 
-      background: linear-gradient(to right, transparent, #b08d57, transparent);
-  }
-  .Menu-Titre p {
-    font-weight: bold;
-    font-size: 12px;
-    color: transparent;
-    background: linear-gradient(45deg, #d4af37, #b08d57);
-    background-clip: text;
-    -webkit-background-clip: text;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-  }
+
+/* Titre plus visible et élégant */
+.Menu-Titre h1 {
+  font-family: "Playfair Display", serif; /* Police plus élégante comme tes autres titres */
+  font-size: 1.8em; /* Plus gros */
+  margin-bottom: 8px;
+  letter-spacing: 1.5px;
+  font-weight: 600; /* Plus gras pour plus de visibilité */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(45deg, #d4af37, #b08d57, #d4af37);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  position: relative;
+}
+
+/* Trait en dessous plus visible */
+Menu-Titre h1::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%; /* Plus large */
+  height: 3px; /* Plus épais */
+  background: linear-gradient(to right, transparent, #d4af37, #b08d57, #d4af37, transparent);
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(176, 141, 87, 0.3);
+}
+/* Sous-titre plus visible */
+.Menu-Titre p {
+  font-weight: 600; /* Plus gras */
+  font-size: 13px; /* Légèrement plus gros */
+  color: transparent;
+  background: linear-gradient(45deg, #d4af37, #b08d57);
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  letter-spacing: 2.5px; /* Plus espacé */
+  text-transform: uppercase;
+}
   
   .icons-menu {
     grid-column: 1/-1;
