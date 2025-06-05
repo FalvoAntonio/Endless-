@@ -18,7 +18,14 @@
 </head>
 
 <body class="bodyabout">
-  <header></header>
+  
+
+  <?php 
+    include "./module/header.html"; 
+    include "./module/modal-recherche.html"; 
+    include "./module/modal-panier.html"; 
+  ?>
+  
 
   <main>
     <h1>Qui sommes-nous ?</h1>

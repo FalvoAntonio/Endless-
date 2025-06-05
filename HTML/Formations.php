@@ -5,16 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formation Professionnelle de Manucure Russe</title>
+     <base href="/">
+    <!-- <base href="/Endless-/"> -->
+    <link rel="stylesheet" href="CSS/header.css">
+    <link rel="stylesheet" href="CSS/form.css">
+    <link rel="stylesheet" href="CSS/footer.css">
+    <link rel="stylesheet" href="CSS/Login.css">
+    <link rel="stylesheet" href="CSS/Modal-Panier.css">
+    <script type="module" src="JS/script.js"></script>
+    <link rel="stylesheet" href="CSS/Modal-Recherche.css">
 
 </head>
 
+<?php 
+    include "./module/header.html"; 
+    include "./module/modal-recherche.html"; 
+    include "./module/modal-panier.html"; 
+  ?>
+
 <body>
-    <header>
-        <div class="container">
+    
+    <div class="Formations-Professionnelles">
+        <section class="header-section">
             <h1>Formation Professionnelle de Manucure Russe</h1>
-            <h2>Révolutionnez votre approche de la manucure avec notre formation complète</h2>
-        </div>
-    </header>
+            <p>Maîtrisez l'art de la manucure russe et offrez à vos clientes un service haut de gamme.</p>
+        </section>
+
+
+
 
     <div class="container">
         <section class="intro">

@@ -19,9 +19,12 @@
 </head>
 
 <body class="homepage">
-    <header>
-    </header>
-
+  <?php 
+    include "./module/header.html"; 
+    include "./module/modal-recherche.html"; 
+    include "./module/modal-panier.html"; 
+  ?>
+  
     <section class="Connexion container">
 
         <h1>Se connecter</h1>
@@ -48,7 +51,7 @@
                 </p>
             </div>
             <input type="submit" value="Connectez-vous" name="boutonConnexion" class="btn-form">
-            <a href="./HTML/MDP-oublie.html">
+            <a href="./HTML/MDP-oublie.php">
                 <p>Mot de passe oublié ? </p>
             </a>
         </form>
@@ -58,7 +61,7 @@
         <h1>Création d'un compte</h1>
         <p>Vous n’avez pas encore de compte ? Rejoignez notre communauté de passionnés de beauté.</p>
         <p>Créez votre compte et commencez votre voyage vers l’expertise esthétique.</p>
-        <a href="./HTML/Creation-Compte.html"><input class="INPUT btn-form" type="submit"
+        <a href="./HTML/Creation-Compte.php"><input class="INPUT btn-form" type="submit"
                 value="Je crée mon compte"></a>
     </section>
 

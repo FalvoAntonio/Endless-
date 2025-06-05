@@ -22,9 +22,12 @@
      sur le fichier "Menu-Burger.js" qui sera ensuite importer sur mon fichier "script.js"-->
      <!-- Donc dans mon fichier "Menu-Burger.js" je retrouve mon header,mon menu burger ainsi que mes modales Panier/Recherce -->
 
-    <header>
+      <?php 
+      include "./HTML/module/header.html";
+      include "./HTML/module/modal-recherche.html"; 
+      include "./HTML/module/modal-panier.html";  
+    ?>
    
-    </header>
 
     <main class="main-content">
       <section class="introduction">

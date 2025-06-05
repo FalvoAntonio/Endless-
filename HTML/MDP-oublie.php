@@ -17,8 +17,11 @@
 </head>
 
 <body>
-    <header>
-    </header>
+      <?php 
+    include "./module/header.html"; 
+    include "./module/modal-recherche.html"; 
+    include "./module/modal-panier.html"; 
+  ?>
 
     <div class="container">
         <h2>🔐 Vous avez oublié votre mot de passe ?</h2>
@@ -29,7 +32,7 @@
             <button type="submit" class="btn-form">Envoyer</button>
 
 
-            <a href="./index.html" class="button-accueil btn-form">Accueil</a>
+            <a href="./index.php" class="button-accueil btn-form">Accueil</a>
         </form>
     </div>
 

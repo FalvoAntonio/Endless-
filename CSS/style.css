@@ -7,14 +7,14 @@ body {
   background-color: #ffffff;
 }
 
-.introduction h2{
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    
+.introduction h2 {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
-.introduction p{
-    font-style: italic;
-    letter-spacing: 1px;
+.introduction p {
+  font-style: italic;
+  letter-spacing: 1px;
 }
 .formations-container {
   display: flex;
@@ -27,68 +27,66 @@ body {
   margin-top: 50px;
 }
 .formation {
-    border-radius: 15px;
-    width: 80%;
-    min-height: 30vh;
-    background-color: #f5f5f5;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    padding: 20px; 
-    transition: transform 0.2s ease-in-out;
-    border: 1px solid #b08d57;
+  border-radius: 15px;
+  width: 80%;
+  min-height: 30vh;
+  background-color: #f5f5f5;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  transition: transform 0.2s ease-in-out;
+  border: 1px solid #b08d57;
 }
 .formation:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
-.main-content{
-    text-align: center;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.main-content {
+  text-align: center;
 }
 
-.button-formation{
+.button-formation {
+  background: linear-gradient(to right, #b08d57, #d4af37, #b08d57);
+  color: white;
+  border: none;
+  letter-spacing: 1px;
+  border-radius: 25px;
+  padding: 10px 20px;
+  margin-top: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 1s ease;
+}
+.formation button:hover {
+  background: linear-gradient(to right, #d4af37, #b08d57, #d4af37);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
 
-        background: linear-gradient(to right, #b08d57, #d4af37, #b08d57);
-        color: white;
-        border: none;
-        letter-spacing: 1px;
-        border-radius: 25px;
-        padding: 10px 20px;
-        margin-top: 15px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: all 1s ease;
-      }
-      .formation button:hover {
-        background: linear-gradient(to right, #d4af37, #b08d57, #d4af37);
-        transform: translateY(-2px);
-        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-      }
+.main-content p {
+  padding: 20px;
+}
 
-      .main-content p{
-        padding: 20px;
-      }
-       
-      .main-content h2{
-      
-        font-family: 'Playfair Display', serif;
-        color: #333333;
-        font-weight: 500;
-        letter-spacing: 1px;
-        margin-top: 20px;
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-        /* Position et display pour permettre l'apparition du surlignement lorsque va utilsier en dessous ::after */
-        position: relative;
-        display: inline-block;
-        padding-bottom: 10px;
-      }
+.main-content h2 {
+  font-family: "Playfair Display", serif;
+  color: #333333;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-top: 20px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  /* Position et display pour permettre l'apparition du surlignement lorsque va utilsier en dessous ::after */
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
 
 .main-content h2::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 25%;
-    width: 50%;
-    height: 2px;
-    background: linear-gradient(to right, transparent, #b08d57, transparent);
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+  width: 50%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #b08d57, transparent);
 }
 
 .formation-image {
@@ -96,8 +94,8 @@ body {
   width: 100%;
   margin-bottom: 15px;
   overflow: hidden;
-    /* garantit que l'image respecte les coins arrondis du conteneur et garantit que l'image respecte les coins arrondis du conteneur.*/
-    /* Tout ce qui dépasse du container est caché : Ce qui évite que la photo lorsqu'elle sort du container on à l'impression qu'elle est 
+  /* garantit que l'image respecte les coins arrondis du conteneur et garantit que l'image respecte les coins arrondis du conteneur.*/
+  /* Tout ce qui dépasse du container est caché : Ce qui évite que la photo lorsqu'elle sort du container on à l'impression qu'elle est 
     à l'intérieur visuellement */
   border-radius: 10px;
 }
@@ -105,7 +103,7 @@ body {
 .formation-image img {
   width: 100%;
   height: 250px;
-  object-fit: cover; 
+  object-fit: cover;
   transition: transform 0.5s ease;
 }
 
@@ -113,127 +111,154 @@ body {
   transform: scale(1.05);
 }
 
-
 /* Section principale de présentation */
-        .salon-presentation {
-            display: flex;
-            align-items: center;
-            max-width: 1200px;
-            margin: 50px auto;
-            padding: 40px 20px;
-            gap: 50px;
-            background: linear-gradient(135deg, #f9f7f4 0%, #ffffff 50%, #f5f3ed 100%);
-            border-radius: 20px;
-            box-shadow: 0 8px 25px rgba(176, 141, 87, 0.15);
-            border: 2px solid #b08d57;
-        }
+.salon-presentation {
+  display: flex;
+  /* Transforme le conteneur en flexbox, permettant d'aligner facilement les éléments enfants (images et texte) côte à côte */
+  align-items: center;
+  /* Centre verticalement tous les éléments enfants dans le conteneur flex*/
+  max-width: 1200px; /* Limite la largeur maximale à 1200px pour éviter que la section soit trop large sur grands écrans */
+  margin: 50px auto; /* 50px : espace en haut et en bas | auto : centre horizontalement la section dans la page  */
+  padding: 40px 20px; /* Espace intérieur : 40px en haut/bas, 20px à gauche/droite */
+  gap: 50px; /* Espace de 50px entre les éléments flex (entre l'image et le texte) */
+  background: linear-gradient(
+    135deg,
+    #f9f7f4 0%,
+    #ffffff 50%,
+    #f5f3ed 100%
+  ); /* Dégradé diagonal (135°) avec 3 couleurs pour un effet élégant */
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(176, 141, 87, 0.15); /*  Ombre portée : pas de décalage horizontal, 8px vers le bas, 25px de flou, couleur dorée à 15% d'opacité*/
+  border: 2px solid #b08d57;
+}
 
-        /* Image à gauche */
-        .image-container {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            
-        }
+/* Images à gauche */
+.image-container {
+  flex: 1; /* Prend 1 part égale de l'espace disponible (50% car le texte a aussi flex: 1) */
+  display: flex;
+  flex-direction: column; /* Organise les images verticalement (l'une sous l'autre) */
+  gap: 20px; /* Espace de 20px entre les deux images */
+}
+/* Style sur les images */
+.salon-image {
+  width: 100%; /* L'image prend toute la largeur de son conteneur */
+  height: 400px; /* Hauteur fixe de 400px pour uniformiser toutes les images */
+  object-fit: cover; /* Recadre l'image pour remplir l'espace sans déformation */
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Ombre noire à 20% d'opacité pour donner de la profondeur */
+  transition: transform 0.3s ease; /* Animation douce de 0.3s quand l'image se transforme */
+}
 
-        .salon-image {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
-        }
+.salon-image:hover {
+  transform: scale(1.02); /*Au survol, l'image s'agrandit légèrement (2%)*/
+}
 
-        .salon-image:hover {
-            transform: scale(1.02);
-        }
-
-        /* Texte à droite */
-        .text-container {
-            flex: 1; /* Permet de prendre l'espace restant */
-            padding: 20px; 
-        }
-
-        .text-container h2 {
-            color: #333333;
-            font-size: 2.2em;
-            font-weight: 600;
-            margin-bottom: 25px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-            position: relative;
-            display: inline-block;
-            padding-bottom: 10px;
-        }
-
-        .text-container h2::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60%;
-            height: 3px;
-            background: linear-gradient(to right, #b08d57, #d4af37, transparent);
-            border-radius: 2px;
-        }
-
-        .text-container p {
-            color: #555;
-            font-size: 1.1em;
-            line-height: 1.7;
-            margin-bottom: 18px;
-        }
-
-        .highlight {
-            color: #b08d57;
-            font-weight: 600;
-        }
-
-        /* Bouton découvrir */
-        .discover-button {
-            background: linear-gradient(to right, #b08d57, #d4af37, #b08d57);
-            color: white;
-            border: none;
-            letter-spacing: 1px;
-            border-radius: 25px;
-            padding: 15px 30px;
-            margin-top: 25px;
-            font-weight: bold;
-            font-size: 1em;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(176, 141, 87, 0.3);
-        }
-
-        .discover-button:hover {
-            background: linear-gradient(to right, #d4af37, #b08d57, #d4af37);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(176, 141, 87, 0.4);
-        }
+/* Texte à droite | Titre H2 dans le texte*/
+.text-container {
+  flex: 1; /* Permet de prendre l'espace restant,Prend l'autre moitié de l'espace (50%) */
+}
 
 
-        /* ! Responsive pour MOBILE pour la partie Présentation page d'accueil (avec les deux img) */
+/* Pour le H2 a "position: relative" ? */
+.text-container h2 {
+  color: #333333;
+  font-size: 2.2em;
+  font-weight: 600;
+  margin-bottom: 25px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  position: relative;  /* pour positionner le trait décoratif par rapport au titre */
+  /* + La position relative est crucial ici, sans ça le :: after se positionne par rapport au h2
+  + avec relative le ::after se postionne par rapport au h2 */
+  display: inline-block; /* Le titre ne prend que la largeur de son contenu */
+  /* + display: inline-block fait que le h2 ne prend que la largeur
+  + de son texte (pas tout la largeur disponible) */
+  padding-bottom: 10px; /* Espace sous le titre pour le trait décoratif */
 
-        @media (max-width: 768px) {
-            .salon-presentation {
-                flex-direction: column;
-                text-align: center;
-                gap: 30px;
-                margin: 20px;
-                padding: 30px 15px;
-            }
+}
+/* + "::after" est un pseudo-élément CSS qui permet de créer un élément "virtuel" après le contenu d'un élément HTML,
++ sans avoir à ajouter du HTML supplémentaire. */
+.text-container h2::after {
+  content: "";  /* Crée un pseudo-élément vide */
+  /* + content: "" est OBLIGATOIRE pour que le pseudo-élément apparaisse
+  + Même vide, il crée un élément qu'on peut styliser  */
+  position: absolute;
+  /* + position: absolute sort l'élément du flux normal
+  + Il se positionne par rapport au parent qui a position: relative (le h2) */
+  bottom: 0;
+  left: 0;
+  /* Positionné en bas à gauche du titre */
+  width: 60%;
+  height: 3px;
+  /* Trait de 60% de la largeur du titre, 3px d'épaisseur */
+  background: linear-gradient(to right, #b08d57, #d4af37, transparent);
+  border-radius: 2px;
+}
 
-            .salon-image {
-                height: 300px;
-            }
+.text-container p {
+  color: #555;
+  font-size: 1.1em;
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+/* Texte en surbrillance (Span) */
+.highlight {
+  color: #b08d57;
+  font-weight: 600;
+}
 
-            .text-container h2 {
-                font-size: 1.8em;
-            }
+/* Bouton découvrir */
+.discover-button {
+  background: linear-gradient(to right, #b08d57, #d4af37, #b08d57);
+  color: white;
+  border: none;
+  letter-spacing: 1px;
+  border-radius: 25px;
+  padding: 15px 30px;
+  margin-top: 25px;
+  font-weight: bold;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Animation de toutes les propriétés */
+  box-shadow: 0 4px 15px rgba(176, 141, 87, 0.3);
+}
 
-            .text-container p {
-                font-size: 1em;
-            }
-        }
-    
+.discover-button:hover {
+  /* Au survol : inverse le dégradé, remonte de 3px, ombre plus prononcée */
+  background: linear-gradient(to right, #d4af37, #b08d57, #d4af37);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(176, 141, 87, 0.4);
+}
+
+/* ! Responsive pour MOBILE pour la partie Présentation page d'accueil (avec les deux img) */
+
+@media (max-width: 768px) {
+  /* Pour les écrans de 768px ou moins, on adapte la présentation */
+  .salon-presentation {
+    flex-direction: column; /* Sur mobile, passe en colonne (images au-dessus, texte en dessous) */
+    text-align: center; /* Centre tout le contenu */
+    gap: 30px;
+    margin: 20px;
+    padding: 30px 15px;
+    /* Réduit les espacements pour mobile */
+  }
+
+  .salon-image {
+    height: 300px;
+    /* Images plus petites sur mobile */
+  }
+
+  .text-container h2 {
+    font-size: 1.8em; /* Réduit la taille du titre pour les petits écrans */
+  }
+
+  .text-container h2::after {
+        left: 50%; /* Positionne le début du trait au centre */
+        transform: translateX(-50%); /* Décale le trait de 50% de sa largeur pour le centrer */
+        width: 80%; /* Optionnel : augmente la largeur pour mobile */
+    }
+
+  .text-container p {
+    font-size: 1em;
+    margin: 2px 0;
+  }
+}

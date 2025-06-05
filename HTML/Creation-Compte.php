@@ -24,8 +24,12 @@
 </head>
 
 <body>
-    <header>
-    </header>
+    <?php 
+    include "./module/header.html"; 
+    include "./module/modal-recherche.html"; 
+    include "./module/modal-panier.html"; 
+  ?>
+
 
     <div class="container">
         <h1>Créez votre compte</h1>

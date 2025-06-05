@@ -5,17 +5,17 @@
 export function fetchPanier() {
     // const prefix = window.location.href.includes("HTML")?"./" : "./HTML/";
     
-    fetch("./HTML/module/modal-panier.html")
-    .then((response) => response.text())
-    .then((data) => {
-        const modalContainer = document.createElement("div");
-        modalContainer.innerHTML = data;
-        document.body.appendChild(modalContainer.firstChild);
+    // fetch("./HTML/module/modal-panier.html")
+    // .then((response) => response.text())
+    // .then((data) => {
+    //     const modalContainer = document.createElement("div");
+    //     modalContainer.innerHTML = data;
+    //     document.body.appendChild(modalContainer.firstChild);
         // La création de div pose problème, du coup on recupère juste l'overlay pour l'insérer dans le body avec "firstChild"
         // ! On va donc chercher le premier enfant de modalContainer et on va l'ajouter au body
         // Pour résumé mon footer ne se place pas en bas de page, il est collé au div de la modale.
         startModalPanier();
-    })
+    // })
 }
 export function startModalPanier(){
 

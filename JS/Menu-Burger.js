@@ -14,16 +14,16 @@ import {fetchPanier} from "./Modal-Panier.js";
 // ! Je vais donc chercher le header dans le body et je vais le remplacer par le contenu de header.html
 // const prefix = window.location.href.includes("HTML")? "./" : "./HTML/";
 //     console.log(prefix, window.location.href);
-fetch("./HTML/module/header.html")
-.then((response) => response.text())
-.then((data) => {
+// fetch("./HTML/module/header.html")
+// .then((response) => response.text())
+// .then((data) => {
     // Selection du conteneur du menu, la page doit donc contenir un header vide c'est à dire " <header></header> ""
-    const menuContainer = document.querySelector("header");
-    menuContainer.innerHTML = data;
+    // const menuContainer = document.querySelector("header");
+    // menuContainer.innerHTML = data;
     startMenuBurger();
     fetchModalRecherche();
     fetchPanier();
-})
+// })
 
 
 export function startMenuBurger(){const logomenuburger = document.querySelector(".logomenuburger")
