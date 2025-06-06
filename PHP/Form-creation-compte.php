@@ -1,6 +1,7 @@
 <?php
 
 require "Forme.php";
+require "./PHP_Mailer.php";
 // On inclut le fichier Forme.php qui contient la fonction cleanData
 
 $formulaire = $mail = $motdepasse = $prenom = $nom = $numerotel = "";
@@ -19,7 +20,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["signup-form"])) // Le 
 // La condition vérifie si la méthode de la requête est POST et si le formulaire a été soumis.
 // isset($_POST[""]) vérifie si le formulaire a été soumis.
 
-    if(empty($_POST["mail"]))
+    if(empty($_POST["email"]))
     // Si le champ mail est vide
     {
         $error["mail"] = "Veuillez entrer une adresse e-mail";
@@ -27,7 +28,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["signup-form"])) // Le 
     }
     else
     {
-        $mail = trim($_POST["mail"]);
+        $mail = trim($_POST["email"]);
         // retire les espaces au début et à la fin du string
         $mail = stripslashes($mail);
         // retire les \ présent dans le string.
@@ -52,7 +53,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["signup-form"])) // Le 
 
     } // ? fin vérification mail
 
-    if(empty($_POST["motdepasse"]))
+    if(empty($_POST["password"]))
     {
         $error["motdepasse"] = "Veuillez entrer un mot de passe";
         // On ajoute un message d'erreur dans le tableau $error
@@ -60,7 +61,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["signup-form"])) // Le 
 
     else
     {
-        $motdepasse = trim($_POST["motdepasse"]);
+        $motdepasse = trim($_POST["password"]);
         // retire les espaces au début et à la fin du string
         // $motdepasse = stripslashes($motdepasse);
         // retire les \ présent dans le string.
@@ -72,7 +73,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["signup-form"])) // Le 
             $error["motdepasse"] = "Votre mot de passe n'a pas une taille adaptée";
             // On ajoute un message d'erreur dans le tableau $error
         }
-        elseif(!preg_match('/[A-Z]/', $motdepasse) || !preg_match('/[a-z]/', $motdepasse) || !preg_match('/[0-9]/', $motdepasse) || !preg_match('/[!@#$%^&*(),.?":{}|<>]/', $motdepasse))
+        elseif(!preg_match('/[A-Z]/', $motdepasse) || !preg_match('/[a-z]/', $motdepasse) || !preg_match('/[0-9]/', $motdepasse) || !preg_match('/[!@#$%^&*(),.?":{}|<>+]/', $motdepasse))
         // On vérifie si le mot de passe contient au moins une majuscule, une minuscule et un chiffre et un caractère spécial.
     {
             $error["motdepasse"] = "Votre mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre et un caractère spécial";
@@ -81,7 +82,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["signup-form"])) // Le 
 
     } // ? fin vérification mot de passe
 
-    if(empty($_POST["prenom"]))
+    if(empty($_POST["firstname"]))
     // Si le champ prenom est vide
     {
         $error["prenom"] = "Veuillez entrer un prénom";
@@ -92,7 +93,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["signup-form"])) // Le 
     // On récupère la valeur du champ prenom, c'est-à-dire le prénom saisi par l'utilisateur.
     // empty retourne true si le paramètre est vide.
     {
-        $prenom = trim($_POST["prenom"]);
+        $prenom = trim($_POST["firstname"]);
         // retire les espaces au début et à la fin du string
         $prenom = stripslashes($prenom);
         // retire les \ présent dans le string.
@@ -115,7 +116,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["signup-form"])) // Le 
     }
     } // ? fin vérification prenom
 
-    if(empty($_POST["nom"]))
+    if(empty($_POST["lastname"]))
     // Si le champ nom est vide
     // empty est une fonction PHP qui retourne true si le paramètre est vide.
     // On vérifie si le champ nom est vide, c'est-à-dire si l'utilisateur n'a pas saisi de nom.
@@ -135,10 +136,9 @@ if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["signup-form"])) // Le 
 
         // ! ICI J'UTILISE LA FONCTION cleanData QUI SE TROUVE DANS LE FICHIER Forme.php
         // ! C'est un raccourci pour ajouter les trois lignes de code ci-dessus, pour gagner du temps si je dois l'écrire plusieurs fois.
-        $nom = cleanData($_POST["nom"]);
+        $nom = cleanData($_POST["lastname"]);
         // On nettoie les données saisies par l'utilisateur en appelant la fonction cleanData.
-        
-        if (strlen ($nom) > 2 || strlen($nom) > 30)
+        if (strlen($nom) < 2 || strlen($nom) > 30)
         // On vérifie si la taille du nom est inférieure à 2 ou supérieure à 30
         {
             $error["nom"] = "Votre nom n'a pas une taille adaptée";
@@ -153,7 +153,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["signup-form"])) // Le 
         
     } // ? fin vérification nom
 
-    if(empty($_POST["numerotel"]))
+    if(empty($_POST["phone"]))
     // Si le champ numerotel est vide
     {
         $error["numerotel"] = "Veuillez entrer un numéro de téléphone";
@@ -161,7 +161,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["signup-form"])) // Le 
     }
     else
     {
-        $numerotel = trim($_POST["numerotel"]);
+        $numerotel = trim($_POST["phone"]);
         // retire les espaces au début et à la fin du string
         $numerotel = stripslashes($numerotel);
         // retire les \ présent dans le string.
@@ -181,5 +181,13 @@ if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["signup-form"])) // Le 
     } // ? fin vérification numerotel
 
 
+    // ! A NE PAS OUBLIER DE FAIRE
+    if(empty($error))
+    {
+        $miseEnFormMail = file_get_contents("../HTML/module/test_mail.html");
+        EnvoyerMail($mail, "Inscription", $miseEnFormMail);
+    }
 }// fin du bloc principal
 
+var_dump($error);
+var_dump($_POST);
