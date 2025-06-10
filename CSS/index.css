@@ -24,7 +24,7 @@ body {
   background-color: #ffffff;
   gap: 15px;
   width: 100%;
-  margin-top: 50px;
+  margin-top: 100px;
 }
 .formation {
   border-radius: 15px;
@@ -71,12 +71,13 @@ body {
   color: #333333;
   font-weight: 500;
   letter-spacing: 1px;
-  margin-top: 20px;
+  margin-top: 50px;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
   /* Position et display pour permettre l'apparition du surlignement lorsque va utilsier en dessous ::after */
   position: relative;
   display: inline-block;
   padding-bottom: 10px;
+  font-size: 45px;
 }
 
 .main-content h2::after {
@@ -92,6 +93,7 @@ body {
 .formation-image {
   margin: auto;
   width: 100%;
+  height: auto;
   margin-bottom: 15px;
   overflow: hidden;
   /* garantit que l'image respecte les coins arrondis du conteneur et garantit que l'image respecte les coins arrondis du conteneur.*/
@@ -264,26 +266,49 @@ body {
 }
 
 
-/* Responsive pour ordinateurs */
+/* ! Responsive pour ordinateurs */
+
 @media (min-width: 1024px) {
+
+/* Images de formations */
 
 .formation-image {
  
-  width: 20%;
+  width: 55%;
+  height: 320px;
   margin-bottom: 15px;
   overflow: hidden;
   /* garantit que l'image respecte les coins arrondis du conteneur et garantit que l'image respecte les coins arrondis du conteneur.*/
   /* Tout ce qui dépasse du container est caché : Ce qui évite que la photo lorsqu'elle sort du container on à l'impression qu'elle est 
     à l'intérieur visuellement */
-  border-radius: 10px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);;
 }
 
 .formation-image img {
-  width: 100%;
-  height: 50px;
- 
-  transition: transform 0.5s ease;
+  width: 100%; 
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
- 
- 
+ .formation:hover .formation-image img {
+  transform: scale(1.03);
+}
+
+/* Mise en page des formations */
+
+.formations-container {
+
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  gap: 50px;
+}
+.formation
+{
+  width: 30%;
+}
+
 }

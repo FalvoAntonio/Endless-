@@ -183,7 +183,7 @@ INSERT INTO users (email, password, firstname, lastname, phone, phone_prefix, ro
 ('admin@nailsendlessbeauty.fr', '$2y$10$h.KxQEIH7VH5j6HM1x3NLOov0BYA7VT.NXxmNL1YkTk.YPYPjQlA6', 'Admin', 'Nails', '123456789', '+33', 'admin');
 
 
--- COMPREHENSION DE NULL et NOT_NULL :
+--  + COMPREHENSION DE NULL et NOT_NULL :
 
 -- Qu'est-ce que NULL ?
 -- NULL signifie "vide", "rien", "aucune valeur", "inconnu" ou "non renseigné". C'est différent de zéro (0) ou d'une chaîne vide ("").
