@@ -25,7 +25,7 @@
 
 <body>
    <h1>Nos Formations</h1>
-
+    <div class = container >
     <h2>MANUCURE RUSSE</h2>
     <p>
         Tu veux devenir une pro de la manucure russe ou perfectionner ta technique ?<br>
@@ -56,6 +56,7 @@
         <li>Support PDF téléchargeable : livret de formation</li>
         <li>Bonus : Protocole complet de stérilisation du matériel pour garantir des prestations sûres et conformes aux normes d’hygiène</li>
     </ul>
+    </div>
 
     <h2>RALLONGEMENT GEL X</h2>
     <p>

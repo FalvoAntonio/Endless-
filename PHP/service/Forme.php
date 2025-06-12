@@ -25,7 +25,7 @@ function cleanData(string $data): string
 // + Fonction qui permet d’afficher un message d’erreur pour un champ spécifique d’un formulaire
 // + si ce champ a généré une erreur (stockée dans le tableau $error).
 
-function getError($clef)
+function MessagesErrorsFormulaire($champ)
 {
     static $error = [];
     // Initialise un tableau vide local appelé $error, que je vais utiliser pour stocker les erreurs.
@@ -49,5 +49,5 @@ function getError($clef)
   Si oui, on affiche un span HTML contenant le message d'erreur
   Sinon, on n'affiche rien (chaîne vide)
   */
-  echo isset($error[$clef])?"<span class='error'>{$error[$clef]}</span>":"" ;
+  echo isset($error[$champ])?"<span class='error'>{$error[$champ]}</span>":"" ;
 }
