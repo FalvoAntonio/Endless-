@@ -37,7 +37,7 @@
     <div class="container">
   
         <h1>Créez votre compte</h1>
-        <form id="signup-form" action="./HTML/PHP/Compte/Formulaire-creation-compte.php" method="POST"> // + ICI
+        <form id="signup-form" action="./Formulaire-creation-compte.php" method="POST"> // + ICI
             <div class="form-groupe">
                 <label for="email">E-mail</label>
                 <input type="email" id="email" name="email" placeholder="votreemail@exemple.com" required>
