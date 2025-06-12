@@ -24,190 +24,111 @@
   ?>
 
 <body>
-    
-    <div class="Formations-Professionnelles">
-        <section class="header-section">
-            <h1>Formation Professionnelle de Manucure Russe</h1>
-            <p>Maîtrisez l'art de la manucure russe et offrez à vos clientes un service haut de gamme.</p>
-        </section>
+   <h1>Nos Formations</h1>
 
+    <h2>MANUCURE RUSSE</h2>
+    <p>
+        Tu veux devenir une pro de la manucure russe ou perfectionner ta technique ?<br>
+        La formation Manucure russe est faite pour toi ! Que tu sois débutante passionnée ou déjà en activité, cette formation complète t’apprend toutes les étapes clés pour réaliser des manucures impeccables, durables et professionnelles.
+    </p>
+    <h3>Ce que tu vas apprendre :</h3>
+    <ul>
+        <li>Les bases essentielles de l’hygiène et de la préparation de l’ongle</li>
+        <li>Le matériel indispensable et comment bien l’utiliser</li>
+        <li>Les techniques de manucure russe et combinée</li>
+        <li>Le gainage sur l’ongle naturel : renforcement pour une meilleure tenue sans extension</li>
+        <li>Le limage parfait pour une forme harmonieuse</li>
+        <li>Application de la couleur sous cuticules : effet fondu et propre pour un rendu ultra net</li>
+        <li>Les erreurs courantes à éviter et les astuces de pro pour un rendu net et durable</li>
+        <li>La dépose complète, expliquée étape par étape pour respecter l’ongle naturel</li>
+    </ul>
+    <h3>À qui s’adresse cette formation ?</h3>
+    <ul>
+        <li>Aux débutantes qui souhaitent se lancer dans l’univers de la manucure</li>
+        <li>Aux pros en activité qui veulent revoir leurs bases ou apprendre de nouvelles techniques</li>
+        <li>Aux passionnées qui souhaitent gagner en confiance et qualité dans leurs prestations</li>
+    </ul>
+    <h3>Informations pratiques :</h3>
+    <ul>
+        <li>100 % en ligne – Accès illimité, à ton rythme</li>
+        <li>Durée : environ XXXX de vidéo découpée en modules clairs</li>
+        <li>Visionnage illimité à vie</li>
+        <li>Support PDF téléchargeable : livret de formation</li>
+        <li>Bonus : Protocole complet de stérilisation du matériel pour garantir des prestations sûres et conformes aux normes d’hygiène</li>
+    </ul>
 
+    <h2>RALLONGEMENT GEL X</h2>
+    <p>
+        Tu veux maîtriser une technique de rallongement rapide, propre et ultra tendance ?<br>
+        La formation Rallongement GEL X est idéale pour toi ! Que tu sois débutante ou déjà prothésiste ongulaire, cette méthode accessible et performante va changer ta façon de travailler.
+    </p>
+    <p>
+        Le GEL X est une technique simple, sans limage, et adaptée à tous les niveaux. Elle te permet de proposer des poses structurées, élégantes et solides en un minimum de temps, tout en respectant l’ongle naturel.
+    </p>
+    <h3>Ce que tu vas apprendre :</h3>
+    <ul>
+        <li>Les bases de l’hygiène et la préparation de l’ongle avant la pose</li>
+        <li>Les avantages de la technique GEL X et pour qui elle est adaptée</li>
+        <li>Le matériel à utiliser, et comment bien choisir tes produits (capsules, gel, primer, etc.)</li>
+        <li>Le choix des bonnes capsules en fonction de la forme et de la morphologie de l’ongle</li>
+        <li>Pose complète des capsules GEL X : technique, alignement, fixation et finition</li>
+        <li>Limage minimal pour un rendu propre sans abîmer la capsule</li>
+        <li>Application de la couleur sous cuticules pour un fini net, tendance et professionnel</li>
+        <li>Les erreurs fréquentes à éviter, et toutes les astuces pour une tenue longue durée</li>
+        <li>La dépose complète, expliquée étape par étape pour respecter l’ongle naturel</li>
+    </ul>
+    <h3>À qui s’adresse cette formation ?</h3>
+    <ul>
+        <li>Aux débutantes qui veulent apprendre une technique simple et efficace</li>
+        <li>Aux prothésistes ongulaires qui cherchent à proposer un nouveau service rapide et rentable</li>
+        <li>À toutes celles qui veulent offrir des poses fines, élégantes et solides sans passer par les chablons ou le modelage classique</li>
+    </ul>
+    <h3>Informations pratiques :</h3>
+    <ul>
+        <li>100 % en ligne – Accès illimité, à ton rythme</li>
+        <li>Durée : environ XXXX de vidéo découpée en modules clairs</li>
+        <li>Visionnage illimité à vie</li>
+        <li>Support PDF téléchargeable : livret de formation</li>
+        <li>Bonus : Protocole complet de stérilisation du matériel pour garantir des prestations sûres et conformes aux normes d’hygiène</li>
+    </ul>
 
-
-    <div class="container">
-        <section class="intro">
-            <p>Vous souhaitez vous démarquer dans l'univers des soins des ongles ?
-                La manucure russe est la technique premium que recherchent vos clients.
-                Notre formation en ligne vous offre l'opportunité de maîtriser cet art prisé depuis le confort de votre
-                domicile ou de votre salon.</p>
-
-            <h2>Qu'est-ce que la manucure russe ?</h2>
-            <p>La manucure russe est une technique professionnelle de soin des ongles reconnue pour sa précision et ses
-                résultats impeccables. Contrairement aux méthodes traditionnelles, elle utilise une fraise électrique
-                spécifique et des embouts adaptés pour :</p>
-            <ul>
-                <li>Travailler les cuticules sans les couper</li>
-                <li>Préparer la plaque de l'ongle de manière non agressive</li>
-                <li>Créer une finition parfaite et durable</li>
-                <li>Résoudre les problématiques comme les cuticules excessives ou les ongles abîmés</li>
-            </ul>
-
-            <p>Cette méthode est particulièrement appréciée pour son respect de l'ongle naturel et sa finition
-                exceptionnelle qui sert de base idéale pour tout type de pose (gel, semi-permanent).</p>
-        </section>
-
-        <section class="section">
-            <h2>Objectifs de la formation</h2>
-            <p>À l'issue de notre programme complet, vous serez capable de :</p>
-            <ul>
-                <li>Maîtriser la technique complète de la manucure russe</li>
-                <li>Utiliser correctement la ponceuse et ses différents embouts</li>
-                <li>Appliquer les protocoles d'hygiène professionnels</li>
-                <li>Adapter la technique aux différentes morphologies d'ongles</li>
-                <li>Résoudre les problématiques courantes (ongles rongés, cuticules hypertrophiées)</li>
-                <li>Proposer un service haut de gamme très recherché</li>
-                <li>Augmenter votre chiffre d'affaires grâce à ce service premium</li>
-            </ul>
-        </section>
-
-        <section class="section">
-            <h2>Programme détaillé</h2>
-            <div class="modules">
-                <div class="module-card">
-                    <h3>Module 1 : Fondamentaux et théorie</h3>
-                    <ul>
-                        <li>Histoire et principes de la manucure russe</li>
-                        <li>Anatomie de l'ongle et des tissus périunguéaux</li>
-                        <li>Hygiène et sécurité spécifiques à cette technique</li>
-                        <li>Présentation du matériel nécessaire</li>
-                    </ul>
-                </div>
-                <div class="module-card">
-                    <h3>Module 2 : Maîtrise de la ponceuse</h3>
-                    <ul>
-                        <li>Choix et utilisation des différents embouts</li>
-                        <li>Techniques de prise en main et mouvements de base</li>
-                        <li>Réglages de vitesse et pression adaptés</li>
-                        <li>Exercices pratiques progressifs</li>
-                    </ul>
-                </div>
-                <div class="module-card">
-                    <h3>Module 3 : Protocole complet pas à pas</h3>
-                    <ul>
-                        <li>Préparation de l'ongle naturel</li>
-                        <li>Travail des cuticules à la fraise</li>
-                        <li>Techniques de polissage et finition</li>
-                        <li>Résolution des cas particuliers</li>
-                    </ul>
-                </div>
-                <div class="module-card">
-                    <h3>Module 4 : Perfectionnement et cas spécifiques</h3>
-                    <ul>
-                        <li>Adaptation aux ongles problématiques</li>
-                        <li>Manucure russe combinée à d'autres techniques</li>
-                        <li>Conseils pour une pratique efficace et rentable</li>
-                        <li>Astuces professionnelles exclusives</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>Avantages de notre formation</h2>
-            <ul class="advantages">
-                <li>Formation 100% en ligne - Apprenez à votre rythme, où que vous soyez</li>
-                <li>Vidéos HD détaillées - Visualisez chaque geste technique avec précision</li>
-                <li>Support pédagogique complet - Fiches techniques, liste de matériel recommandé, protocoles
-                    imprimables</li>
-                <li>Accès illimité - Révisez autant de fois que nécessaire</li>
-                <li>Certificat de formation - Valorisez votre nouvelle expertise</li>
-                <li>Suivi personnalisé - Posez vos questions et recevez des retours sur vos pratiques</li>
-                <li>Groupe d'entraide privé - Échangez avec la communauté et la formatrice</li>
-            </ul>
-        </section>
-
-        <section class="section">
-            <h2>Qui peut suivre cette formation ?</h2>
-            <div class="target-audience">
-                <div class="audience-card">
-                    <p>Professionnels de l'ongle souhaitant élargir leurs compétences</p>
-                </div>
-                <div class="audience-card">
-                    <p>Débutants désireux d'apprendre une technique premium dès le départ</p>
-                </div>
-                <div class="audience-card">
-                    <p>Personnes en reconversion professionnelle</p>
-                </div>
-                <div class="audience-card">
-                    <p>Salons cherchant à former leur équipe aux techniques haut de gamme</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>Votre formatrice</h2>
-            <p>[Nom de la formatrice], spécialiste en manucure russe avec plus de [X] années d'expérience. Formée
-                directement auprès des meilleurs experts russes, elle a développé une approche pédagogique claire et
-                efficace pour transmettre toutes les subtilités de cette technique.</p>
-        </section>
-
-        <section class="testimonials">
-            <h2>Témoignages de nos élèves</h2>
-            <div class="testimonial">
-                <p>Cette formation a transformé ma pratique. Mes clientes sont ravies et je peux désormais proposer un
-                    service haut de gamme très rentable.</p>
-                <p class="testimonial-author">- Sandrine D.</p>
-            </div>
-            <div class="testimonial">
-                <p>Les explications sont claires, les vidéos détaillées. J'ai pu proposer la manucure russe dès la fin
-                    de la formation avec confiance.</p>
-                <p class="testimonial-author">- Amélie T.</p>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>Investissement</h2>
-            <div class="price-tag">
-                <p class="original-price">Prix normal : XXX €</p>
-                <p class="current-price">Offre de lancement : XXX €</p>
-                <p>Paiement sécurisé en 1 ou 3 fois sans frais.</p>
-                <div class="alert">
-                    <p>⚠️ Places limitées pour garantir un suivi de qualité !</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="faq">
-            <h2>Foire Aux Questions</h2>
-            <div class="faq-item">
-                <div class="faq-question">Quel matériel dois-je avoir pour suivre la formation ?</div>
-                <div class="faq-answer">Une liste complète vous sera fournie avant le début de la formation.
-                    L'investissement matériel de base comprend une ponceuse professionnelle et des embouts spécifiques.
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">Je suis débutant(e), puis-je suivre cette formation ?</div>
-                <div class="faq-answer">Absolument ! Notre méthode pédagogique s'adapte à tous les niveaux. Nous
-                    commençons par les bases pour vous amener progressivement à la maîtrise.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">Combien de temps ai-je accès au contenu ?</div>
-                <div class="faq-answer">Vous bénéficiez d'un accès illimité à vie à tous les modules de la formation.
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">Y a-t-il un certificat à la fin de la formation ?</div>
-                <div class="faq-answer">Oui, un certificat digital vous sera délivré attestant de votre nouvelle
-                    compétence.</div>
-            </div>
-        </section>
-
-        <div class="cta">
-            <h2>Réservez votre place dès maintenant !</h2>
-            <a href="#inscription" class="button">JE M'INSCRIS</a>
-            <p>Transformez votre pratique et proposez un service d'exception avec la manucure russe</p>
-        </div>
-    </div>
+    <h2>BEAUTÉ DES PIEDS</h2>
+    <p>
+        Tu veux proposer des soins des pieds complets, professionnels et esthétiques ?<br>
+        La formation Beauté des Pieds est faite pour toi ! Que tu débutes ou que tu souhaites améliorer tes techniques, cette formation t’apprend tout pour offrir à tes clientes une prestation haut de gamme, de l’hygiène à la finition parfaite.
+    </p>
+    <p>
+        Une pédicure bien réalisée, ce n’est pas juste esthétique : c’est aussi du confort, du soin et un vrai moment de bien-être. Dans cette formation, tu apprendras à maîtriser la pédicure russe, la réparation des ongles abîmés, l’application de la couleur sous cuticules et le traitement des callosités.
+    </p>
+    <h3>Ce que tu vas apprendre :</h3>
+    <ul>
+        <li>Hygiène et préparation du pied avant toute intervention</li>
+        <li>Pédicure russe : technique de manucure russe adaptée aux pieds pour un contour net et sain</li>
+        <li>Réparation d’un ongle cassé, abîmé ou traumatisé – avec patch acrygel</li>
+        <li>Couleur sous cuticules sur ongles de pieds : pose élégante et durable</li>
+        <li>Sens et technique de traitement des callosités (talons, coussinets, etc.)</li>
+        <li>Matériel à utiliser : ponceuse, embouts, produits émollients, etc.</li>
+        <li>Limage et choix des formes adaptées à la morphologie des orteils</li>
+        <li>Conseils pour optimiser ton poste de travail et le confort client</li>
+        <li>Erreurs fréquentes à éviter pour garantir un résultat propre, durable et sans danger</li>
+        <li>La dépose complète, expliquée étape par étape pour respecter l’ongle naturel</li>
+    </ul>
+    <h3>À qui s’adresse cette formation ?</h3>
+    <ul>
+        <li>Aux débutantes qui veulent apprendre les bases du soin des pieds esthétiques</li>
+        <li>Aux prothésistes ongulaires qui veulent élargir leur carte de prestations</li>
+        <li>À toutes les professionnelles du bien-être qui souhaitent proposer un soin de pieds complet et soigné</li>
+    </ul>
+    <h3>Informations pratiques :</h3>
+    <ul>
+        <li>100 % en ligne – Accès illimité, à ton rythme</li>
+        <li>Durée : environ XXXX de vidéo découpée en modules clairs</li>
+        <li>Visionnage illimité à vie</li>
+        <li>Support PDF téléchargeable : livret de formation</li>
+        <li>Bonus : Protocole complet de stérilisation du matériel pour garantir des prestations sûres et conformes aux normes d’hygiène</li>
+    </ul>
+</body>
+</html>
 
    <footer>
   <div class="footer-content">
