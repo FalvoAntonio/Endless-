@@ -3,7 +3,8 @@ CREATE DATABASE IF NOT EXISTS endless_db;
 --  Cette ligne crée une nouvelle base de données appelée "endless_db" si elle n'existe pas déjà.
 --  C'est comme créer un nouveau classeur vide qui contiendra toutes nos tables.
 
-USE endless_db;
+USE endless_db; 
+-- ! Je reprends endless_db pour le PDO
 -- Cette ligne indique à MySQL d'utiliser la base de données "endless_db" pour toutes les commandes suivantes.
 --  C'est comme ouvrir ce classeur pour y travailler.
 
@@ -15,7 +16,7 @@ CREATE TABLE IF NOT EXISTS users (
     -- La colonne "id" est un nombre entier qui s'incrémente automatiquement (commence à 1, puis 2, 3, etc.)
     -- pour chaque nouvel utilisateur. PRIMARY KEY indique que c'est l'identifiant unique de chaque utilisateur.
     email VARCHAR(100) NOT NULL UNIQUE,
-    Explication : La colonne "email" stocke l'adresse email de l'utilisateur.
+    -- Explication : La colonne "email" stocke l'adresse email de l'utilisateur.
     -- VARCHAR(100) : peut contenir jusqu'à 100 caractères
     -- NOT NULL : ce champ doit obligatoirement être rempli
     -- UNIQUE : deux utilisateurs ne peuvent pas avoir le même email
@@ -65,7 +66,7 @@ CREATE TABLE IF NOT EXISTS formations (
     -- La durée de la formation (ex: "1H30 à 2H").
     price DECIMAL(10, 2) NOT NULL,
     discount_price DECIMAL(10, 2) NULL,
-    prix : Le prix normal de la formation
+    -- prix : Le prix normal de la formation
 -- prix_reduit : Le prix en promotion (peut être NULL si pas de promotion)
 -- DECIMAL(10, 2) signifie un nombre avec jusqu'à 10 chiffres au total, dont 2 après la virgule (ex: 1234567.89).
     image_path VARCHAR(255) NOT NULL,

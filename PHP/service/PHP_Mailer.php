@@ -27,7 +27,7 @@ use PHPMailer\PHPMailer\SMTP; // C'est la classe pour capturer les erreurs spéc
 // ? Avec use (propre et lisible)
 // $mail = new PHPMailer(true);
 
-require __DIR__ . '/vendor/autoload.php'; // Chemin vers l'autoloader de Composer
+require __DIR__ . '/../vendor/autoload.php'; // Chemin vers l'autoloader de Composer
 // ! C'est absolument indispensable : sans cette ligne Php ne sait pas ou trouver les classes PHPMailer.
 
 function EnvoyerMail(string $destinataire, string $sujet, string $message): string

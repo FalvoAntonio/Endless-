@@ -68,10 +68,12 @@ if(empty($error))
 // Si le tableau $error est vide, cela signifie que tous les champs sont valides
 
 {
+
     // ? Connexion à la base de données:
     // ? Récupérer l'utilisateur dans la base de données:
     $utilisateur = ["password"=> '$2y$10$Hn7l4petJPiFnAIZlpO1jeJ3IPw2waquHWETyRwuPQ2.P16p9B1zG', "username" => "Maurice"];
-
+    require("./service/PDO-Connexion-BDD.php"); // Connexion à la base de donner 
+    
     if($utilisateur)
     {
         if(password_verify($pass, $utilisateur["password"]))

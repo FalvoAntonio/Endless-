@@ -1,9 +1,19 @@
 <?php
 
-require "Forme.php";
-require "./PHP_Mailer.php";
+// ! VERIFICATION DU FORMULAIRE
+require "./service/Forme.php";
+require "./service/PHP_Mailer.php";
 // On inclut le fichier Forme.php qui contient la fonction cleanData
-
+if(session_status() !== PHP_SESSION_ACTIVE)
+// On vérifie si la session n'est pas déjà démarrée
+// Si la session n'est pas démarrée, on la démarre
+{
+    session_start();
+    // On utilise session_start() pour démarrer la session
+    // Cela permet de pouvoir utiliser les variables de session
+    // Si la session est déjà démarrée, on ne fait rien
+    // Cela permet d'éviter les erreurs liées à la session
+}
 $formulaire = $mail = $motdepasse = $prenom = $nom = $numerotel = "";
 
 // Tableau d'erreurs:
@@ -19,6 +29,8 @@ if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["signup-form"])) // Le 
 // le nom dans la super global $_POST correspond à l'attribut "name" des champs du formulaire.
 // La condition vérifie si la méthode de la requête est POST et si le formulaire a été soumis.
 // isset($_POST[""]) vérifie si le formulaire a été soumis.
+{
+    require("./service/PDO-Connexion-BDD.php"); // On inclut le fichier qui contient la connexion à la base de données via PDO.
 
     if(empty($_POST["email"]))
     // Si le champ mail est vide
@@ -50,7 +62,22 @@ if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["signup-form"])) // Le 
     {
         $error["mail"] = "Votre adresse e-mail n'est pas valide";
         // On ajoute un message d'erreur dans le tableau $error
-
+    }
+    else
+    {
+    // Vérification si l'adresse e-mail existe déjà
+            // Je prépare ma requête
+            $sql = $pdo->prepare("SELECT * FROM users WHERE email=?");
+            // Je lance ma requête 
+            $sql->execute([$mail]);
+            // Je récupère mon résultat
+            $user = $sql->fetch();
+            // Si j'ai trouvé un utilisateur, alors cet email est déjà utilisé
+            if($user)
+            {
+                $error["email"] = "Cet email est déjà utilisé";
+            }
+    }
     } // ? fin vérification mail
 
     if(empty($_POST["password"]))
@@ -111,7 +138,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["signup-form"])) // Le 
         // Donc, ensemble ^...$ veut dire : la chaîne entière doit respecter cette règle.
         // "[a-zA-ZÀ-ÿ\s-]+" signifie que la chaîne peut contenir des lettres (minuscules et majuscules), des caractères accentués, des espaces et des tirets.
     {
-        $erro["prenom"] = "Votre prénom ne doit contenir que des lettres, des espaces et des tirets";
+        $error["prenom"] = "Votre prénom ne doit contenir que des lettres, des espaces et des tirets";
         // On ajoute un message d'erreur dans le tableau $error]
     }
     } // ? fin vérification prenom
@@ -179,15 +206,54 @@ if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["signup-form"])) // Le 
             // On ajoute un message d'erreur dans le tableau $error
         }
     } // ? fin vérification numerotel
+    if(empty($_POST["prefix"]))
+    // Si le champ prefix est vide
+    {
+        $error["prefix"] = "Veuillez entrer un préfixe";
+    }
+    else
+    {
+    // Sinon on récupère la valeur et on la nettoie avec la fonction cleanData (à adapter selon ta logique)
+    $prefix = cleanData($_POST["prefix"]);
 
+    // Vérifie que le préfixe commence bien par un "+" suivi uniquement de chiffres (ex: +33, +1, etc.)
+    if(!preg_match('/^\+\d{1,4}$/', $prefix))
+    {
+        $error["prefix"] = "Le préfixe doit commencer par + suivi de 1 à 4 chiffres";
+    }
+    }
 
     // ! A NE PAS OUBLIER DE FAIRE
+    // ! DONC si je n'ai aucunes erreurs je peux envoyer mon mail en utilisant ma fonction "EnvoyerMail"
+    // ! qui se trouve dans le fichier "PHP_Mailer.php"
+    // + Envoi de mail + Insertion SQL avec PDO
     if(empty($error))
     {
-        $miseEnFormMail = file_get_contents("../HTML/module/test_mail.html");
-        EnvoyerMail($mail, "Inscription", $miseEnFormMail);
-    }
-}// fin du bloc principal
 
-var_dump($error);
-var_dump($_POST);
+        $miseEnFormMail = file_get_contents("../HTML/module/test_mail.html");
+        // On récupère le contenu HTML du mail à envoyer (template prédéfini) depuis un fichier externe.
+
+        EnvoyerMail($mail, "Inscription", $miseEnFormMail);
+        // On envoie un mail de confirmation à l'adresse saisie, avec un sujet et le contenu HTML chargé.
+
+        // ? Lancer une requête SQL:
+        // Cela protège contre les injections SQL grâce à PDO::prepare
+        $stmt = $pdo->prepare("INSERT INTO users (firstname, lastname, email, phone, phone_prefix,password) VALUES (?, ?, ? ,?, ?, ?)");
+
+        $motdepasse = password_hash($motdepasse, PASSWORD_DEFAULT);
+        // Avant d’insérer le mot de passe, on le crypte avec l’algorithme par défaut de PHP (actuellement bcrypt).
+
+        // Exécution de la requête avec les vraies valeurs, dans le même ordre que les "?" ci-dessus
+        $stmt->execute([$prenom, $nom, $mail,$numerotel,$prefix,$motdepasse]);
+
+        // Redirection vers la page d'accueil après l'inscription
+        header('Location: /');
+
+        
+    }
+
+}// fin du bloc principal
+$_SESSION["error"] = $error;
+header('Location: /HTML/Creation-Compte.php');
+// var_dump($error);
+// var_dump($_POST);

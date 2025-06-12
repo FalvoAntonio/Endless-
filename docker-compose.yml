@@ -46,7 +46,7 @@ services:
 # Quand vous lancez docker-compose up, Docker démarre d'abord le service "db"
 # Une fois que "db" est démarré, Docker lance ensuite le service "app"
     depends_on:
-      - db
+      - db 
       #  Si le conteneur s'arrête pour une raison quelconque (crash, erreur),
       #  Docker le redémarrera automatiquement. C'est comme un gardien qui veille à ce que votre site reste opérationnel.
     restart: always
@@ -55,6 +55,7 @@ services:
 
   # Service pour la base de données MySQL
   db:
+  # ! Je récupère le db pour le PDO
   # Le deuxième service s'appelle "db" (votre base de données). Au lieu de construire une image personnalisée, 
   # on utilise directement l'image officielle MySQL version 8.0. C'est pratique car MySQL est déjà configuré correctement.
     image: mysql:8.0
