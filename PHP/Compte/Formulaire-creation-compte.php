@@ -230,11 +230,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["signup-form"])) // Le 
     if(empty($error))
     {
 
-        $miseEnFormMail = file_get_contents("../../HTML/module/test_mail.html");
-        // On récupère le contenu HTML du mail à envoyer (template prédéfini) depuis un fichier externe.
-
-        EnvoyerMail($mail, "Inscription", $miseEnFormMail);
-        // On envoie un mail de confirmation à l'adresse saisie, avec un sujet et le contenu HTML chargé.
+        $token = bin2hex(random_bytes(50));
 
         // ? Lancer une requête SQL:
         // Cela protège contre les injections SQL grâce à PDO::prepare
@@ -246,11 +242,28 @@ if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["signup-form"])) // Le 
         // Exécution de la requête avec les vraies valeurs, dans le même ordre que les "?" ci-dessus
         $stmt->execute([$prenom, $nom, $mail,$numerotel,$prefix,$motdepasse]);
 
+        $miseEnFormMail = file_get_contents("../../HTML/module/test_mail.html");
+        // On récupère le contenu HTML du mail à envoyer (template prédéfini) depuis un fichier externe.
+
+        $miseEnFormMail = str_replace('$token$', $token, $miseEnFormMail);
+
+        EnvoyerMail($mail, "Inscription", $miseEnFormMail);
+        // On envoie un mail de confirmation à l'adresse saisie, avec un sujet et le contenu HTML chargé.
+
         // Redirection vers la page d'accueil après l'inscription
         header('Location: /');
         exit;
         
     }
+
+
+    /* 
+    Je dois créer une table comme celle du password_reset je pars sur la même structure
+    Ensuite fichier pour générer un token : bin2hex(random_bytes(50)) ( à ajouter au dessus)
+    Lancer ma requête pour le token et insérer le token dans le mail
+
+
+    */
 
 }// fin du bloc principal
 $_SESSION["error"] = $error;

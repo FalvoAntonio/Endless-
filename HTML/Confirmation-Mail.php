@@ -25,7 +25,7 @@
 
     Veuillez confirmer votre adresse e-mail en cliquant sur le bouton ci dessous
     <button>Vérification e-mail</button>
-    
+
 <footer>
   <div class="footer-content">
     <div>
