@@ -50,4 +50,5 @@ function MessagesErrorsFormulaire($champ)
   Sinon, on n'affiche rien (chaîne vide)
   */
   echo isset($error[$champ])?"<span class='error'>{$error[$champ]}</span>":"" ;
+  // var_dump($error);
 }

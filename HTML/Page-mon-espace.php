@@ -3,12 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <base href="/">
+    <!-- <base href="/Endless-/"> -->
+    <!--  ! On utilisera la balise <base> pour contrer le problème du local/en ligne qui modifie les chemins à cause de gitHub qui
+      crée un dossier "/Endless-/" Pour faire simple <base> permettra de mettre le bon chemin, en utilisant
+      le prefix /Endless-/ devant chaque chemin relatifs, pour que ça soit des chemins relatifs on ajoute le point devant le slash "./" 
+      Sinon ça serait un chemin absolu  -->
+    <link rel="stylesheet" href="./CSS/footer.css">
+    <link rel="stylesheet" href="./CSS/header.css">
+    <link rel="stylesheet" href="./CSS/form.css">
+    <link rel="stylesheet" href="./CSS/Modal-Panier.css">
+    <link rel="stylesheet" href="./CSS/Creation-Compte.css">
+    <link rel="stylesheet" href="./CSS/Modal-Recherche.css">
+    <script type="module" src="./JS/script.js"></script>
+
     <title>Mon espace</title>
 </head>
 <body>
-    
 
+      <?php 
+      include "./HTML/module/header.html";
+      include "./HTML/module/modal-recherche.html"; 
+      include "./HTML/module/modal-panier.html";  
+    ?>
 
+    <h1>Bienevenue dans votre espace client</h1>
+    <h2>Mon espace client</h2>
 
 
     <footer>

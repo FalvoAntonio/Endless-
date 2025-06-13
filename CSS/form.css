@@ -108,7 +108,7 @@ body{
     transition: transform 0.5s ease;  /* Animation douce de 0.5 seconde lors de l'apparition/disparition du menu */
     position: absolute;  /* Place le menu en position absolue (sort du flux normal du document) */
     left: 0;  /* Positionne le menu à 0px du bord gauche de son parent positionné */
-    top: 185px;
+    top: 161px;
     border-bottom-right-radius: 15px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Ajoute une ombre légère pour donner de la profondeur */
     /* On ajoute le z-index pour éviter que sur la page d'accueil la position relative du surlignement du h2 le fasse passer au dessus

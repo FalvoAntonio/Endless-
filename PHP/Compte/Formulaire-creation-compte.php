@@ -1,8 +1,8 @@
-<?php
+<?php 
 
 // ! VERIFICATION DU FORMULAIRE
-require "./service/Forme.php";
-require "./service/PHP_Mailer.php";
+require "../service/Forme.php";
+require "../service/PHP_Mailer.php";
 // On inclut le fichier Forme.php qui contient la fonction cleanData
 if(session_status() !== PHP_SESSION_ACTIVE)
 // On vérifie si la session n'est pas déjà démarrée
@@ -30,7 +30,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["signup-form"])) // Le 
 // La condition vérifie si la méthode de la requête est POST et si le formulaire a été soumis.
 // isset($_POST[""]) vérifie si le formulaire a été soumis.
 {
-    require("./service/PDO-Connexion-BDD.php"); // On inclut le fichier qui contient la connexion à la base de données via PDO.
+    require("../service/PDO-Connexion-BDD.php"); // On inclut le fichier qui contient la connexion à la base de données via PDO.
 
     if(empty($_POST["email"]))
     // Si le champ mail est vide
@@ -75,7 +75,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["signup-form"])) // Le 
             // Si j'ai trouvé un utilisateur, alors cet email est déjà utilisé
             if($user)
             {
-                $error["email"] = "Cet email est déjà utilisé";
+                $error["mail"] = "Cet email est déjà utilisé";
             }
     }
     } // ? fin vérification mail
@@ -230,7 +230,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["signup-form"])) // Le 
     if(empty($error))
     {
 
-        $miseEnFormMail = file_get_contents("../HTML/module/test_mail.html");
+        $miseEnFormMail = file_get_contents("../../HTML/module/test_mail.html");
         // On récupère le contenu HTML du mail à envoyer (template prédéfini) depuis un fichier externe.
 
         EnvoyerMail($mail, "Inscription", $miseEnFormMail);
@@ -248,12 +248,12 @@ if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["signup-form"])) // Le 
 
         // Redirection vers la page d'accueil après l'inscription
         header('Location: /');
-
+        exit;
         
     }
 
 }// fin du bloc principal
 $_SESSION["error"] = $error;
-header('Location: /HTML/Creation-Compte.php');
+header('Location: ../../HTML/Creation-Compte.php');
 // var_dump($error);
 // var_dump($_POST);
