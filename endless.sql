@@ -170,6 +170,16 @@ CREATE TABLE IF NOT EXISTS password_reset (
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- Table pour confirmer les emails (comme password_reset mais pour les emails)
+CREATE TABLE IF NOT EXISTS email_confirmations (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,  -- : quel utilisateur doit confirmer son email
+    confirmation_token VARCHAR(255) NOT NULL,--    : le fameux token secret
+    expiry_date TIMESTAMP NOT NULL,-- :quand le token expire
+    used BOOLEAN DEFAULT FALSE, -- :est-ce que le token a déjà été utilisé ?
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 -- Données initiales pour les formations (basées sur votre page d'accueil)
 INSERT INTO formations (title, description, content, duration, price, discount_price, image_path) VALUES
 ('Manucure Russe', 'Gainage + couleur sous cuticule', 'Apprenez les techniques professionnelles de la manucure russe', '1H30 à 2H', 150.00, NULL, '/Endless-/Images/Photos Accueil/IMG_3652.jpeg'),

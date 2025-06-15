@@ -229,8 +229,33 @@ if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["signup-form"])) // Le 
     // + Envoi de mail + Insertion SQL avec PDO
     if(empty($error))
     {
-
+        /* Création d'un token pour mon envoie de mail */
         $token = bin2hex(random_bytes(50));
+
+        // ? Je calcule quand le token va expirer
+        //! !
+        $expiry_date = date('Y-m-d H:i:s', strtotime('+24 hours'));
+        // strtotime('+24 hours') = ajoute 24 heures à maintenant
+        // date('Y-m-d H:i:s', ...) = formate la date pour MySQL
+        // Supposons qu'on soit le 15 juin 2025 à 14:30:45
+        // echo time(); 
+        // Résultat : 1718467845 (incompréhensible pour nous)
+        // echo date('Y-m-d H:i:s', time()); 
+        // Résultat : 2025-06-15 14:30:45 (lisible !)
+
+ 
+        // ? Je récupère l'ID de l'utilisateur que je viens de créer
+        // !
+        $user_id = $pdo->lastInsertId();
+        // lastInsertId() = me donne l'ID du dernier utilisateur inséré
+
+        // ? J'insère le token dans la table email_confirmations
+        // !
+        $stmt_token = $pdo->prepare("INSERT INTO email_confirmations (user_id, confirmation_token, expiry_date) VALUES (?, ?, ?)");
+        $stmt_token->execute([$user_id, $token, $expiry_date]);
+        // Je lie le token à l'utilisateur que je viens de crée
+        // ! Résumé : J'ajoute une table pour stocker les tokens
+        // ! Quand quelqu'un s'inscrit, je crée un token et je l'envoie par email et quand quelqu'un clique sur le lien, je vérifie le token
 
         // ? Lancer une requête SQL:
         // Cela protège contre les injections SQL grâce à PDO::prepare
@@ -246,6 +271,8 @@ if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["signup-form"])) // Le 
         // On récupère le contenu HTML du mail à envoyer (template prédéfini) depuis un fichier externe.
 
         $miseEnFormMail = str_replace('$token$', $token, $miseEnFormMail);
+        // "str_replace" est une fonction PHP qui remplace du texte dans une chaine de caractères
+        // * str_replace('QUOI_REMPLACER', 'PAR_QUOI', 'DANS_QUEL_TEXTE')
 
         EnvoyerMail($mail, "Inscription", $miseEnFormMail);
         // On envoie un mail de confirmation à l'adresse saisie, avec un sujet et le contenu HTML chargé.

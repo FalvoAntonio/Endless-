@@ -22,9 +22,50 @@
     include "./module/modal-panier.html"; 
   ?>
 
-
-    Veuillez confirmer votre adresse e-mail en cliquant sur le bouton ci dessous
-    <button>Vérification e-mail</button>
+<div class="container">
+        <h1>Confirmation d'email</h1>
+        
+        <?php if($success): ?>
+            <div class="success">
+                <h2>✅ Success !</h2>
+                <p><?php echo $message; ?></p>
+                <a href="/HTML/04-connexion.php" class="btn">Se connecter maintenant</a>
+            </div>
+        <?php else: ?>
+            <div class="error">
+                <h2>❌ Erreur</h2>
+                <p><?php echo $message; ?></p>
+                <a href="/HTML/Creation-Compte.php" class="btn">Retour à l'inscription</a>
+            </div>
+        <?php endif; ?>
+    </div>
+    
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            padding: 50px; 
+            background-color: #f4f4f4;
+        }
+        .container { 
+            background-color: white; 
+            padding: 30px; 
+            border-radius: 10px; 
+            max-width: 500px; 
+            margin: 0 auto;
+        }
+        .success { color: green; }
+        .error { color: red; }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px;
+        }
+    </style>
 
 <footer>
   <div class="footer-content">
