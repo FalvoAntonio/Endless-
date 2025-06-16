@@ -1,3 +1,6 @@
+<?php
+ require "../PHP/service/Forme.php";
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -32,11 +35,11 @@
         <p>Gérez vos formations, suivez votre progression et découvrez nos astuces exclusives pour sublimer votre art.
         </p>
 
-        <form id="loginForm" action="/PHP/Connexion-compte.php" method="post">
+        <form id="loginForm" action="/PHP/Compte/Connexion-compte.php" method="post">
             <div class="Mail">
                 <label for="email">Adresse E-mail</label>
                 <input type="email" name="email" id="email" placeholder="Saisissez votre e-mail">
-                <p class="error-message"></p>
+                <?php MessagesErrorsFormulaire("email") ?>
             </div>
             <div class="MDP">
                 <label for="Mot de passe">Mot de passe</label>
@@ -46,9 +49,7 @@
                     <img class="LogoEyes1" src="./Images/eyes.png" alt="Mot de passe visible">
                     <img class="LogoEyes2" src="./Images/noeyes.png" alt="Mot de passe non visible">
                 </div>
-                <p class="error-message">
-                    </pclass>
-                </p>
+                <?php MessagesErrorsFormulaire("mdp") ?>
             </div>
             <input type="submit" value="Connectez-vous" name="boutonConnexion" class="btn-form">
             <a href="./HTML/MDP-oublie.php">

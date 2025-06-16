@@ -42,9 +42,11 @@ CREATE TABLE IF NOT EXISTS users (
     last_login TIMESTAMP NULL,
     --  Stocke la date et l'heure de la dernière connexion de l'utilisateur.
     --  NULL signifie que ce champ peut être vide (par exemple, si l'utilisateur ne s'est jamais connecté).
-    role ENUM('user', 'admin') DEFAULT 'user'
+    role ENUM('user', 'admin') DEFAULT 'user',
     -- Définit le rôle de l'utilisateur. ENUM signifie que seules deux valeurs sont autorisées :
     -- 'utilisateur' ou 'administrateur'. Par défaut, chaque nouveau compte est un 'utilisateur'.
+    email_verified BOOLEAN DEFAULT FALSE,
+    -- Le mail n'est pas vérifié.
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 -- Termine la définition de la table.
 -- ENGINE=InnoDB : utilise le moteur InnoDB qui supporte les clés étrangères

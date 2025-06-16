@@ -1,8 +1,8 @@
-    <!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Confirmation d'inscription</title>
+  <title>Réinitialisation mot de passe</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -55,22 +55,22 @@
 </head>
 <body>
   <div class="container-mail">
-    <img src="http://localhost:8000/Images/Logo-Endless-Mail.png" alt="Logo de la société" class="logo" />
+   <img src="http://localhost:8000/Images/Logo-Endless-Mail.png" alt="Logo de la société" class="logo" />
 
-    <h1>Bienvenue chez Endless Beauty Nails !</h1>
-    <p> Merci pour votre inscription ! Nous sommes ravis de vous accueillir dans notre univers dédié à la beauté des ongles et au bien-être</p>
-    <p>
-      Que vous soyez ici pour prendre soin de vous, découvrir nos prestations en salon, ou bien suivre nos formations en ligne pour développer vos compétences en stylisme ongulaire, vous êtes au bon endroit.
-    </p>
-    <p>
-      Veuillez confirmer votre adresse e-mail en cliquant sur le bouton ci-dessous :
-    </p>
-    <a href="http://localhost:8000/PHP/Compte/Confirmer-votre-mail.php?token=$token$" class="button">
-      Confirmer mon adresse
+    <h1>Réinitialisation de votre mot de passe</h1>
+    <p>Bonjour,</p>
+    <p>Vous avez demandé à réinitialiser votre mot de passe. Vous pouvez le faire en cliquant sur le bouton ci-dessous :</p>
+
+    <a href="http://localhost:8000/PHP/Compte/Réinitialiser-motdepasse.php?token=$token$" class="button">
+      Réinitialiser mon mot de passe
     </a>
 
+    <p>Ce lien est valable pendant une durée limitée pour des raisons de sécurité.</p>
+    <p>Si vous n’êtes pas à l’origine de cette demande, vous pouvez ignorer ce message en toute sécurité.</p>
+
     <p class="footer">
-      Si vous n’avez pas effectué cette inscription, vous pouvez ignorer ce message.
+      Merci et excellente journée,<br>
+      L’équipe Endless Beauty Nails
     </p>
   </div>
 </body>

@@ -1,4 +1,3 @@
-
 <?php
 // Confirmation-Mail.php - Version simple pour débutant
 
@@ -8,7 +7,7 @@ if(session_status() !== PHP_SESSION_ACTIVE) {
 }
 
 // 2. Je me connecte à la base de données
-require("./service/PDO-Connexion-BDD.php");
+require("../service/PDO-Connexion-BDD.php");
 
 // 3. Je récupère le token depuis l'URL
 // Quand quelqu'un clique sur le lien, l'URL ressemble à :
@@ -43,8 +42,9 @@ if(!empty($token)) {
         $update_token = $pdo->prepare("UPDATE email_confirmations SET used = TRUE WHERE id = ?");
         $update_token->execute([$confirmation['id']]);
         
-        // 8. Ici, vous pourriez ajouter une colonne "email_verified" dans users
-        // Mais pour commencer, on va juste marquer le token comme utilisé
+        // 8. Ici, vous pourriez ajouter une colonne "email_verified" danseusers
+        $update_user = $pdo->prepare("UPDATE users SET email_verified = TRUE WHERE id = ?");
+        $update_user->execute([$confirmation['user_id']]);
         
         $success = true;
         $message = "Félicitations ! Votre email a été confirmé avec succès.";
@@ -59,4 +59,5 @@ if(!empty($token)) {
     $success = false;
     $message = "Aucun token de confirmation fourni.";
 }
+require("../../HTML/Confirmation-Mail.php")
 ?>

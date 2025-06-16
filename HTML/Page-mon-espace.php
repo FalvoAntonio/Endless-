@@ -1,3 +1,15 @@
+<?php
+
+// J'ouvre ma session pour récupérer les informations de connexion de mon autre page.
+// Ici je vérifie si la session n'est pas connecté.
+// Si elle ne l'est pas alors que je suis redirigé vers ma page d'accueil.
+  session_start();
+  if(!isset($_SESSION["logged"]))
+  {
+    header("Location: /");
+    exit;
+  }
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -22,12 +34,12 @@
 <body>
 
       <?php 
-      include "./HTML/module/header.html";
-      include "./HTML/module/modal-recherche.html"; 
-      include "./HTML/module/modal-panier.html";  
+      include "./module/header.html";
+      include "./module/modal-recherche.html"; 
+      include "./module/modal-panier.html";  
     ?>
 
-    <h1>Bienevenue dans votre espace client</h1>
+    <h1>Bienvenue dans votre espace client</h1>
     <h2>Mon espace client</h2>
 
 

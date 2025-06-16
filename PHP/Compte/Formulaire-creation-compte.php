@@ -243,7 +243,17 @@ if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["signup-form"])) // Le 
         // echo date('Y-m-d H:i:s', time()); 
         // Résultat : 2025-06-15 14:30:45 (lisible !)
 
- 
+        
+        // ? Lancer une requête SQL:
+        // Cela protège contre les injections SQL grâce à PDO::prepare
+        $stmt = $pdo->prepare("INSERT INTO users (firstname, lastname, email, phone, phone_prefix,password) VALUES (?, ?, ? ,?, ?, ?)");
+        
+        $motdepasse = password_hash($motdepasse, PASSWORD_DEFAULT);
+        // Avant d’insérer le mot de passe, on le crypte avec l’algorithme par défaut de PHP (actuellement bcrypt).
+        
+        // Exécution de la requête avec les vraies valeurs, dans le même ordre que les "?" ci-dessus
+        $stmt->execute([$prenom, $nom, $mail,$numerotel,$prefix,$motdepasse]);
+        
         // ? Je récupère l'ID de l'utilisateur que je viens de créer
         // !
         $user_id = $pdo->lastInsertId();
@@ -256,17 +266,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["signup-form"])) // Le 
         // Je lie le token à l'utilisateur que je viens de crée
         // ! Résumé : J'ajoute une table pour stocker les tokens
         // ! Quand quelqu'un s'inscrit, je crée un token et je l'envoie par email et quand quelqu'un clique sur le lien, je vérifie le token
-
-        // ? Lancer une requête SQL:
-        // Cela protège contre les injections SQL grâce à PDO::prepare
-        $stmt = $pdo->prepare("INSERT INTO users (firstname, lastname, email, phone, phone_prefix,password) VALUES (?, ?, ? ,?, ?, ?)");
-
-        $motdepasse = password_hash($motdepasse, PASSWORD_DEFAULT);
-        // Avant d’insérer le mot de passe, on le crypte avec l’algorithme par défaut de PHP (actuellement bcrypt).
-
-        // Exécution de la requête avec les vraies valeurs, dans le même ordre que les "?" ci-dessus
-        $stmt->execute([$prenom, $nom, $mail,$numerotel,$prefix,$motdepasse]);
-
+        
         $miseEnFormMail = file_get_contents("../../HTML/module/test_mail.html");
         // On récupère le contenu HTML du mail à envoyer (template prédéfini) depuis un fichier externe.
 

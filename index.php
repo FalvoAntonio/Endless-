@@ -1,3 +1,4 @@
+<?php include "./PHP/service/Message-Flash.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -12,6 +13,7 @@
     <link rel="stylesheet" href="./CSS/form.css" />
     <link rel="stylesheet" href="./CSS/Modal-Recherche.css" />
     <script type="module" src="./JS/script.js"></script>
+    <script src="./JS/Flash-Message.js" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <title>Nails Endless Beauty</title>
   </head>
@@ -30,6 +32,9 @@
    
 
     <main class="main-content">
+      <?php
+      afficheMessageFlash("Message-confirmation-envoi-mail")
+      ?>
       <section class="introduction">
         <h2>Bienvenue dans notre univers de formations beauté</h2>
         <p>
