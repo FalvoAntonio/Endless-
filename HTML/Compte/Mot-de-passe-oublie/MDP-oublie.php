@@ -18,16 +18,16 @@
 
 <body>
       <?php 
-    include "./module/header.html"; 
-    include "./module/modal-recherche.html"; 
-    include "./module/modal-panier.html"; 
+    include "../../module/header.html"; 
+    include "../../module/modal-recherche.html"; 
+    include "../../module/modal-panier.html"; 
   ?>
 
     <div class="container">
         <h2>🔐 Vous avez oublié votre mot de passe ?</h2>
         <p>Saisissez votre adresse e-mail enregistrée. Nous vous enverrons un lien pour réinitialiser votre mot de
             passe.</p>
-        <form action="../PHP/Compte/Adresse-mail-motdepasseoublié.php" method="POST">
+        <form action="../PHP/Compte/Mot-de-passe-oublie/Adresse-mail-motdepasseoublié.php" method="POST">
           <!-- J'ajoute ma page PHP pour l'utilisation du bouton -->
             <input type="email" name="email" placeholder="Votre adresse e-mail" required />
             <button type="submit" class="btn-form">Envoyer</button>

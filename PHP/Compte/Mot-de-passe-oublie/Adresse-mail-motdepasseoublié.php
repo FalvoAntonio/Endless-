@@ -2,7 +2,7 @@
 /* CE FICHIER PERMET DE VERIFIER LE CHAMP DE L'ADRESSE MAIL DE LA PAGE "MDP-oublie.php"
 ON VERIFIE EGALEMENT SI L'ADRESSE MAIL SAISIE EXISTE BIEN DANS NOTRE TABLE DE DONNEES
 NOUS PREPARONS L'ENVOIE DU MAIL QUI PERMETTRA DE MOFIDIER LE MDP AVEC LE LIEN URL CONTENANT LE TOKEN
-ON ENVOIE DANS LE MAIL LA PAGE HTML : "éinitialiser-motdepasse.html"
+ON ENVOIE DANS LE MAIL LA PAGE HTML : "réinitialiser-motdepasse.html"
 */
 
 if(session_status() !== PHP_SESSION_ACTIVE)
@@ -16,10 +16,10 @@ if(session_status() !== PHP_SESSION_ACTIVE)
     // Cela permet d'éviter les erreurs liées à la session
 }
 // On inclut le fichier Forme.php qui contient mes fonctions php, ainsi que PHP_Mailer pour me permettre d'envoyer un mail
-require "../service/Forme.php";
-require "../service/PHP_Mailer.php";
+require "../../service/Forme.php";
+require "../../service/PHP_Mailer.php";
 
-require("../service/PDO-Connexion-BDD.php"); // On inclut le fichier qui contient la connexion à la base de données via PDO.
+require("../../service/PDO-Connexion-BDD.php"); // On inclut le fichier qui contient la connexion à la base de données via PDO.
 
 $error = [];
 
@@ -77,7 +77,7 @@ else
                 * Quand la personne cliquera sur le lien dans le mail, on vérifiera si ce token existe encore et n'est pas expiré.
                 */
                 
-                $miseEnFormMail = file_get_contents("../../HTML/module/Réinitialiser-motdepasse.html");
+                $miseEnFormMail = file_get_contents("../../../HTML/module/Réinitialiser-motdepasse.html");
                 // On récupère le contenu HTML du mail à envoyer (template prédéfini) depuis un fichier externe.
 
                 $miseEnFormMail = str_replace('$token$', $token, $miseEnFormMail);

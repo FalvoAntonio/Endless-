@@ -10,7 +10,7 @@ if(session_status() !== PHP_SESSION_ACTIVE) {
 
 // 2. Je me connecte à la base de données
 // ? ça me permet d'ouvrir la connexion à ma base de données
-require("../service/PDO-Connexion-BDD.php");
+require("../../service/PDO-Connexion-BDD.php");
 
 // 3. Je récupère le token depuis l'URL
 // ? Quand quelqu'un clique sur le lien dans l'email l'URL ressemble à ça: "monsite.com/reset.php?token=abc123xyz789"
@@ -68,6 +68,6 @@ if(!empty($token)) {
 }
 
 // 7. J'inclus la page qui va afficher soit le formulaire, soit le message d'erreur
-require("../../HTML/Espace-réinitialiser-motdepasse.php");
+require("../../../HTML/Compte/Mot-de-passe-oublie/Espace-réinitialiser-motdepasse.php");
 ?>
 

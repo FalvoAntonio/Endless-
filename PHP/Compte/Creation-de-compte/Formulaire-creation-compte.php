@@ -1,8 +1,8 @@
 <?php 
 
 // ! VERIFICATION DU FORMULAIRE
-require "../service/Forme.php";
-require "../service/PHP_Mailer.php";
+require "../../service/Forme.php";
+require "../../service/PHP_Mailer.php";
 // On inclut le fichier Forme.php qui contient la fonction cleanData
 if(session_status() !== PHP_SESSION_ACTIVE)
 // On vérifie si la session n'est pas déjà démarrée
@@ -30,7 +30,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["signup-form"])) // Le 
 // La condition vérifie si la méthode de la requête est POST et si le formulaire a été soumis.
 // isset($_POST[""]) vérifie si le formulaire a été soumis.
 {
-    require("../service/PDO-Connexion-BDD.php"); // On inclut le fichier qui contient la connexion à la base de données via PDO.
+    require("../../service/PDO-Connexion-BDD.php"); // On inclut le fichier qui contient la connexion à la base de données via PDO.
 
     if(empty($_POST["email"]))
     // Si le champ mail est vide
@@ -267,7 +267,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["signup-form"])) // Le 
         // ! Résumé : J'ajoute une table pour stocker les tokens
         // ! Quand quelqu'un s'inscrit, je crée un token et je l'envoie par email et quand quelqu'un clique sur le lien, je vérifie le token
         
-        $miseEnFormMail = file_get_contents("../../HTML/module/test_mail.html");
+        $miseEnFormMail = file_get_contents("../../../HTML/module/Mail-de-confirmation-inscription.html");
         // On récupère le contenu HTML du mail à envoyer (template prédéfini) depuis un fichier externe.
 
         $miseEnFormMail = str_replace('$token$', $token, $miseEnFormMail);
@@ -294,6 +294,6 @@ if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["signup-form"])) // Le 
 
 }// fin du bloc principal
 $_SESSION["error"] = $error;
-header('Location: ../../HTML/Creation-Compte.php');
+header('Location: /HTML/Compte/Creation-de-compte/Creation-Compte.php');
 // var_dump($error);
 // var_dump($_POST);

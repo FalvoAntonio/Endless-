@@ -16,16 +16,16 @@
 <body>
 
     <?php 
-      include __DIR__."/module/header.html";
-      include __DIR__."/module/modal-recherche.html"; 
-      include __DIR__."/module/modal-panier.html";  
+      include __DIR__."/../../module/header.html";
+      include __DIR__."/../../module/modal-recherche.html"; 
+      include __DIR__."/../../module/modal-panier.html";  
     ?>
 
 <header>
     <h1>Bienvenue</h1>
     <h2>Vous pouvez réinitialiser votre mot de passe</h2>
 
-    <form id="Formulaire-nouveau-mdp" action="../PHP/Compte/Formulaire-réinitialiser-motdepasse.php" method="POST" class="form-reinitialisation-mdp ">
+    <form id="Formulaire-nouveau-mdp" action="/PHP/Compte/Mot-de-passe-oublie/Formulaire-réinitialiser-motdepasse.php" method="POST" class="form-reinitialisation-mdp ">
       <div class="New-mdp">
       <label for="New-mdp">Entrer votre nouveau mot de passe :</label>
       <input type="password" name="New-mdp" id="New-mdp" required/>

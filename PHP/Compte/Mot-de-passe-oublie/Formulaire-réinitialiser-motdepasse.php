@@ -6,8 +6,8 @@ if(session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
 }
 
-require("../service/PDO-Connexion-BDD.php");
-require("../service/Forme.php");
+require("../../service/PDO-Connexion-BDD.php");
+require("../../service/Forme.php");
 
 
 $error = [];
@@ -92,7 +92,7 @@ else
         // ! A REVOIR !!! DOIS JE UTILISER TOUJOURS LA MEME VARIABLE "Message-confirmation-envoi-mail"
         
         // Redirection vers la page de connexion
-        header("Location: ../../HTML/Login.php");
+        header("Location: /HTML/Compte/Login.php");
         exit;
     }
 
@@ -101,7 +101,7 @@ else
 
 }
 
-header("/")
+header("Location: /");
 
 
 /* 

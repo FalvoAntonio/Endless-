@@ -1,6 +1,6 @@
 <?php
- require "../PHP/service/Forme.php";
- require "../PHP/service/Message-Flash.php";
+ require "../../PHP/service/Forme.php";
+ require "../../PHP/service/Message-Flash.php";
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -25,9 +25,9 @@
 
 <body class="homepage">
   <?php 
-    include "./module/header.html"; 
-    include "./module/modal-recherche.html"; 
-    include "./module/modal-panier.html"; 
+    include "../module/header.html"; 
+    include "../module/modal-recherche.html"; 
+    include "../module/modal-panier.html"; 
   ?>
  <?php afficheMessageFlash("Message-confirmation-envoi-mail"); ?>
 
@@ -38,7 +38,7 @@
         <p>Gérez vos formations, suivez votre progression et découvrez nos astuces exclusives pour sublimer votre art.
         </p>
 
-        <form id="loginForm" action="/PHP/Compte/Connexion-compte.php" method="post">
+        <form id="loginForm" action="/PHP/Compte/Connexion-Deconnexion/Connexion-compte.php" method="post">
             <div class="Mail">
                 <label for="email">Adresse E-mail</label>
                 <input type="email" name="email" id="email" placeholder="Saisissez votre e-mail">
@@ -55,7 +55,7 @@
                 <?php MessagesErrorsFormulaire("mdp") ?>
             </div>
             <input type="submit" value="Connectez-vous" name="boutonConnexion" class="btn-form">
-            <a href="./HTML/MDP-oublie.php">
+            <a href="./HTML/Compte/Mot-de-passe-oublie/MDP-oublie.php">
                 <p>Mot de passe oublié ? </p>
             </a>
         </form>
@@ -65,7 +65,7 @@
         <h1>Création d'un compte</h1>
         <p>Vous n’avez pas encore de compte ? Rejoignez notre communauté de passionnés de beauté.</p>
         <p>Créez votre compte et commencez votre voyage vers l’expertise esthétique.</p>
-        <a href="./HTML/Creation-Compte.php"><input class="INPUT btn-form" type="submit"
+        <a href="./HTML/Compte/Creation-de-compte/Creation-Compte.php"><input class="INPUT btn-form" type="submit"
                 value="Je crée mon compte"></a>
     </section>
 

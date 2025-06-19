@@ -8,7 +8,7 @@ if(session_status() !== PHP_SESSION_ACTIVE) {
 }
 
 // 2. Je me connecte à la base de données
-require("../service/PDO-Connexion-BDD.php");
+require("../../service/PDO-Connexion-BDD.php");
 
 // 3. Je récupère le token depuis l'URL
 // Quand quelqu'un clique sur le lien, l'URL ressemble à :
@@ -60,5 +60,5 @@ if(!empty($token)) {
     $success = false;
     $message = "Aucun token de confirmation fourni.";
 }
-require("../../HTML/Confirmation-Mail.php")
+require("../../../HTML/Compte/Creation-de-compte/Confirmation-Mail.php")
 ?>

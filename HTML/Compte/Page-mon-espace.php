@@ -34,9 +34,9 @@
 <body>
 
       <?php 
-      include "./module/header.html";
-      include "./module/modal-recherche.html"; 
-      include "./module/modal-panier.html";  
+      include "../module/header.html";
+      include "../module/modal-recherche.html"; 
+      include "../module/modal-panier.html";  
     ?>
 
     <h1>Bienvenue dans votre espace client</h1>

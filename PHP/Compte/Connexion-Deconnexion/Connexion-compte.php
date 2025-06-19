@@ -72,7 +72,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST")
 
         // ? Connexion à la base de données:
         // ? Récupérer l'utilisateur dans la base de données:
-        require("../service/PDO-Connexion-BDD.php"); // Connexion à la base de donner 
+        require("../../service/PDO-Connexion-BDD.php"); // Connexion à la base de donner 
         //Je dois vérifier si l'adresse mail correspond à l'utilisateur, si un utilisateur à cette adresse mail
         $smtp = $pdo->prepare("SELECT * FROM users WHERE email = ? ");
         $smtp->execute([$email]);
@@ -92,7 +92,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST")
                     // Authentifier l'utilisateur:
                     $_SESSION["logged"] = true; // !
                     // On crée une session pour l'utilisateur
-                    header("Location: /HTML/Page-mon-espace.php");
+                    header("Location: /HTML/Compte/Page-mon-espace.php");
                     exit;
                     // On redirige l'utilisateur vers la page d'accueil
                 }
