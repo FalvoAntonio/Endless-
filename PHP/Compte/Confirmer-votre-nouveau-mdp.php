@@ -50,8 +50,8 @@ if(!empty($token)) {
         $message = "Token valide. Vous pouvez maintenant changer votre mot de passe.";
         
         // Je stocke l'ID du token et l'ID utilisateur pour les utiliser dans le formulaire
-        $_SESSION['reset_token_id'] = $confirmation['id'];
-        $_SESSION['reset_user_id'] = $confirmation['user_id'];
+        $_SESSION['reset_token_id'] = $confirmation['id']; // ? ['id'] de la table de BDD
+        $_SESSION['reset_user_id'] = $confirmation['user_id']; // ? ['user_id'] de la table de BDD
         
         // ? On va sauvegarder 2 informations dans la session:
             //? - reset_token_id : Qui est l'id du token
@@ -68,6 +68,6 @@ if(!empty($token)) {
 }
 
 // 7. J'inclus la page qui va afficher soit le formulaire, soit le message d'erreur
-require("../../HTML/Espace_réinitialiser-motdepasse.php");
+require("../../HTML/Espace-réinitialiser-motdepasse.php");
 ?>
 

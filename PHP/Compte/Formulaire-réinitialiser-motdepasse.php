@@ -10,7 +10,6 @@ require("../service/PDO-Connexion-BDD.php");
 require("../service/Forme.php");
 
 
-
 $error = [];
 
 
@@ -21,17 +20,19 @@ if(!isset($_SESSION['reset_token_id']) || !isset($_SESSION['reset_user_id'])) {
 }
 
 // Vérifier que le formulaire a été soumis
-if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["Formulaire-nouveau-mdp"])) 
-
-
+if($_SERVER["REQUEST_METHOD"] === "POST") 
+{
+    // var_dump($_POST);
+    // die("coucou");
+    
 // Vérification du nouveau mot de passe
-if(empty($_POST["nouveau_mdp"]))
+if(empty($_POST["New-mdp"]))
 {
 $error["nouveau_mdp"] = "Veuillez entrer un nouveau mot de passe";
 }
 else
 {
-    $nouveau_mdp = trim($_POST["nouveau_mdp"]);
+    $nouveau_mdp = trim($_POST["New-mdp"]);
     if(strlen($nouveau_mdp) < 8 || strlen($nouveau_mdp) > 40){
         $error["nouveau_mdp"] = "Votre mot de passe n'a pas une taille adaptée";
     } elseif(
@@ -46,10 +47,10 @@ else
 
 // Vérification de la confirmation du nouveau mot de passe (retaper)
 
- if(empty($_POST["confirmer_nouveau_mdp"])) {
+ if(empty($_POST["Confirm-mdp"])) {
         $error["confirmer_nouveau_mdp"] = "Veuillez confirmer votre nouveau mot de passe";
     } else {
-        $confirmer_nouveau_mdp = trim($_POST["confirmer_mdp"]);
+        $confirmer_nouveau_mdp = trim($_POST["Confirm-mdp"]);
         
         // Vérifier que les deux mots de passe sont identiques
         if(isset($nouveau_mdp) && $nouveau_mdp !== $confirmer_nouveau_mdp) {
@@ -62,11 +63,11 @@ else
     if(empty($error))
     {
         // Il faut crypter le mot de passe
-        $nouveau_mdp_hash = password_hash($nouveau_mdp_hash, PASSWORD_DEFAULT);
+        $nouveau_mdp_hash = password_hash($nouveau_mdp, PASSWORD_DEFAULT);
         // Nous devons mettre le mot de passe à jour (crud)
         // Changer le mot de passe dans la base de données
         $stmt = $pdo->prepare("UPDATE users SET password = ? WHERE id = ?");
-        $stmt->execute([$nouveau_mdp_crypte, $_SESSION['reset_user_id']]); // !
+        $stmt->execute([$nouveau_mdp_hash, $_SESSION['reset_user_id']]); // !
         // ! Je reprends l'id d'une autre page "Confirmer-votre-nouveau-mdp.php" avec $_SESSION 
         // ! Ce qu'il y avait dans la page "Confirmer-votre-nouveau-mdp.php" :
         
@@ -98,8 +99,9 @@ else
 
 
 
+}
 
-
+header("/")
 
 
 /* 

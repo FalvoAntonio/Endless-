@@ -16,9 +16,9 @@
 <body>
 
     <?php 
-      include "./module/header.html";
-      include "./module/modal-recherche.html"; 
-      include "./module/modal-panier.html";  
+      include __DIR__."/module/header.html";
+      include __DIR__."/module/modal-recherche.html"; 
+      include __DIR__."/module/modal-panier.html";  
     ?>
 
 <header>

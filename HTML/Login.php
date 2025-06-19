@@ -1,5 +1,6 @@
 <?php
  require "../PHP/service/Forme.php";
+ require "../PHP/service/Message-Flash.php";
 ?>
 <!DOCTYPE html>
 <html lang="fr">
