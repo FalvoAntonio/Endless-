@@ -50,8 +50,10 @@
         élève avec bienveillance.
 
         Bienvenue dans notre univers.</p>
-      <img src="../Images/Nails.png" alt="Icone Nails">
     </div>
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24570.55404421394!2d3.1113290347656233!3d50.62948495017588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3296d9920ca33%3A0xe36fc9e33dd82a4c!2sEndless%20beauty!5e1!3m2!1sfr!2sfr!4v1750253094954!5m2!1sfr!2sfr" 
+    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </main>
 
   <footer>

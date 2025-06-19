@@ -80,9 +80,10 @@
       <img src="../Images/Photos Accueil/IMG_3652.jpeg" alt="Manucure Russe" />
     </div>
           <h1>Manucure Russe</h1>
-          <p>Contenu: Gainage + couleur sous cuticule</p>
-          <p>Durée estimée des vidéos: 1H30 à 2H</p>
-          <p>Prix: 150€</p>
+          <p class="contenu"><img src="../Images/Logo-Contenu.png" alt="Logo-Contenu">Contenu: Gainage + Couleur sous cuticule</p>
+          <p class="duree"><img src="../Images/Logo-Durée.png" alt="Logo-Durée">Durée: 1H30 à 2H de vidéos</p>
+          <p class="niveau"><img src="../Images/Logo-Niveau.png" alt="Logo-Niveau">Niveau: Débutant à intermédiaire
+          <p class="prix">150€</p>
           <button class="button-formation">Découvrir cette formation</button>
         </div>
         <div class="formation2 formation">
@@ -90,9 +91,10 @@
       <img src="../Images/Photos Accueil/IMG_3653.jpeg" alt="Manucure Russe" />
     </div>
           <h1>Extension Gel X</h1>
-          <p>Contenu: Techniques d'extension Gel X</p>
-          <p>Durée estimée des vidéos: 2H à 2H30</p>
-          <p>Prix: 200€</p>
+          <p class="contenu"><img src="../Images/Logo-Contenu.png" alt="Logo-Contenu">Contenu: Techniques d'extension Gel X</p>
+          <p class="duree"><img src="../Images/Logo-Durée.png" alt="Logo-Durée">Durée: 2H à 2H30 de vidéos</p>
+          <p class="niveau"><img src="../Images/Logo-Niveau.png" alt="Logo-Niveau">Niveau: Débutant à intermédiaire
+          <p class="prix">200€</p>
           <button class="button-formation">Découvrir cette formation</button>
         </div>
         <div class="formation3 formation">
@@ -100,30 +102,38 @@
       <img src="../Images/Photos Accueil/IMG_3654.jpeg" alt="Manucure Russe" />
     </div>
           <h1>Beauté des pieds</h1>
-          <p>Contenu: Pédicure russe + gainage</p>
-          <p>Durée estimée des vidéos: 1H30 à 2H</p>
-          <p>Prix: 180€</p>
+          <p class="contenu"><img src="../Images/Logo-Contenu.png" alt="Logo-Contenu">Contenu: Pédicure Russe + Gainage</p>
+          <p class="duree"><img src="../Images/Logo-Durée.png" alt="Logo-Durée">Durée:: 1H30 à 2H de vidéos</p>
+          <p class="niveau"><img src="../Images/Logo-Niveau.png" alt="Logo-Niveau">Niveau: Débutant à intermédiaire</p>
+          <p class="prix">180€</p>
           <button class="button-formation">Découvrir cette formation</button>
         </div>
         <div class="formation4 formation">
           <div class="formation-image">
       <img src="../Images/Photos Accueil/IMG_3655.jpeg" alt="Manucure Russe" />
     </div>
-          <h1>Soin anti-callosité des pieds</h1>
-          <p>Contenu: Traitement & soin des callosités</p>
-          <p>Durée estimée des vidéos: 1H à 1H30</p>
-          <p>Prix: 120€</p>
+          <h1>Soin Anti-callosité des pieds</h1>
+          <p class="contenu"><img src="../Images/Logo-Contenu.png" alt="Logo-Contenu">Contenu: Traitement & soin des callosités</p>
+          <p class="duree"><img src="../Images/Logo-Durée.png" alt="Logo-Durée">Durée: 1H à 1H30</p>
+          <p class="niveau"><img src="../Images/Logo-Niveau.png" alt="Logo-Niveau">Niveau: Débutant à intermédiaire</p>
+          <p class="prix">120€</p>
           <button class="button-formation">Découvrir cette formation</button>
         </div>
-        <div class="formation5 formation">
-          <div class="formation-image">
+        <div class="formation5 formation"> 
+          <div class="formation-image"> 
       <img src="../Images/Photos Accueil/IMG_3656.jpeg" alt="Manucure Russe" />
+      <img class="logo-promo" src="../Images/Logo-Promo.png" alt="Logo-Promo">
     </div>
           <h1>PACK COMPLET</h1>
-          <p>Contenu: Tous les modules en un seul achat</p>
-          <p>Durée estimée des vidéos: Environ 8H</p>
-          <p>Prix: 500€ > 450€ réduction pack</p>
-          <button class="button-formation">Découvrir cette formation</button>
+          <p class="contenu"><img src="../Images/Logo-Contenu.png" alt="Logo-Contenu">Contenu: Tous les modules</p>
+          <p class="duree"><img src="../Images/Logo-Durée.png" alt="Logo-Durée">Durée: Environ 8H de vidéos</p>
+          <p><img src="../Images/Logo-Diamant.png" alt="Logo-Diamant">Formation complète professionnelle</p>
+          <p class="prix">
+          <img src="../Images/Logo-Prix.png" alt="Logo-Prix">
+          <span class="prix-barre">500€</span>
+          <span class="prix-promo">450€</span>
+          </p>
+          <button class="button-formation"><img src="../Images/Logo-Hot.png" alt="Logo Hot">OFFRE SPECIALE<img src="../Images/Logo-Hot.png" alt="Logo Hot"></button>
         </div>
       </div>
     </main>
