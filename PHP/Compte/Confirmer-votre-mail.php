@@ -1,5 +1,6 @@
 <?php
-// Confirmation-Mail.php - Version simple pour débutant
+// Vérification du token:
+
 
 // 1. Je démarre la session (comme toujours)
 if(session_status() !== PHP_SESSION_ACTIVE) {

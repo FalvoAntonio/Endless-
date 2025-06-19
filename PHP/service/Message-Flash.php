@@ -12,6 +12,8 @@ if(session_status() !== PHP_SESSION_ACTIVE)
 /* 
 ! Création de la function "afficheMessageFlash" qui me permet d'afficher les messages flash lorsque je fais la demande pour 
 ! réinitialiser mon mot de passe.
+
+? NE PAS OUBLIER QUE J'AI FAIT UNE FONCTION JS "Flash-Message.js" POUR POUVOIR ENLEVER LE MESSAGE QUAND JE CLIQUE SUR LE X
 */
 function afficheMessageFlash(string $titreMessage)
 {

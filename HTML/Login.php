@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="CSS/Modal-Panier.css">
     <script type="module" src="JS/script.js"></script>
     <link rel="stylesheet" href="CSS/Modal-Recherche.css">
+     <script src="./JS/Flash-Message.js" defer></script>
 
     <title>Formulaire</title>
 </head>
@@ -27,7 +28,8 @@
     include "./module/modal-recherche.html"; 
     include "./module/modal-panier.html"; 
   ?>
-  
+ <?php afficheMessageFlash("Message-confirmation-envoi-mail"); ?>
+
     <section class="Connexion container">
 
         <h1>Se connecter</h1>

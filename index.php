@@ -32,6 +32,7 @@
    
 
     <main class="main-content">
+      <!-- Ici j'utilise ma fonction pour envoyer un message flash -->
       <?php
       afficheMessageFlash("Message-confirmation-envoi-mail")
       ?>

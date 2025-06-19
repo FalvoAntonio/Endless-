@@ -82,6 +82,8 @@ else
 
                 // Envoi du mail de réinitialisation avec le sujet et le contenu personnalisé
                 EnvoyerMail($mail, "Réinitialisation mot de passe", $miseEnFormMail);
+                // ! Ici on utilisera la fonction "MessageèFlash.php"
+                // ! A REVOIR !!!!
                 $_SESSION["Message-confirmation-envoi-mail"] =  "Un e-mail de réinitialisation a été envoyé à votre adresse.";
             }else
             {
@@ -93,14 +95,3 @@ else
 
 header("Location: /");
 
-
-
-/* 
-!
-!Créer la page de redirection "Modifier son mdp"
-!Avec le formulaire pour retaper son nouveau mot de passe
-!Partie php : Vérifier si le token est valide
-!S'il est valide il faudra alors permettre de pouvoir changer son mot de passe
-!Ensuite faire les vérifications du formulaire
-!
-*/
