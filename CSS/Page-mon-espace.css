@@ -1,0 +1,125 @@
+/* MON ESPACE CLIENT AVEC SON TABLEAU DE BORD */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Titres principaux */
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+h2 {
+    text-align: center;
+    color: #34495e;
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+    font-weight: 500;
+}
+
+/* Container principal */
+.Tableaudebord-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Container des blocs avec Flexbox */
+.Tableaudebord-Blocs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px; /* Espace entre les blocs */
+    justify-content: center;
+    align-items: stretch; /* Même hauteur pour tous les blocs */
+}
+
+/* Style des cartes */
+.Tableaudebord-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px 25px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    
+    /* Flexbox pour les cartes */
+    flex: 1;
+    min-width: 280px; /* Largeur minimale */
+    max-width: 350px; /* Largeur maximale */
+    
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Effet hover */
+.Tableaudebord-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Bordures colorées en haut selon le type */
+.Tableaudebord-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    border-radius: 15px 15px 0 0;
+}
+
+.Tableaudebord-card.formations::before {
+    background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+.Tableaudebord-card.profil::before {
+    background: linear-gradient(90deg, #f093fb, #f5576c);
+}
+
+.Tableaudebord-card.achats::before {
+    background: linear-gradient(90deg, #4facfe, #00f2fe);
+}
+
+.Tableaudebord-card.documents::before {
+    background: linear-gradient(90deg, #43e97b, #38f9d7);
+}
+
+/* Style des icônes */
+.Icones-tableaudebord {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+    transition: transform 0.3s ease;
+}
+
+.Tableaudebord-card:hover .Icones-tableaudebord {
+    transform: scale(1.1);
+}
+
+/* Titres des cartes */
+.Tableaudebord-card h3 {
+    color: #2c3e50;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+/* Descriptions des cartes */
+.Tableaudebord-card p {
+    color: #7f8c8d;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 0;
+}

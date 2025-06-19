@@ -4,11 +4,12 @@
 // Ici je vérifie si la session n'est pas connecté.
 // Si elle ne l'est pas alors que je suis redirigé vers ma page d'accueil.
   session_start();
+
   if(!isset($_SESSION["logged"]))
   {
     header("Location: /");
     exit;
-  }
+  }  
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -27,9 +28,11 @@
     <link rel="stylesheet" href="./CSS/Modal-Panier.css">
     <link rel="stylesheet" href="./CSS/Creation-Compte.css">
     <link rel="stylesheet" href="./CSS/Modal-Recherche.css">
+    <link rel="stylesheet" href="./CSS/Page-mon-espace.css">
     <script type="module" src="./JS/script.js"></script>
 
     <title>Mon espace</title>
+  
 </head>
 <body>
 
@@ -41,6 +44,36 @@
 
     <h1>Bienvenue dans votre espace client</h1>
     <h2>Mon espace client</h2>
+
+    <div class="Tableaudebord-container">
+      <div class="Tableaudebord-Blocs">
+      <div class="Tableaudebord-card formations">
+      <img class="Icones-tableaudebord" src="../Images/Page Mon Espace/icone-formation.png" alt="Icone-formation">
+      <h3>Mes Formations</h3>
+      <p>Jetter un oeil sur mes formations</p>
+      </div>
+     
+      <div class="Tableaudebord-card profil">
+      <img class="Icones-tableaudebord" src="../Images/Page Mon Espace/icone-profil.png" alt="Icone-profil">
+      <h3>Mon Profil</h3>
+      <p>Gérer mes informations</p>
+      </div>
+
+      <div class="Tableaudebord-card achats">
+      <img class="Icones-tableaudebord" src="../Images/Page Mon Espace/icone-achat.png" alt="Icone-achat">
+      <h3>Mes Achats</h3>
+      <p>Mes achats effectués</p>
+      </div>
+     
+     <div class="Tableaudebord-card documents">
+      <img class="Icones-tableaudebord" src="../Images/Page Mon Espace/icone-document.png" alt="Icone-document">
+      <h3>Mes Documents</h3>
+      <p>Ma documentation de formation</p>
+      </div>
+      </div>
+    </div>
+
+   
 
 
     <footer>

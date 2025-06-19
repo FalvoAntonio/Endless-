@@ -15,6 +15,9 @@ body {
 .introduction p {
   font-style: italic;
   letter-spacing: 1px;
+  margin-top: 25px;
+  font-size: 20px;
+  font-weight: bold;
 }
 .formations-container {
   display: flex;

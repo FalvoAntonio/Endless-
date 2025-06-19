@@ -1,4 +1,13 @@
 <?php
+/* Si je suis connecté je peux cliquer sur login et être redirigé sur la page "Page-mon-espace" */
+
+ session_start();
+
+  if(isset($_SESSION["logged"]))
+  {
+    header("Location: ./Page-mon-espace.php");
+    exit;
+  }  
  require "../../PHP/service/Forme.php";
  require "../../PHP/service/Message-Flash.php";
 ?>
