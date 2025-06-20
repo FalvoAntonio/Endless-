@@ -141,26 +141,40 @@
 
 
   <footer>
-  <div class="footer-content">
-    <div>
-      <div class="footer-logo">Nails Endless Beauty</div>
-      <div class="contact-info">
-        <p>Email: Endlessbeauty.lc@gmail.com</p>
-        <p>Téléphone: 06 71 54 13 54</p>
-      </div>
-      <div class="copyright">
-        &copy; 2025 Nails Endless Beauty - Tous droits réservés
-      </div>
+    <div class="footer-content">
+        <!-- COLONNE 1 : MARQUE + DESCRIPTION -->
+        <div class="footer-brand">
+            <div class="footer-name">Nails Endless Beauty</div>
+            <p class="footer-description">
+                Découvrez nos formations professionnelles en ligne pour développer vos compétences en soins des ongles et des pieds. Apprenez à votre rythme avec nos experts.
+            </p>
+        </div>
+
+        <!-- COLONNE 2 : CONTACT -->
+        <div class="footer-contact">
+            <h3>Contact</h3>
+            <div class="contact-item">Endlessbeauty.lc@gmail.com</div>
+            <div class="contact-item">06 71 54 13 54</div>
+        </div>
+
+        <!-- COLONNE 3 : RÉSEAUX SOCIAUX -->
+        <div class="footer-social">
+            <h3>Suivez-nous</h3>
+            <div class="social-links">
+                <a href="https://www.tiktok.com/@endless.beauty8?_t=ZN-8wNbi4AV1cs&_r=1" target="_blank" rel="noopener" class="social-link">
+                    <img src="/Images/icons8-tiktok.svg" alt="TikTok Logo">
+                </a>
+                <a href="https://www.instagram.com/accounts/login/?next=https%3A%2F%2Fwww.instagram.com%2Fendlessbeauty_nailss%2F%3Figsh%3DbGo3ZnBtcDJ1M20w%26utm_source%3Dqr&is_from_rle" target="_blank" rel="noopener" class="social-link">
+                    <img src="/Images/Icone-Instagram.svg" alt="Instagram Logo">
+                </a>
+            </div>
+        </div>
     </div>
-    <div class="logos-reseaux">
-      <a href="https://www.tiktok.com/@endless.beauty8?_t=ZN-8wNbi4AV1cs&_r=1" target="_blank" rel="noopener">
-        <img src="/Images/icons8-tiktok.svg" alt="TikTok Logo">
-      </a>
-      <a href="https://www.instagram.com/accounts/login/?next=https%3A%2F%2Fwww.instagram.com%2Fendlessbeauty_nailss%2F%3Figsh%3DbGo3ZnBtcDJ1M20w%26utm_source%3Dqr&is_from_rle" target="_blank" rel="noopener">
-        <img src="/Images/Icone-Instagram.svg" alt="Instagram Logo">
-      </a>
+
+    <!-- COPYRIGHT EN BAS -->
+    <div class="footer-bottom">
+        <p class="copyright">&copy; 2025 Nails Endless Beauty - Tous droits réservés</p>
     </div>
-  </div>
 </footer>
   </body>
 </html>

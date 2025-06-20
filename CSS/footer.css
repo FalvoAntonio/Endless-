@@ -1,138 +1,217 @@
-*, ::before, ::after
-{
-    margin: 0; 
-    padding: 0;
-    box-sizing: border-box; 
-}
+ *, ::before, ::after {
+            margin: 0; 
+            padding: 0;
+            box-sizing: border-box; 
+        }
+
+        /* FOOTER PRINCIPAL (Pas le copyright)*/
+        footer {
+            /*  */
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: #ecf0f1;
+            /* Espacement : 60px haut, 0 sur les côtés et 30px bas */
+            padding: 60px 0 30px 0; 
+            /* Séparer le footer de ce qui est en haut */
+            margin-top: 50px;
+            /*  Nécessaire pour la ligne au dessus du footer (::before) */
+            position: relative;
+            /* Par sécurité si des éléments dépassent */
+            overflow: hidden;
+        }
+
+        /* Ligne dorée en haut */
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #d4af37, #f1c40f, #d4af37);
+        }
+
+        /* LA GRID DU FOOTER */
+        .footer-content {
+            /* Largeur max sur grands écrans */
+            max-width: 1200px; 
+            /* Permet de center horizontalement le contenu, sinon tout serait au debut */
+            margin: 0 auto; 
+            /* Espacement sur les côtés : 20px */
+            padding: 0 20px; 
+            display: grid;
+            /* 3 colonnes : large, petite, petite */
+            /* Equivalent : La 1ere prend 50% et les deux autres 50% */
+            grid-template-columns: 2fr 1fr 1fr; 
+
+            gap: 40px;  
+        }
+
+        /* COLONNE 1 : MARQUE + DESCRIPTION */
+       
+
+        .footer-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #d4af37;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .footer-description {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #bdc3c7;
+            margin-bottom: 25px;
+            max-width: 350px;
+        }
+
+        /* COLONNE 2 : CONTACT */
+        .footer-contact h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #ecf0f1;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        /* Ligne dorée sous "Contact" */
+        .footer-contact h3::after {
+            /* Toujours créer un élement vide sinon on ne peut pas faire le after */
+            content: ''; 
+            position: absolute;
+            /* On position à 8px en dessous du texte */
+            bottom: -8px;
+            left: 0;
+            /* La hauteur et longueur de la ligne */
+            width: 30px;
+            height: 2px;
+            background-color: #d4af37;
+        }
+
+        .contact-item {
+            /* display: flex;
+            align-items: center; */
+            margin-bottom: 12px;
+            font-size: 14px;
+            color: #bdc3c7;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item:hover {
+            color: #d4af37;
+        }
 
 
+        /* COLONNE 3 : RÉSEAUX SOCIAUX */
+        .footer-social h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #ecf0f1;
+            margin-bottom: 20px;
+            position: relative;
+        }
 
+        /* Ligne dorée sous "Suivez-nous" */
+        .footer-social h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background-color: #d4af37;
+        }
 
-.footer-content {
-    display: flex;
-    justify-content: center; /* Texte à gauche, logos à droite */
-    align-items: center; /* Centre verticalement et de manière à ce que les logos soient alignés avec le texte */
-    gap: 20px;
+        .social-links {
+            /* Permet de mettre les deux icones côte à côte */
+            /* Sinon c'est l'un au dessus de l'autre */
+            display: flex;
+            /* Espacement entre les deux */
+            gap: 15px;
+        }
 
-}
+        .social-link {
+            /* Permet de centrer les icones à l'interieur de la div */
+            display: flex;
+            /* Centre verticalement le logo */
+            align-items: center;
+            /* Centre horizontalement le logo */
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            /* Un effet flou derrière */
+            backdrop-filter: blur(10px);
+        }
 
+        .social-link:hover {
+            /* Fond semi-transparent */
+            background: rgba(212, 175, 55, 0.2);
+            /* Animation monte de 3 px  */
+            transform: translateY(-3px);
+            /* Rajout d'une ombre en fond */
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+        }
 
-footer{
-    
-    margin-top: 50px; 
-    text-align: center;
-    background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
-    padding: 20px;
-    font-size: 15px;
-    color: #eecc99; 
-    font-family: 'Georgia', 'Times New Roman', serif;
-    border-top: 2px solid #b08d57;
-    box-shadow: 0 -4px 15px rgba(176, 141, 87, 0.1);
-}
+        .social-link img {
+            /* Taille des icônes */
+            width: 24px;
+            height: 24px;
+            /* Rends l'icone blanche */
+            filter: brightness(0) invert(1);
+            transition: filter 0.3s ease;
+        }
 
-/* Style pour le titre " Nails Endless Beauty */
-.footer-logo {
-    font-size: 22px;
-    font-weight: bold;
-    color: #d4af37;
-    margin-bottom: 15px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    letter-spacing: 1px;
-    font-family: 'Playfair Display', serif;
-}
+        .social-link:hover img {
+            /*  Rend l'icône dorée au survol * */
+            filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(35deg);
+        }
 
-/* Style pour la section Contact (Mail/Tel)*/
-.contact-info {
-    background: rgba(176, 141, 87, 0.1);
-    padding: 12px;
-    border-radius: 8px;
-    margin: 10px 0; /* Ajout d'une marge pour espacer la section du reste du contenu, */
-    border: 1px solid rgba(176, 141, 87, 0.3);
-}
-/* Style pour les textes de section Contact */
-.contact-info p {
-    margin: 6px 0; /* Ajout d'une marge pour espacer les lignes de contact */
-    font-size: 15px; /* Taille de la police pour une meilleure lisibilité */
-    font-weight: 500; /* Poids de la police pour rendre le texte plus lisible */
-    color: #f0e6d2;
-}
-/*  */
-.contact-info p:before {
-    content: "✦"; /* Ajout d'une étoile avant chaque ligne de contact */
-    color: #d4af37; /* Couleur de l'étoile */
-    margin-right: 5px; /* Espace entre l'étoile et le texte */
-}
+        /* COPYRIGHT */
+        .footer-bottom {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            grid-column: 1 / -1; /* S'étend sur toute la largeur */
+        }
 
-/* Copyright discret */
-.copyright {
-    margin-top: 15px;
-    font-size: 12px;
-    color: #cccccc;
-    font-style: italic;
-    opacity: 0.8;
-}
+        .copyright {
+            font-size: 14px;
+            color: #95a5a6;
+            font-weight: 300;
+        }
 
-footer p{
-    margin: 8px; 
-} 
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
 
-/* Postionnement de mes logos */
-.logos-reseaux{
+            .footer-brand {
+                text-align: center;
+            }
 
-    display: flex;
-    justify-content: end;
-    gap: 20px; 
-    position: absolute; /* Position absolu m'a permis de placer les logos en bas à droite parce que sinon
-    il faisait un bloc et les logos étaient en dessous du texte */
-    right: 50px;
-    
-}
-/* Style de mes logos */
-.logos-reseaux img{
-    
-    width: 40px; 
-    height: 40px; 
-    transition: all 0.3s ease;
-    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.3));
-    /* Le filter: drop-shadow() est une propriété CSS qui permet d'ajouter une ombre portée à un élément. 
-    C'est particulièrement utile pour les images avec des zones transparentes (comme les logos PNG). */
-}
-/* Style de mes logos au survol */
-.logos-reseaux img:hover{
-    transform: scale(1.15) rotate(5deg);
-    cursor: pointer;
-    filter: drop-shadow(0 4px 10px rgba(212, 175, 55, 0.4));
-}
+            .footer-description {
+                max-width: 100%;
+            }
 
-/* Responsive pour mobile */
-/* @media (max-width: 768px) {
-    footer {
-        padding: 25px 15px;
-    }
-    
-    .footer-logo {
-        font-size: 20px;
-    }
-    
-    .logos-reseaux {
-        position: static;
-        justify-content: center;
-        margin-top: 20px;
-    }
-    
-    .footer-content {
-        flex-direction: column;
-    }
-} */
+            .footer-contact h3::after,
+            .footer-social h3::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
 
-/* ! Responsive pour ordinateurs */
+            .social-links {
+                justify-content: center;
+            }
 
-@media (min-width: 1024px) {
-
-/* Images de formations */
-
-footer{
-    margin-top: 150px;
-}
-
-}
+            footer {
+                padding: 40px 0 20px 0;
+            }
+        }
