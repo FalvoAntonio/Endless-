@@ -86,7 +86,7 @@ services:
 # Même si vous démolissez et reconstruisez la banque (le conteneur), le coffre-fort reste intact avec toutes ses valeurs.
     
     restart: always
-       #  Si le conteneur s'arrête pour une raison quelconque (crash, erreur),
+      #  Si le conteneur s'arrête pour une raison quelconque (crash, erreur),
       #  Docker le redémarrera automatiquement. C'est comme un gardien qui veille à ce que votre site reste opérationnel.
 
 
