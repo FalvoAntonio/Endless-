@@ -79,28 +79,9 @@
     </section>
 
 
-<footer>
-  <div class="footer-content">
-    <div>
-      <div class="footer-logo">Nails Endless Beauty</div>
-      <div class="contact-info">
-        <p>Email: Endlessbeauty.lc@gmail.com</p>
-        <p>Téléphone: 06 71 54 13 54</p>
-      </div>
-      <div class="copyright">
-        &copy; 2025 Nails Endless Beauty - Tous droits réservés
-      </div>
-    </div>
-    <div class="logos-reseaux">
-      <a href="https://www.tiktok.com/@endless.beauty8?_t=ZN-8wNbi4AV1cs&_r=1" target="_blank" rel="noopener">
-        <img src="/Images/icons8-tiktok.svg" alt="TikTok Logo">
-      </a>
-      <a href="https://www.instagram.com/accounts/login/?next=https%3A%2F%2Fwww.instagram.com%2Fendlessbeauty_nailss%2F%3Figsh%3DbGo3ZnBtcDJ1M20w%26utm_source%3Dqr&is_from_rle" target="_blank" rel="noopener">
-        <img src="/Images/Icone-Instagram.svg" alt="Instagram Logo">
-      </a>
-    </div>
-  </div>
-</footer>
+  <?php
+    include "./module/footer.html"; 
+    ?>
 </body>
 
 </html>

@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="CSS/Modal-Panier.css">
     <script type="module" src="JS/script.js"></script>
     <link rel="stylesheet" href="CSS/Modal-Recherche.css">
+    <link rel="stylesheet" href="CSS/formations.css">
 
 </head>
 
@@ -24,6 +25,91 @@
   ?>
 
 <body>
+  <div class="container-formations">
+        <section class="section">
+            <h1>Nos Formations</h1>
+            <p>Découvrez nos formations professionnelles en beauté et esthétique</p>
+            
+            <div class="formations-grid">
+                <div class="formation-card">
+                    <div>
+                        <h3 class="formation-title">Manucure Russe</h3>
+                        <p class="formation-description">Maîtrisez la technique révolutionnaire de la manucure russe. Apprenez les gestes précis et les outils spécialisés pour des résultats parfaits.</p>
+                    </div>
+                    <a href="#" class="btn-decouverte">Je découvre</a>
+                </div>
+                
+                <div class="formation-card">
+                    <div>
+                        <h3 class="formation-title">Extension Gel X</h3>
+                        <p class="formation-description">Devenez experte en extensions Gel X. Technique moderne et durable pour des ongles parfaits et une tenue exceptionnelle.</p>
+                    </div>
+                    <a href="#" class="btn-decouverte">Je découvre</a>
+                </div>
+                
+                <div class="formation-card">
+                    <div>
+                        <h3 class="formation-title">Beauté des Pieds</h3>
+                        <p class="formation-description">Perfectionnez vos techniques de pédicure professionnelle. Soins complets pour la beauté et la santé des pieds.</p>
+                    </div>
+                    <a href="#" class="btn-decouverte">Je découvre</a>
+                </div>
+                
+                <div class="formation-card">
+                    <div>
+                        <h3 class="formation-title">Soin Anti-Callosité</h3>
+                        <p class="formation-description">Spécialisez-vous dans le traitement des callosités. Techniques avancées pour des pieds doux et en parfaite santé.</p>
+                    </div>
+                    <a href="#" class="btn-découverte">Je découvre</a>
+                </div>
+                
+                <div class="formation-card">
+                    <div>
+                        <h3 class="formation-title">Pack Complet</h3>
+                        <p class="formation-description">Formation complète incluant toutes nos spécialités. Devenez une professionnelle polyvalente avec notre pack tout-en-un.</p>
+                    </div>
+                    <a href="#" class="btn-decouverte">Je découvre</a>
+                </div>
+            </div>
+        </section>
+
+
+        
+        <!-- Section Pourquoi Choisir -->
+        <section class="section">
+            <div class="why-choose">
+                <h2>Pourquoi choisir nos formations ?</h2>
+                
+                <div class="advantages-grid">
+                    <div class="advantage-item">
+                        <div class="advantage-icon">🏆</div>
+                        <h3 class="advantage-title">Expertise Reconnue</h3>
+                        <p class="advantage-description">Nos formateurs sont des professionnels reconnus dans le domaine de l'esthétique avec plus de 10 ans d'expérience.</p>
+                    </div>
+                    
+                    <div class="advantage-item">
+                        <div class="advantage-icon">♾️</div>
+                        <h3 class="advantage-title">Accès Illimité</h3>
+                        <p class="advantage-description">Accédez à vie à vos formations et bénéficiez des mises à jour continues de nos contenus pédagogiques.</p>
+                    </div>
+                    
+                    <div class="advantage-item">
+                        <div class="advantage-icon">🎓</div>
+                        <h3 class="advantage-title">Certification</h3>
+                        <p class="advantage-description">Obtenez un certificat reconnu à la fin de chaque formation pour valoriser vos compétences professionnelles.</p>
+                    </div>
+                    
+                    <div class="advantage-item">
+                        <div class="advantage-icon">💬</div>
+                        <h3 class="advantage-title">Support Personnalisé</h3>
+                        <p class="advantage-description">Bénéficiez d'un accompagnement personnalisé avec nos experts pour répondre à toutes vos questions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+  
+<!--     
    <h1>Nos Formations</h1>
     <div class = container >
     <h2>MANUCURE RUSSE</h2>
@@ -127,33 +213,12 @@
         <li>Visionnage illimité à vie</li>
         <li>Support PDF téléchargeable : livret de formation</li>
         <li>Bonus : Protocole complet de stérilisation du matériel pour garantir des prestations sûres et conformes aux normes d’hygiène</li>
-    </ul>
+    </ul> -->
+
+    <?php
+    include "./module/footer.html"; 
+    ?>
 </body>
 </html>
 
-   <footer>
-  <div class="footer-content">
-    <div>
-      <div class="footer-logo">Nails Endless Beauty</div>
-      <div class="contact-info">
-        <p>Email: Endlessbeauty.lc@gmail.com</p>
-        <p>Téléphone: 06 71 54 13 54</p>
-      </div>
-      <div class="copyright">
-        &copy; 2025 Nails Endless Beauty - Tous droits réservés
-      </div>
-    </div>
-    <div class="logos-reseaux">
-      <a href="https://www.tiktok.com/@endless.beauty8?_t=ZN-8wNbi4AV1cs&_r=1" target="_blank" rel="noopener">
-        <img src="/Images/icons8-tiktok.svg" alt="TikTok Logo">
-      </a>
-      <a href="https://www.instagram.com/accounts/login/?next=https%3A%2F%2Fwww.instagram.com%2Fendlessbeauty_nailss%2F%3Figsh%3DbGo3ZnBtcDJ1M20w%26utm_source%3Dqr&is_from_rle" target="_blank" rel="noopener">
-        <img src="/Images/Icone-Instagram.svg" alt="Instagram Logo">
-      </a>
-    </div>
-  </div>
-</footer>
-
-</body>
-
-</html>
+  

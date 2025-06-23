@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="./CSS/Modal-Recherche.css" />
     <script type="module" src="./JS/script.js"></script>
     <script src="./JS/Flash-Message.js" defer></script>
+    <link rel="stylesheet" href="./CSS/formations.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <title>Nails Endless Beauty</title>
   </head>
@@ -31,6 +32,9 @@
       include "./HTML/module/modal-panier.html";  
     ?>
    
+<div class="container-image-header">     
+  <img src="./Images/image-sous-header.jpg" alt="Salon de beauté professionnel">   
+</div>
 
     <main class="main-content">
       <!-- Ici j'utilise ma fonction pour envoyer un message flash -->
@@ -72,9 +76,12 @@
     </section>
 
 
+      <div class="formations-title">
+      <h2> Nos Formations</h2>
 
-      <h2 class="formations-title">Nos Formations</h2>
-
+      <p>Explorez un univers complet dédié à la beauté des mains et des pieds. Nos formations en ligne couvrent un éventail de techniques modernes : manucure russe, extensions Gel X, soins des pieds et traitements spécifiques. Conçus pour les débutants comme pour les professionnels en perfectionnement,
+         nos modules vous offrent un apprentissage précis, accessible à tout moment, pour maîtriser les gestes qui font la différence.</p>
+    </div>
       <div class="formations-container">
         <div class="formation1 formation">
           <div class="formation-image">
@@ -142,7 +149,7 @@
 
   <footer>
     <div class="footer-content">
-        <!-- COLONNE 1 : MARQUE + DESCRIPTION -->
+        <!-- DESCRIPTION -->
         <div class="footer-brand">
             <div class="footer-name">Nails Endless Beauty</div>
             <p class="footer-description">
@@ -150,14 +157,14 @@
             </p>
         </div>
 
-        <!-- COLONNE 2 : CONTACT -->
+        <!-- CONTACT -->
         <div class="footer-contact">
             <h3>Contact</h3>
             <div class="contact-item">Endlessbeauty.lc@gmail.com</div>
             <div class="contact-item">06 71 54 13 54</div>
         </div>
 
-        <!-- COLONNE 3 : RÉSEAUX SOCIAUX -->
+        <!-- RÉSEAUX SOCIAUX -->
         <div class="footer-social">
             <h3>Suivez-nous</h3>
             <div class="social-links">

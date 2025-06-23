@@ -7,12 +7,12 @@
         /* FOOTER PRINCIPAL (Pas le copyright)*/
         footer {
             /*  */
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            background: black;
             color: #ecf0f1;
             /* Espacement : 60px haut, 0 sur les côtés et 30px bas */
             padding: 60px 0 30px 0; 
             /* Séparer le footer de ce qui est en haut */
-            margin-top: 50px;
+            margin-top: 150px;
             /*  Nécessaire pour la ligne au dessus du footer (::before) */
             position: relative;
             /* Par sécurité si des éléments dépassent */
@@ -27,7 +27,8 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, #d4af37, #f1c40f, #d4af37);
+            background: #b08d57;
+            
         }
 
         /* LA GRID DU FOOTER */
@@ -53,7 +54,7 @@
             font-family: 'Playfair Display', serif;
             font-size: 28px;
             font-weight: 700;
-            color: #d4af37;
+            color: #b08d57;
             margin-bottom: 20px;
             letter-spacing: 1px;
         }
@@ -86,7 +87,7 @@
             /* La hauteur et longueur de la ligne */
             width: 30px;
             height: 2px;
-            background-color: #d4af37;
+            background-color: #b08d57;
         }
 
         .contact-item {
@@ -120,7 +121,7 @@
             left: 0;
             width: 30px;
             height: 2px;
-            background-color: #d4af37;
+            background-color: #b08d57;
         }
 
         .social-links {
@@ -161,13 +162,13 @@
             width: 24px;
             height: 24px;
             /* Rends l'icone blanche */
-            filter: brightness(0) invert(1);
+            filter: brightness(1) invert(0);
             transition: filter 0.3s ease;
         }
 
         .social-link:hover img {
             /*  Rend l'icône dorée au survol * */
-            filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(35deg);
+            filter: brightness(1) invert(0) sepia(1) saturate(5) hue-rotate(20deg);
         }
 
         /* COPYRIGHT */

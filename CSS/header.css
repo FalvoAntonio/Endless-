@@ -5,6 +5,7 @@ header {
   background: linear-gradient(135deg, #f9f7f4 0%, #ffffff 50%, #f5f3ed 100%);
   border-bottom: 3px solid black;
   box-shadow: 0 3px 12px rgba(176, 141, 87, 0.15);
+  margin-bottom: 50px;
 }
 
   .Menu {

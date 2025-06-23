@@ -10,24 +10,33 @@ body {
 .introduction h2 {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
+   line-height: 1.4;
+   
 }
 
 .introduction p {
   font-style: italic;
   letter-spacing: 1px;
-  margin-top: 25px;
+  margin-top: 70px;
   font-size: 20px;
   font-weight: bold;
+  /* Permet de définir une largeur, pour éviter de tout prendre */
+  max-width: 700px;
+  /* En mode auto ça permet de centrer mon paragraphe */
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.8;
 }
 .formations-container {
   display: flex;
   flex-direction: column;
   text-align: center;
-  background-color: #0a0a09;
+  background-color: #b08d57;
   padding: 50px;
   gap: 15px;
   width: 100%;
   margin-top: 100px;
+  border-radius: 10% / 50%;
 }
 .formations-container p
 {
@@ -100,17 +109,17 @@ font-size: 28px;
 }
 .formation {
   border-radius: 15px;
-  width: 80%;
+  width: 70%;
   min-height: 30vh;
   background-color: #f5f5f5;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  padding: 3px; 
+  padding: px; 
   transition: transform 0.2s ease-in-out;
-  border: 3px solid #b08d57;
+  border: 3px solid white;
 }
 .formation:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px rgb(255, 255, 255);
 }
 .main-content {
   text-align: center;
@@ -166,6 +175,20 @@ font-size: 28px;
   background: linear-gradient(to right, transparent, #b08d57, transparent);
 }
 
+.formations-title p{
+
+  font-style: italic;
+  letter-spacing: 1px;
+  margin-top: 80px;
+  font-size: 20px;
+  font-weight: bold;
+  /* Permet de définir une largeur, pour éviter de tout prendre */
+  max-width: 850px;
+  /* En mode auto ça permet de centrer mon paragraphe */
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.8;
+}
 .formation-image {
   position: relative; 
   /* Permet au logo promo qui est en absolute de se raprocher de ce parent */
@@ -177,7 +200,7 @@ font-size: 28px;
   /* garantit que l'image respecte les coins arrondis du conteneur et garantit que l'image respecte les coins arrondis du conteneur.*/
   /* Tout ce qui dépasse du container est caché : Ce qui évite que la photo lorsqu'elle sort du container on à l'impression qu'elle est 
     à l'intérieur visuellement */
-  border-radius: 10px;
+  border-radius: 30px;
 }
 
 .formation-image img {
@@ -198,7 +221,7 @@ font-size: 28px;
   align-items: center;
   /* Centre verticalement tous les éléments enfants dans le conteneur flex*/
   max-width: 1200px; /* Limite la largeur maximale à 1200px pour éviter que la section soit trop large sur grands écrans */
-  margin: 50px auto; /* 50px : espace en haut et en bas | auto : centre horizontalement la section dans la page  */
+  margin: 70px auto; /* 50px : espace en haut et en bas | auto : centre horizontalement la section dans la page  */
   padding: 40px 20px; /* Espace intérieur : 40px en haut/bas, 20px à gauche/droite */
   gap: 50px; /* Espace de 50px entre les éléments flex (entre l'image et le texte) */
   background: linear-gradient(
@@ -224,7 +247,7 @@ font-size: 28px;
   width: 100%; /* L'image prend toute la largeur de son conteneur */
   height: 322px; /* Hauteur fixe de 400px pour uniformiser toutes les images */
   object-fit: cover; /* Recadre l'image pour remplir l'espace sans déformation */
-  border-radius: 15px;
+  border-radius: 1.25rem; 
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Ombre noire à 20% d'opacité pour donner de la profondeur */
   transition: transform 0.3s ease; /* Animation douce de 0.3s quand l'image se transforme */
 }

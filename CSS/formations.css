@@ -1,0 +1,23 @@
+ *, ::before, ::after {
+            margin: 0; 
+            padding: 0;
+            box-sizing: border-box; 
+        }
+
+/* Image de sous header */
+.container-image-header {
+    
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 10px 100px / 120px;
+    margin-bottom: 60px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.container-image-header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
