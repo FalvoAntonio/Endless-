@@ -27,6 +27,7 @@
 <body>
   <div class="container-formations">
         <section class="section">
+            <img src="./Images/Photos Formations/Photo-intro.jpg" alt="Photo d'introduction">
             <h1>Nos Formations</h1>
             <p>Découvrez nos formations professionnelles en beauté et esthétique</p>
             
@@ -35,40 +36,50 @@
                     <div>
                         <h3 class="formation-title">Manucure Russe</h3>
                         <p class="formation-description">Maîtrisez la technique révolutionnaire de la manucure russe. Apprenez les gestes précis et les outils spécialisés pour des résultats parfaits.</p>
+                        <p class="prix" >500€</p>
                     </div>
                     <a href="#" class="btn-decouverte">Je découvre</a>
+                    <a href="#" class="btn-achat">Acheter</a>
                 </div>
                 
                 <div class="formation-card">
                     <div>
                         <h3 class="formation-title">Extension Gel X</h3>
                         <p class="formation-description">Devenez experte en extensions Gel X. Technique moderne et durable pour des ongles parfaits et une tenue exceptionnelle.</p>
+                        <p class="prix" >500€</p>
                     </div>
                     <a href="#" class="btn-decouverte">Je découvre</a>
+                    <a href="#" class="btn-achat">Acheter</a>
                 </div>
                 
                 <div class="formation-card">
                     <div>
                         <h3 class="formation-title">Beauté des Pieds</h3>
                         <p class="formation-description">Perfectionnez vos techniques de pédicure professionnelle. Soins complets pour la beauté et la santé des pieds.</p>
+                        <p class="prix" >500€</p>
                     </div>
                     <a href="#" class="btn-decouverte">Je découvre</a>
+                    <a href="#" class="btn-achat">Acheter</a>
                 </div>
                 
                 <div class="formation-card">
                     <div>
                         <h3 class="formation-title">Soin Anti-Callosité</h3>
                         <p class="formation-description">Spécialisez-vous dans le traitement des callosités. Techniques avancées pour des pieds doux et en parfaite santé.</p>
+                        <p class="prix" >500€</p>
                     </div>
-                    <a href="#" class="btn-découverte">Je découvre</a>
+                    <a href="#" class="btn-decouverte">Je découvre</a>
+                    <a href="#" class="btn-achat">Acheter</a>
                 </div>
                 
                 <div class="formation-card">
                     <div>
                         <h3 class="formation-title">Pack Complet</h3>
                         <p class="formation-description">Formation complète incluant toutes nos spécialités. Devenez une professionnelle polyvalente avec notre pack tout-en-un.</p>
+                        <p class="prix" >500€</p>
                     </div>
                     <a href="#" class="btn-decouverte">Je découvre</a>
+                    <a href="#" class="btn-achat">Acheter</a>
                 </div>
             </div>
         </section>

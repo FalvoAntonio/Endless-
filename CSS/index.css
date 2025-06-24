@@ -7,6 +7,17 @@ body {
   background-color: #ffffff;
 }
 
+.container-image-header img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+    border-radius: 18px;
+    /* Optionnel : un léger filtre pour un effet chic */
+    filter: brightness(0.97) contrast(1.05);
+    transition: filter 0.3s;
+}
+
 .introduction h2 {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
