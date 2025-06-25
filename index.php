@@ -21,13 +21,14 @@
   </head>
   <body class="homepage">
 
-    <!-- Le header est vide car j'ai mis son contenu dans le fichier "module" dans le fichier "header.html"
+    <!-- Le header est vide car j'ai mis son contenu dans le fichier "module" dans le fichier "header.php"
      Du coup juste avec <header> </header> vide, je peux faire apparaitre le contenu HTML du header grâce au fetch réalisé
      sur le fichier "Menu-Burger.js" qui sera ensuite importer sur mon fichier "script.js"-->
      <!-- Donc dans mon fichier "Menu-Burger.js" je retrouve mon header,mon menu burger ainsi que mes modales Panier/Recherce -->
 
       <?php 
-      include "./HTML/module/header.html";
+      require "./HTML/module/Menu-burger-compte.html";
+      include "./HTML/module/header.php";
       include "./HTML/module/modal-recherche.html"; 
       include "./HTML/module/modal-panier.html";  
     ?>

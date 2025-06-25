@@ -5,7 +5,7 @@
         }
 
     
-
+    /* Image d'introduction */
     .section img
     {
         width: 100%;
@@ -15,7 +15,7 @@
         margin-bottom: 60px;
         box-shadow: 0 8px 25px rgba(0,0,0,0.15)
     }
-
+    /* Titre "Nos Formation"  */
     .section h1
     {
         text-align: center;
@@ -24,7 +24,7 @@
         margin-bottom: 15px;
         color: #b08d57;
     }
-
+    /* Texte introduction  */
     .section > p
     {
         font-size: 1.3rem;
@@ -33,14 +33,14 @@
         text-align: center;
         margin-top: 50px;
     }
-
+    /* Container Grid des formations */
     .formations-grid
     {
         display: grid;
         grid-template-columns: (5, 1fr);
         gap: 80px;
     }
-
+    /* Toutes les cartes formations */
     .formation-card {
             background: white;
             border-radius: 20px;
@@ -60,12 +60,12 @@
             border: 1px solid #b08d57;
             margin: 0 90px;
     }
-
+    /* Toutes les cartes   */
     .formation-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
-
+    /* Le titre des formation à l'intérieur de chaque carte */
     .formation-title 
     {
         text-align: center;
@@ -75,6 +75,7 @@
         color: white;
         margin-bottom: 25px;
     }
+    /* Déscription des formations dans chaque carte  */
     .formation-description
     {
         text-align: center;
@@ -90,7 +91,7 @@
         /* margin auto me permet de centrer mon texte */
         margin: auto;
     }
-
+    /* Le prix à l'intérieur de chaque carte */
     .prix
     {
         font-size: 2.5rem;
@@ -99,6 +100,7 @@
         margin-top: 35px;
         margin-bottom: 35px;
     }
+    /* Les boutons à l'intérieur de chaque carte */
     .btn-decouverte, .btn-achat
     {
         text-decoration: none;
@@ -155,7 +157,7 @@
         background-size: cover;
         background-position: center;
 }
-
+/* Container des avantages en mode grid */
 .advantages-grid
 {
         display: grid;
@@ -181,6 +183,7 @@
         margin: 100px 0 100px 0;
 }
 
+/* Le style des cartes avantages */
 .advantage-item
 {
         text-align: center;
@@ -205,7 +208,7 @@
 {
   transform: translateY(-5px);
 }
-
+/* Les icones des cartes */
 .advantage-icon
 {
   background-color:#ffffff;;
@@ -216,6 +219,7 @@
   margin-bottom: 3rem;
   padding:15px;
 }
+/* Les titres des cartes avantages */
 .advantage-title 
 {
   font-size: 1.2rem;
@@ -225,7 +229,7 @@
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-
+/* Les descriptions des cartes avantages */
 .advantage-description 
 {
 

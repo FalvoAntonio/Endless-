@@ -1,5 +1,5 @@
 "use strict";
-// ! J'ai utilisé la méthode fetch pour récupérer le contenu de l'HTML du header dans le fichier header.html
+// ! J'ai utilisé la méthode fetch pour récupérer le contenu de l'HTML du header dans le fichier header.php
 // ! Mais j'ai aussi utilisé la méthode fetch pour récupérer le contenu de la modale panier dans le fichier Modal-Panier.html avec les deux import
 // ! Je récupère donc le contenu HTML pour éviter de le copier coller sur chaque page HTML que ja vais créer
 // ! Donc juste avec le fichier script.js je vais pouvoir afficher le header avec le menu burger ainsi que les modales Recherche/Panier sur chaque page HTML
@@ -7,14 +7,14 @@
 import {fetchModalRecherche} from "./Modal-Recherche.js";
 import {fetchPanier} from "./Modal-Panier.js";
 
-// ! Je vais chercher le menu burger dans le fichier header.html
+// ! Je vais chercher le menu burger dans le fichier header.php
 // ! Ici c'est différent vu que le header est déjà dans le body je n'ai pas besoin de le rechercher commme avec les autres :(document.body.appendChild(modalContainer);)
 // ! Je n'ai donc pas besoin de créer un div pour le header
-// ! Je vais juste le chercher dans le body et je vais le remplacer par le contenu de header.html
-// ! Je vais donc chercher le header dans le body et je vais le remplacer par le contenu de header.html
+// ! Je vais juste le chercher dans le body et je vais le remplacer par le contenu de header.php
+// ! Je vais donc chercher le header dans le body et je vais le remplacer par le contenu de header.php
 // const prefix = window.location.href.includes("HTML")? "./" : "./HTML/";
 //     console.log(prefix, window.location.href);
-// fetch("./HTML/module/header.html")
+// fetch("./HTML/module/header.php")
 // .then((response) => response.text())
 // .then((data) => {
     // Selection du conteneur du menu, la page doit donc contenir un header vide c'est à dire " <header></header> ""

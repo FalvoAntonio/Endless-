@@ -5,11 +5,11 @@
 // ! Sur chaque page HTML je vais juste devoir importer le fichier script.js et il va tout gérer
 
 import {createlist} from "./prefix.js";
-import {startMenuBurger} from "./Menu-Burger.js";  // Le menu burger se trouve dans le fichier header.html avec le fetch et les modales
+import {startMenuBurger} from "./Menu-Burger.js";  // Le menu burger se trouve dans le fichier header.php avec le fetch et les modales
 // Donc avec Menu-Burger On va pouvoir retrouver le header,les modales et le menu burger
 import { ValidationDesChamps,MDPvisible } from "./login.js";
 import { SliderImage } from "./Slider.js";
-
+import {StartMenuUtilisateur} from "./Menu-Burger-Utilisateur.js"
 
 const images = ["OPX05236.jpg","OPX05238.jpg","OPX05253.jpg","OPX05257.jpg","OPX05267.jpg","OPX05269.jpg","IMG_3863.jpeg","IMG_3865.jpeg"]
 /* J'insère directement mon tableau d'images, pour faciliter mon code, car si je veux
@@ -28,3 +28,5 @@ if(aboutMain) // S'il trouve le main dans la page QuiSommesNous. Alors tu peux l
     // HTML QuiSommesNous
 }
 
+
+StartMenuUtilisateur()

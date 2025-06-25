@@ -34,7 +34,7 @@
 
 <body class="homepage">
   <?php 
-    include "../module/header.html"; 
+    include "../module/header.php"; 
     include "../module/modal-recherche.html"; 
     include "../module/modal-panier.html"; 
   ?>

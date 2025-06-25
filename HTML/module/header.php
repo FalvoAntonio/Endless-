@@ -1,4 +1,4 @@
-
+<?php $isLogged = isset($_SESSION["logged"]); ?>
     <header>
     <nav class="Menu">
       <div class="Menu-Titre">
@@ -15,6 +15,10 @@
         >
       </div>
 
+      <!-- ! Utiliser class="icon icon-recherche pour créer la fonction JavaScript qui permettra de faire apparaitre le menu utilisateur.
+       ! Il faudra ensuite faire cette fonction dans le fichier ...
+       ! Ne pas oublier de faire les require pour appeler notre menu utilisateur sur chaque page
+      -->
       <div class="icons-menu">
         <div class="logomenuburger">
           <span class="span1"></span>
@@ -36,7 +40,8 @@
         <a href="HTML/Compte/Login.php">
           <!-- <?php //endif; ?> -->
           <img
-            class="icon icon-login"
+            class="icon icon-login <?= $isLogged ? 'connected' : ''; // Si je suis connécté j'aurais la class 'connected' 
+            // si je suis pas connecté elle n'apparait pas?>"
             src="./Images/Login.png"
             alt="Identifiant"
           />

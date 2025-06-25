@@ -17,7 +17,7 @@
 </head>
 <body>
      <?php 
-    include __DIR__."/../../module/header.html"; 
+    include __DIR__."/../../module/header.php"; 
     include __DIR__."/../../module/modal-recherche.html"; 
     include __DIR__."/../../module/modal-panier.html"; 
   ?>
