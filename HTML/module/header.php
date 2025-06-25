@@ -1,4 +1,5 @@
 <?php $isLogged = isset($_SESSION["logged"]); ?>
+<!-- On vérifie si l'utilisateur est connecté -->
     <header>
     <nav class="Menu">
       <div class="Menu-Titre">
@@ -40,8 +41,8 @@
         <a href="HTML/Compte/Login.php">
           <!-- <?php //endif; ?> -->
           <img
-            class="icon icon-login <?= $isLogged ? 'connected' : ''; // Si je suis connécté j'aurais la class 'connected' 
-            // si je suis pas connecté elle n'apparait pas?>"
+            class="icon icon-login <?= $isLogged ? 'connected' : ''; // Si l'utilisateur est connecté, ajoute la classe 'connected' sinon n'ajoute rien 
+            // si je suis pas connecté le menu n'apparait pas?>"
             src="./Images/Login.png"
             alt="Identifiant"
           />
