@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS users (
     role ENUM('user', 'admin') DEFAULT 'user',
     -- Définit le rôle de l'utilisateur. ENUM signifie que seules deux valeurs sont autorisées :
     -- 'utilisateur' ou 'administrateur'. Par défaut, chaque nouveau compte est un 'utilisateur'.
-    email_verified BOOLEAN DEFAULT FALSE,
+    email_verified BOOLEAN DEFAULT FALSE
     -- Le mail n'est pas vérifié.
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 -- Termine la définition de la table.
@@ -54,28 +54,22 @@ CREATE TABLE IF NOT EXISTS users (
 
 
 -- Table des formations
-CREATE TABLE IF NOT EXISTS formations (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    -- Comme pour la table utilisateurs, chaque formation aura un identifiant unique qui s'incrémente automatiquement.
-    title VARCHAR(100) NOT NULL,
-    description TEXT NOT NULL,
-    content TEXT NOT NULL,
---  titre : Le nom de la formation (max 100 caractères)
--- description : Un court résumé de la formation
--- contenu : Description détaillée de la formation
--- TEXT permet de stocker des textes plus longs que VARCHAR.
-    duration VARCHAR(50) NOT NULL,
-    -- La durée de la formation (ex: "1H30 à 2H").
-    price DECIMAL(10, 2) NOT NULL,
-    discount_price DECIMAL(10, 2) NULL,
-    -- prix : Le prix normal de la formation
--- prix_reduit : Le prix en promotion (peut être NULL si pas de promotion)
--- DECIMAL(10, 2) signifie un nombre avec jusqu'à 10 chiffres au total, dont 2 après la virgule (ex: 1234567.89).
-    image_path VARCHAR(255) NOT NULL,
---  Le chemin vers l'image de la formation (ex: "/Endless-/Images/...").
-    creation_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
--- Enregistre automatiquement quand la formation a été ajoutée au système.
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE `formations` (
+  `id` int NOT NULL COMMENT 'Comme pour la table utilisateurs, chaque formation aura un identifiant unique qui s incrémente automatiquement.',
+  `slug` varchar(50) NOT NULL,
+  `title` varchar(100) NOT NULL COMMENT 'Le nom de la formation (max 100 caractères)',
+  `description` text NOT NULL COMMENT 'Un court résumé de la formation',
+  `content` text NOT NULL COMMENT 'Description détaillée de la formation, TEXT permet de stocker des textes plus longs que VARCHAR',
+  `duration` varchar(50) NOT NULL COMMENT 'La durée de la formation (ex: "1H30 à 2H")',
+  `price` decimal(10,2) NOT NULL COMMENT 'Le prix normal de la formation',
+  `discount_price` decimal(10,2) DEFAULT NULL COMMENT 'Le prix en promotion (peut être NULL si pas de promotion) DECIMAL(10, 2) signifie un nombre avec jusqu à 10 chiffres au total, dont 2 après la virgule (ex: 1234567.89)',
+  `image_path` varchar(255) NOT NULL COMMENT 'Le chemin vers l image de la formation (ex: "/Endless-/Images/...")',
+  `creation_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Enregistre automatiquement quand la formation a été ajoutée au système.'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+ALTER TABLE `formations`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `slug` (`slug`);
 
 
 -- Table des achats de formations
@@ -183,12 +177,12 @@ CREATE TABLE IF NOT EXISTS email_confirmations (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- Données initiales pour les formations (basées sur votre page d'accueil)
-INSERT INTO formations (title, description, content, duration, price, discount_price, image_path) VALUES
-('Manucure Russe', 'Gainage + couleur sous cuticule', 'Apprenez les techniques professionnelles de la manucure russe', '1H30 à 2H', 150.00, NULL, '/Endless-/Images/Photos Accueil/IMG_3652.jpeg'),
-('Extension Gel X', 'Techniques d''extension Gel X', 'Maîtrisez les extensions Gel X pour des ongles parfaits', '2H à 2H30', 200.00, NULL, '/Endless-/Images/Photos Accueil/IMG_3653.jpeg'),
-('Beauté des pieds', 'Pédicure russe + gainage', 'Découvrez les secrets d''une pédicure professionnelle', '1H30 à 2H', 180.00, NULL, '/Endless-/Images/Photos Accueil/IMG_3654.jpeg'),
-('Soin anti-callosité des pieds', 'Traitement & soin des callosités', 'Techniques efficaces pour éliminer les callosités', '1H à 1H30', 120.00, NULL, '/Endless-/Images/Photos Accueil/IMG_3655.jpeg'),
-('PACK COMPLET', 'Tous les modules en un seul achat', 'Accédez à toutes nos formations à prix réduit', 'Environ 8H', 500.00, 450.00, '/Endless-/Images/Photos Accueil/IMG_3656.jpeg');
+INSERT INTO `formations` (`id`, `slug`, `title`, `description`, `content`, `duration`, `price`, `discount_price`, `image_path`, `creation_date`) VALUES
+(1, 'manucure_russe', 'Manucure Russe', 'Maîtrisez la technique révolutionnaire de la manucure russe. Apprenez les gestes précis et les outils spécialisés pour des résultats parfaits.', '<h2>Tout ce qu\'il faut savoir</h2>\n    <p>\n        Tu veux devenir une pro de la manucure russe ou perfectionner ta technique ?<br>\n        La formation Manucure russe est faite pour toi ! Que tu sois débutante passionnée ou déjà en activité, cette formation complète t’apprend toutes les étapes clés pour réaliser des manucures impeccables, durables et professionnelles.\n    </p>\n    <h3>Ce que tu vas apprendre :</h3>\n    <ul>\n        <li>Les bases essentielles de l’hygiène et de la préparation de l’ongle</li>\n        <li>Le matériel indispensable et comment bien l’utiliser</li>\n        <li>Les techniques de manucure russe et combinée</li>\n        <li>Le gainage sur l’ongle naturel : renforcement pour une meilleure tenue sans extension</li>\n        <li>Le limage parfait pour une forme harmonieuse</li>\n        <li>Application de la couleur sous cuticules : effet fondu et propre pour un rendu ultra net</li>\n        <li>Les erreurs courantes à éviter et les astuces de pro pour un rendu net et durable</li>\n        <li>La dépose complète, expliquée étape par étape pour respecter l’ongle naturel</li>\n    </ul>\n    <h3>À qui s’adresse cette formation ?</h3>\n    <ul>\n        <li>Aux débutantes qui souhaitent se lancer dans l’univers de la manucure</li>\n        <li>Aux pros en activité qui veulent revoir leurs bases ou apprendre de nouvelles techniques</li>\n        <li>Aux passionnées qui souhaitent gagner en confiance et qualité dans leurs prestations</li>\n    </ul>\n    <h3>Informations pratiques :</h3>\n    <ul>\n        <li>100 % en ligne – Accès illimité, à ton rythme</li>\n        <li>Durée : environ XXXX de vidéo découpée en modules clairs</li>\n        <li>Visionnage illimité à vie</li>\n        <li>Support PDF téléchargeable : livret de formation</li>\n        <li>Bonus : Protocole complet de stérilisation du matériel pour garantir des prestations sûres et conformes aux normes d’hygiène</li>\n    </ul>', '1H30 à 2H', 150.00, NULL, '/Images/Photos\\ Formations/IMG_4015.jpeg', '2025-06-12 11:36:42'),
+(2, 'extension_gel_x', 'Extension Gel X', 'Devenez experte en extensions Gel X. Technique moderne et durable pour des ongles parfaits et une tenue exceptionnelle.', 'Maîtrisez les extensions Gel X pour des ongles parfaits', '2H à 2H30', 200.00, NULL, '/Images/Photos\\ Formations/GelX.jpg', '2025-06-12 11:36:42'),
+(3, 'beaute_des_pieds', 'Beauté des pieds', 'Perfectionnez vos techniques de pédicure professionnelle. Soins complets pour la beauté et la santé des pieds.', 'Découvrez les secrets d\'une pédicure professionnelle', '1H30 à 2H', 180.00, NULL, '/Images/Photos\\ Formations/Soin-pied.jpg', '2025-06-12 11:36:42'),
+(4, 'soin_anti-callosite_des_pieds', 'Soin anti-callosité des pieds', 'Spécialisez-vous dans le traitement des callosités. Techniques avancées pour des pieds doux et en parfaite santé.', 'Techniques efficaces pour éliminer les callosités', '1H à 1H30', 120.00, NULL, '/Images/Photos\\ Formations/Anti-callosite.jpg', '2025-06-12 11:36:42'),
+(5, 'pack_complet', 'PACK COMPLET', 'Formation complète incluant toutes nos spécialités. Devenez une professionnelle polyvalente avec notre pack tout-en-un.', 'Accédez à toutes nos formations à prix réduit', 'Environ 8H', 500.00, 450.00, '/Images/Photos\\ Formations/Pack-complet.png', '2025-06-12 11:36:42');
 
 -- Création d'un compte administrateur pour gérer le site (mot de passe: admin123)
 -- Note: En production, utilisez un mot de passe fort et sécurisé!

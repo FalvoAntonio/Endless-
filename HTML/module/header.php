@@ -5,7 +5,7 @@
       <div class="Menu-Titre">
         <ul>
           <li><a href="./HTML/QuiSommesNous.php">Qui sommes-nous ?</a></li>
-          <li><a href="./HTML/Formations.php">Formations</a></li>
+          <li><a href="./HTML/Formations/Formations.php">Formations</a></li>
           <li><a href="#Contact">Contact</a></li>
           <li><a href="#RDV">Prendre rendez-vous</a></li>
         </ul>

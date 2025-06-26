@@ -23,10 +23,11 @@
     de limiter la taille sur grands écrans (Sinon autre solution : max-width: 600px;) */
     width: 400px; /* Largeur souhaitée sur desktop */
     height: auto; /* Maintient les proportions */
-    border-radius: 50%; /* Pour un effet portrait circulaire (Sinon autre solution: 10px) */ 
+    /* border-radius: 50%; Pour un effet portrait circulaire (Sinon autre solution: 10px)  */
     box-shadow: 0 3px 10px rgba(0,0,0,0.15);
     transition: transform 0.3s ease;
     object-fit: cover; /* Assure un bon recadrage si nécessaire */
+      border: 46px double #c5974f;
 }
 
 /* Responsive pour tablettes */

@@ -1,3 +1,9 @@
+<?php
+require __DIR__."/../../PHP/service/PDO-Connexion-BDD.php";
+
+    $sql = $pdo->query("SELECT title, description, CAST(price AS SIGNED) AS price, CAST(discount_price AS SIGNED) AS discount_price, slug, image_path FROM formations");
+    $formations = $sql->fetchAll();
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -19,9 +25,9 @@
 </head>
 
 <?php 
-    include "./module/header.php"; 
-    include "./module/modal-recherche.html"; 
-    include "./module/modal-panier.html"; 
+    include "../module/header.php"; 
+    include "../module/modal-recherche.html"; 
+    include "../module/modal-panier.html"; 
   ?>
 
 <body>
@@ -32,13 +38,32 @@
             <p>Découvrez nos formations professionnelles en beauté et esthétique</p>
             
             <div class="formations-grid">
-                <div class="formation-card">
+                <?php foreach($formations as $formation): ?>
+                    <div class="formation-card" style='background-image: url(<?= $formation["image_path"] ?>)'>
+                        <div>
+                            <h3 class="formation-title"><?= $formation["title"] ?></h3>
+                            <p class="formation-description"><?= $formation["description"] ?></p>
+                            <p class="prix" >
+                                <?php if(empty($formation["discount_price"])): ?>
+                                    <?= $formation["price"] ?>€
+                                <?php else: ?>
+                                    <span class="prix-barre"><?= $formation["price"] ?>€</span>
+                                    <span class="prix-promo"><?= $formation["discount_price"] ?>€</span>
+                                <?php endif; ?>
+                            </p>
+                        </div>
+                        <!-- Je veux que à la fin de mon URL tu ajoutes formation= : le slug  -->
+                        <a href="./HTML/Formations/Formation.php?formation=<?= $formation["slug"] ?>" class="btn-decouverte">Je découvre</a>
+                        <a href="#" class="btn-achat">Acheter</a>
+                    </div>
+                <?php endforeach; ?>
+                <!-- <div class="formation-card">
                     <div>
                         <h3 class="formation-title">Manucure Russe</h3>
                         <p class="formation-description">Maîtrisez la technique révolutionnaire de la manucure russe. Apprenez les gestes précis et les outils spécialisés pour des résultats parfaits.</p>
                         <p class="prix" >500€</p>
                     </div>
-                    <a href="#" class="btn-decouverte">Je découvre</a>
+                    <a href="./HTML/Formations/Formation-manucure-russe.php?id=1" class="btn-decouverte">Je découvre</a>
                     <a href="#" class="btn-achat">Acheter</a>
                 </div>
                 
@@ -80,7 +105,7 @@
                     </div>
                     <a href="#" class="btn-decouverte">Je découvre</a>
                     <a href="#" class="btn-achat">Acheter</a>
-                </div>
+                </div> -->
             </div>
         </section>
 
@@ -121,40 +146,6 @@
     </div>
   
 <!--     
-   <h1>Nos Formations</h1>
-    <div class = container >
-    <h2>MANUCURE RUSSE</h2>
-    <p>
-        Tu veux devenir une pro de la manucure russe ou perfectionner ta technique ?<br>
-        La formation Manucure russe est faite pour toi ! Que tu sois débutante passionnée ou déjà en activité, cette formation complète t’apprend toutes les étapes clés pour réaliser des manucures impeccables, durables et professionnelles.
-    </p>
-    <h3>Ce que tu vas apprendre :</h3>
-    <ul>
-        <li>Les bases essentielles de l’hygiène et de la préparation de l’ongle</li>
-        <li>Le matériel indispensable et comment bien l’utiliser</li>
-        <li>Les techniques de manucure russe et combinée</li>
-        <li>Le gainage sur l’ongle naturel : renforcement pour une meilleure tenue sans extension</li>
-        <li>Le limage parfait pour une forme harmonieuse</li>
-        <li>Application de la couleur sous cuticules : effet fondu et propre pour un rendu ultra net</li>
-        <li>Les erreurs courantes à éviter et les astuces de pro pour un rendu net et durable</li>
-        <li>La dépose complète, expliquée étape par étape pour respecter l’ongle naturel</li>
-    </ul>
-    <h3>À qui s’adresse cette formation ?</h3>
-    <ul>
-        <li>Aux débutantes qui souhaitent se lancer dans l’univers de la manucure</li>
-        <li>Aux pros en activité qui veulent revoir leurs bases ou apprendre de nouvelles techniques</li>
-        <li>Aux passionnées qui souhaitent gagner en confiance et qualité dans leurs prestations</li>
-    </ul>
-    <h3>Informations pratiques :</h3>
-    <ul>
-        <li>100 % en ligne – Accès illimité, à ton rythme</li>
-        <li>Durée : environ XXXX de vidéo découpée en modules clairs</li>
-        <li>Visionnage illimité à vie</li>
-        <li>Support PDF téléchargeable : livret de formation</li>
-        <li>Bonus : Protocole complet de stérilisation du matériel pour garantir des prestations sûres et conformes aux normes d’hygiène</li>
-    </ul>
-    </div>
-
     <h2>RALLONGEMENT GEL X</h2>
     <p>
         Tu veux maîtriser une technique de rallongement rapide, propre et ultra tendance ?<br>
@@ -227,7 +218,7 @@
     </ul> -->
 
     <?php
-    include "./module/footer.html"; 
+    include "../module/footer.html"; 
     ?>
 </body>
 </html>
