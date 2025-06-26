@@ -186,8 +186,6 @@ INSERT INTO `formations` (`id`, `slug`, `title`, `description`, `content`, `dura
 
 -- Création d'un compte administrateur pour gérer le site (mot de passe: admin123)
 -- Note: En production, utilisez un mot de passe fort et sécurisé!
-INSERT INTO users (email, password, firstname, lastname, phone, phone_prefix, role) VALUES
-('admin@nailsendlessbeauty.fr', '$2y$10$h.KxQEIH7VH5j6HM1x3NLOov0BYA7VT.NXxmNL1YkTk.YPYPjQlA6', 'Admin', 'Nails', '123456789', '+33', 'admin');
 
 
 --  + COMPREHENSION DE NULL et NOT_NULL :
