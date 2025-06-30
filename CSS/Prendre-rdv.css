@@ -1,0 +1,42 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: white;
+}
+
+.category-btn {
+    background: #f8f9fa;
+    border: 2px solid #dee2e6;
+    padding: 12px 25px;
+    border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .category-btn:hover {
+            background: #e9ecef;
+            transform: translateY(-2px);
+        }
+        
+        .category-btn.active {
+            background: #d63384;
+            color: white;
+            border-color: #d63384;
+        }
+        
+        .service-category {
+            display: none;
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        .service-category.active {
+            display: block;
+        }

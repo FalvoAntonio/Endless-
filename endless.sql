@@ -232,4 +232,148 @@ INSERT INTO `formations` (`id`, `slug`, `title`, `description`, `content`, `dura
 -- Le Pack Complet a une promotion, donc prix_reduit a une vraie valeur.
 -- Quand vous mettez NOT NULL, cela signifie que ce champ DOIT toujours avoir une valeur.
 
+-- Base de données pour Endless Beauty
+-- À créer dans votre phpMyAdmin ou interface MySQL
+
+
+-- Table des services
+CREATE TABLE services (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nom VARCHAR(100) NOT NULL,
+    duree INT NOT NULL, -- en minutes
+    prix DECIMAL(10,2) NOT NULL,
+    categorie VARCHAR(50),
+    description TEXT,
+    actif BOOLEAN DEFAULT TRUE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Insertion des services complets d'Endless Beauty
+INSERT INTO services (nom, duree, prix, categorie, description) VALUES
+-- BEAUTÉ DES MAINS
+('Manucure Russe seule', 30, 35.00, 'BEAUTÉ DES MAINS', ''),
+('Gainage nude (sur ongle nu)', 60, 50.00, 'BEAUTÉ DES MAINS', 'Sur ongle nu'),
+('Gainage avec couleur (sur ongle nu)', 70, 55.00, 'BEAUTÉ DES MAINS', 'Sur ongle nu'),
+('Remplissage gainage nude', 70, 55.00, 'BEAUTÉ DES MAINS', '⚠️ Toute pose extérieure entraînera un supplément de 10€'),
+('Remplissage gainage + couleur', 80, 60.00, 'BEAUTÉ DES MAINS', '⚠️ Toute pose extérieure entraînera un supplément de 10€'),
+('Dépose complète', 30, 25.00, 'BEAUTÉ DES MAINS', ''),
+
+-- RALLONGEMENT ONGLES
+('Rallongement capsules Gel X', 95, 65.00, 'RALLONGEMENT ONGLES', ''),
+('Dépose + repose capsules Gel X', 100, 70.00, 'RALLONGEMENT ONGLES', ''),
+
+-- BEAUTÉ DES PIEDS
+('Beauté des pieds Russe seule', 30, 35.00, 'BEAUTÉ DES PIEDS', ''),
+('Renfort base nude (sur ongle nu)', 60, 45.00, 'BEAUTÉ DES PIEDS', 'Sur ongle nu'),
+('Renfort avec couleur (sur ongle nu)', 70, 50.00, 'BEAUTÉ DES PIEDS', 'Sur ongle nu'),
+('Dépose + renfort base nude', 70, 50.00, 'BEAUTÉ DES PIEDS', ''),
+('Dépose + renfort + couleur', 75, 55.00, 'BEAUTÉ DES PIEDS', ''),
+('Traitement anti-callosités + renfort', 95, 90.00, 'BEAUTÉ DES PIEDS', ''),
+('Traitement anti-callosités + beauté des pieds russe seule', 70, 80.00, 'BEAUTÉ DES PIEDS', ''),
+('Dépose complète pieds', 30, 25.00, 'BEAUTÉ DES PIEDS', ''),
+
+-- BEAUTÉ DU REGARD
+('Teinture cils ou sourcils', 15, 10.00, 'BEAUTÉ DU REGARD', ''),
+('Réhaussement des cils', 40, 40.00, 'BEAUTÉ DU REGARD', ''),
+
+-- ÉPILATIONS
+('Sourcils', 12, 10.00, 'ÉPILATIONS', ''),
+('Lèvres & Sourcils', 15, 15.00, 'ÉPILATIONS', ''),
+('Lèvre ou Menton', 10, 7.00, 'ÉPILATIONS', ''),
+('Aisselles', 10, 10.00, 'ÉPILATIONS', ''),
+('1/2 Jambes', 20, 20.00, 'ÉPILATIONS', ''),
+('Jambes entières', 30, 30.00, 'ÉPILATIONS', ''),
+('Maillot intégral + inter fessier', 30, 25.00, 'ÉPILATIONS', ''),
+('Maillot américain', 30, 20.00, 'ÉPILATIONS', ''),
+('Maillot échancré', 15, 15.00, 'ÉPILATIONS', ''),
+('Sillon inter fessier (SIF)', 5, 5.00, 'ÉPILATIONS', ''),
+('1/2 Bras', 20, 15.00, 'ÉPILATIONS', ''),
+('Bras entiers', 30, 20.00, 'ÉPILATIONS', ''),
+('Bas du dos', 10, 15.00, 'ÉPILATIONS', '');
+
+-- Table des suppléments
+CREATE TABLE supplements (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nom VARCHAR(100) NOT NULL,
+    duree INT, -- en minutes
+    prix DECIMAL(10,2) NOT NULL,
+    description TEXT
+);
+
+INSERT INTO supplements (nom, duree, prix, description) VALUES
+('French / Baby Boomer', 10, 10.00, ''),
+('Effet chrome', 5, 10.00, ''),
+('Reconstruction d\'ongle en acrygel', 10, 3.00, 'Par ongle'),
+('Incrustation sur un ongle', 3, 3.00, 'Par ongle'),
+('Motif', 10, 0.00, 'Sur devis'),
+('Supplément ongles longs (+5mm)', 0, 5.00, 'Automatique si ongles > 5mm'),
+('Supplément pose extérieure', 0, 10.00, 'Pour remplissage après pose extérieure');
+
+-- Table des rendez-vous
+CREATE TABLE rendez_vous (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    user_client VARCHAR(100) NOT NULL,
+    service_id INT,
+    service_nom VARCHAR(100), -- Dupliqué pour historique
+    service_prix DECIMAL(10,2),
+    service_duree INT,
+    supplements JSON, -- Pour stocker les suppléments choisis
+    date_rdv DATE NOT NULL,
+    heure_rdv TIME NOT NULL,
+    notes TEXT,
+    statut ENUM('en_attente', 'confirmé', 'annulé', 'terminé') DEFAULT 'confirmé',
+    accompte_requis BOOLEAN DEFAULT FALSE,
+    accompte_montant DECIMAL(10,2),
+    accompte_paye BOOLEAN DEFAULT FALSE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (service_id) REFERENCES services(id)
+);
+
+-- Table des clients (optionnel pour historique)
+CREATE TABLE clients (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nom VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE,
+    telephone VARCHAR(20),
+    date_premiere_visite DATE,
+    notes TEXT,
+    nouvelle_cliente BOOLEAN DEFAULT TRUE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Table des paramètres du salon
+CREATE TABLE parametres_salon (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    cle VARCHAR(50) UNIQUE,
+    valeur TEXT,
+    description TEXT
+);
+
+INSERT INTO parametres_salon (cle, valeur, description) VALUES
+('nom_salon', 'Endless Beauty', 'Nom du salon'),
+('adresse', '37 Rue de la Cousinerie, 59650 Villeneuve-d\'Ascq', 'Adresse complète'),
+('telephone', '', 'Téléphone du salon'),
+('email', '', 'Email du salon'),
+('accompte_pourcentage', '50', 'Pourcentage d\'accompte pour nouvelles clientes'),
+('accompte_obligatoire_nouvelle_cliente', 'true', 'Accompte obligatoire pour nouvelles clientes'),
+('duree_creneau', '15', 'Durée minimale d\'un créneau en minutes'),
+('anticipation_max_jours', '60', 'Nombre de jours maximum pour réserver à l\'avance');
+
+-- Index pour optimiser les performances
+CREATE INDEX idx_rdv_date_heure ON rendez_vous(date_rdv, heure_rdv);
+CREATE INDEX idx_rdv_email ON rendez_vous(client_email);
+CREATE INDEX idx_rdv_statut ON rendez_vous(statut);
+CREATE INDEX idx_services_categorie ON services(categorie);
+
+-- Vue pour les créneaux disponibles
+CREATE VIEW vue_creneaux_disponibles AS
+SELECT 
+    DATE(date_rdv) as date_libre,
+    TIME(heure_rdv) as heure_libre,
+    COUNT(*) as nb_rdv
+FROM rendez_vous 
+WHERE statut IN ('confirmé', 'en_attente') 
+GROUP BY date_rdv, heure_rdv;
+
 

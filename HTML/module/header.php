@@ -7,7 +7,7 @@
           <li><a href="./HTML/QuiSommesNous.php">Qui sommes-nous ?</a></li>
           <li><a href="./HTML/Formations/Formations.php">Formations</a></li>
           <li><a href="#Contact">Contact</a></li>
-          <li><a href="#RDV">Prendre rendez-vous</a></li>
+          <li><a href="./HTML/Prise-de-rdv/Prendre-rdv.html">Prendre rendez-vous</a></li>
         </ul>
         <a href="index.php" class="menu-titre-link">
           <img class="headerlogo" src="/Images/Logo Endless.png" alt="Titre header">

@@ -33,6 +33,18 @@
     <h1><?= $formation["title"] ?></h1>
     <div class = container >
         <?= $formation["content"] ?>
+
+    </div>
+
+    <div class="formation-footer">
+        <p>Prix : <?= $formation["price"] ?> €</p>
+        <a href="./Formations.php" class="btn">Retour aux formations</a>
+    </div>
+
+    <div class="formation-comments">
+        <h2>Commentaires</h2>
+        <p> <?= $formation["duration"]  ?> minutes</p>
+        <p>Aucun commentaire pour le moment.</p>
     </div>
 </body>
 </html>
