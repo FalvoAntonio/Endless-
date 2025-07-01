@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS users (
 -- Table des formations
 CREATE TABLE `formations` (
   `id` int NOT NULL COMMENT 'Comme pour la table utilisateurs, chaque formation aura un identifiant unique qui s incrémente automatiquement.',
-  `slug` varchar(50) NOT NULL,
+  `slug` varchar(50) NOT NULL, 'Il s agit d un identifiant unique pour chaque formation, utilisé dans les URL. Par exemple, pour la formation "Manucure Russe", le slug pourrait être "manucure_russe".',
   `title` varchar(100) NOT NULL COMMENT 'Le nom de la formation (max 100 caractères)',
   `description` text NOT NULL COMMENT 'Un court résumé de la formation',
   `content` text NOT NULL COMMENT 'Description détaillée de la formation, TEXT permet de stocker des textes plus longs que VARCHAR',

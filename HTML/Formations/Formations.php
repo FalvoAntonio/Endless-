@@ -1,6 +1,10 @@
 <?php
 require __DIR__."/../../PHP/service/PDO-Connexion-BDD.php";
-
+    // Ici je fais une requête SQL pour récupérer toutes les formations de la base de données
+    // Je vais utiliser PDO pour me connecter à la base de données et récupérer les données
+    // Dans cette requête je demande à PDO de me récupérer les colonnes title, description, price, discount_price, slug et image_path de la table formations
+    // Je vais utiliser CAST pour convertir les prix en entiers, car dans la base de données les prix sont stockés en tant que chaînes de caractères (VARCHAR)
+    // Je vais utiliser fetchAll() pour récupérer toutes les formations sous forme de tableau associatif
     $sql = $pdo->query("SELECT title, description, CAST(price AS SIGNED) AS price, CAST(discount_price AS SIGNED) AS discount_price, slug, image_path FROM formations");
     $formations = $sql->fetchAll();
 ?>
@@ -31,6 +35,11 @@ require __DIR__."/../../PHP/service/PDO-Connexion-BDD.php";
   ?>
 
 <body>
+    <!-- Je suis sur ma page formations, et pour éviter d'avoir trop de lignes html comme en dessous en commentaire, je
+     vais créer une structure de carte de formation réutilisable , c'est à dire avec php je vais inclure le code html 
+     de la carte de formation dans une fonction et l'appeler pour chaque formation, pour ceci je m'aide de php admin pour
+     remplir ma base de données, pour cela je fais une requête SQL pour récupérer toutes les formations et je les affiche
+     dans une boucle et une boucle foreach -->
   <div class="container-formations">
         <section class="section">
             <img src="./Images/Photos Formations/Photo-intro.jpg" alt="Photo d'introduction">
@@ -38,7 +47,13 @@ require __DIR__."/../../PHP/service/PDO-Connexion-BDD.php";
             <p>Découvrez nos formations professionnelles en beauté et esthétique</p>
             
             <div class="formations-grid">
+                <!-- ici je vais inclure le code html de la carte de formation dans une fonction et l'appeler pour chaque formation 
+                 -->
                 <?php foreach($formations as $formation): ?>
+                    <!--  $formations as $formation signifie que je parcours chaque formation dans mon tableau $formations.
+                      le $formation est un tableau associatif qui contient les informations de chaque formation. Et $formations
+                      est un tableau qui contient toutes les formations. 
+                      $formations est déclaré dans le fichier PHP qui récupère les données de la base de données. (en haut de cette page)-->
                     <div class="formation-card" style='background-image: url(<?= $formation["image_path"] ?>)'>
                         <div>
                             <h3 class="formation-title"><?= $formation["title"] ?></h3>

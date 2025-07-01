@@ -1,4 +1,5 @@
 <?php
+    // ! Je suis sur la page de formations, et je veux afficher une formation en particulier
     if(!isset($_GET["formation"]))
     // Si je n'ai pas de formation (dans l'URL) > http://localhost:8000/HTML/Formations/Formation-manucure-russe.php?formation=extension_gel_x
     // Je suis redirigé vers la page formations

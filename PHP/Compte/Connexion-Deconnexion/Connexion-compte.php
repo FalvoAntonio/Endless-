@@ -90,7 +90,16 @@ if($_SERVER["REQUEST_METHOD"] === "POST")
                 // Je vérifie si l'email est confirmé, pour cela elle doit être = à 1 (TRUE)
                 {
                     // Authentifier l'utilisateur:
-                    $_SESSION["logged"] = true; // !
+                    $_SESSION["logged"] = true; 
+                    // Je stock toutes les informations de l'utilisateur dans la session
+                    // On crée une session pour l'utilisateur
+                    $_SESSION["user_id"] = $utilisateur["id"];           
+                    $_SESSION["user_email"] = $utilisateur["email"];     
+                    $_SESSION["user_firstname"] = $utilisateur["firstname"]; 
+                    $_SESSION["user_lastname"] = $utilisateur["lastname"];   
+                    $_SESSION["user_role"] = $utilisateur["role"];       
+
+
                     // On crée une session pour l'utilisateur
                     header("Location: /HTML/Compte/Page-mon-espace.php");
                     exit;

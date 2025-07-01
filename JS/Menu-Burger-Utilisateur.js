@@ -60,31 +60,37 @@ function AfficherMenuUtilisateur(event)
             MenuUtilisateur.style.opacity = "0";
             MenuUtilisateur.style.visibility = "hidden";
     }
+    
 }
 
 // ? Fonction pour ouvrir le menu :
 
 export function StartMenuUtilisateur()
 {
-    
+   
     if(IconeUtilisateur.classList.contains("connected"))
         // est-ce que l'élément a la classe 'connected' ?
         // on n'active le menu QUE si l'utilisateur est connecté
 
         // j'ajoute les évènements au survol et au clique
     {
-        IconeUtilisateur.addEventListener("click", AfficherMenuUtilisateur)
-        // Quand on clique sur l'icône, on exécute la fonction AfficherMenuUtilisateur"
-        IconeUtilisateur.addEventListener("mouseenter", AfficherMenuUtilisateur)
+        const canHover = window.matchMedia('(hover: hover)').matches;
+        if (canHover) { IconeUtilisateur.addEventListener("mouseenter", AfficherMenuUtilisateur)
         // "mouseenter" = quand la souris "entre" sur l'élément (survol)
         // Même fonction appelée = le menu va s'ouvrir/fermer au survol
         MenuUtilisateur.addEventListener("mouseleave", AfficherMenuUtilisateur)
         // "mouseleave" = quand la souris "quitte" l'élément
         // Même fonction = le menu va s'ouvrir/fermer quand on quitte le menu
-    }
+    }else
+    {
+             IconeUtilisateur.addEventListener("click", AfficherMenuUtilisateur)
+        // Quand on clique sur l'icône, on exécute la fonction AfficherMenuUtilisateur"
+       
     // Quand je click sur le logo il se passe quelque chose
     // Ici ça sera le fait d'ouvrir et de fermer le menu
-
+    }
+}
+   
 }
 /* 
 Pour conclure :

@@ -1,3 +1,12 @@
+<?php
+// Connexeion à la base de données
+// On inclut le fichier de connexion à la base de données
+require __DIR__ . "/../../PHP/service/PDO-Connexion-BDD.php";
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -33,7 +42,7 @@
                  <!-- ! Ajoute de "active et id="mains" -->
                 <div class="service-category active" id="mains">
                     <div class="service-grid">
-                        <a href="#" class="service-card-link">Prendre RDV</a>
+                        <a href="./Réservation-du-rdv.php?prestation=1" class="service-card-link">Prendre RDV</a>
                         <div class="service-card">
                             <div class="service-name">Manucure Russe seule</div>
                             <div class="service-duration">⏱️ 30 min</div>
