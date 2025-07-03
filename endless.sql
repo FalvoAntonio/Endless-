@@ -313,6 +313,7 @@ INSERT INTO supplements (nom, duree, prix, description) VALUES
 CREATE TABLE rendez_vous (
     id INT PRIMARY KEY AUTO_INCREMENT,
     user_client VARCHAR(100) NOT NULL,
+    prothesiste VARCHAR(100) NOT NULL, -- Nom du prothésiste
     service_id INT,
     service_nom VARCHAR(100), -- Dupliqué pour historique
     service_prix DECIMAL(10,2),
