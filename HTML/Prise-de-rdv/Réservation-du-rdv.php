@@ -5,12 +5,28 @@ require_once __DIR__ . "/../../PHP/Prise-de-rdv/Page-Réservation-du-rdv.php"; /
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <base href="/">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../CSS/Réservation-du-rdv.css">
-    <script src="../../JS/reservation-de-rdv.js" defer></script>
+    <link rel="stylesheet" href="./CSS/Réservation-du-rdv.css">
+    <link rel="stylesheet" href="./CSS/footer.css">
+    <link rel="stylesheet" href="./CSS/header.css">
+    <link rel="stylesheet" href="./CSS/Menu-utilisateur.css">
+    <link rel="stylesheet" href="./CSS/Modal-Panier.css">
+    <link rel="stylesheet" href="./CSS/form.css">
+    <link rel="stylesheet" href="./CSS/Modal-Recherche.css">
+    <script type="module" src="./JS/script.js"></script>
+    <script src="./JS/reservation-de-rdv.js" defer></script>
+
     <title>Je réserve mon RDV</title>
 </head>
 <body>
+    <?php
+      require "../module/Menu-burger-compte.html";
+      include "../module/header.php";
+      include "../module/modal-recherche.html"; 
+      include "../module/modal-panier.html";  
+    ?>
+   
     <div class="container">
         <div class="header">
             <h1>Endless Beauty</h1>
@@ -100,13 +116,10 @@ require_once __DIR__ . "/../../PHP/Prise-de-rdv/Page-Réservation-du-rdv.php"; /
         </form>
     </div>
 
-    <script>
-        // Vérifier la disponibilité en temps réel (optionnel)
-        document.getElementById('date_rdv').addEventListener('change', function() {
-            // Ici vous pourrez ajouter une vérification AJAX des créneaux disponibles
-            console.log('Date sélectionnée : ' + this.value);
-        });
-    </script>
+    <?php
+    include "../module/footer.html"; 
+    ?>
+    
 </body>
 </html>
 

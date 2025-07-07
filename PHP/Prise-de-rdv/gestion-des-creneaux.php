@@ -108,7 +108,7 @@ if (isset($_GET['ajax']) && $_GET['ajax'] == 'creneaux' && isset($_GET['date']))
     
     $date = $_GET['date'];
     $creneauxLibres = getCreneauxLibres($pdo, $date);
-    
+    // sleep(5);
     echo json_encode([
         'success' => true,
         'date' => $date,

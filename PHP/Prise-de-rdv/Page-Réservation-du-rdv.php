@@ -131,6 +131,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
         // * Ici, on insère les données de la réservation dans la table "rendez_vous"
         $sql_reservation->execute([$_SESSION["user_id"], $service_id, $date_rdv, $heure_rdv, $notes, $prothesiste,
             $service["nom"], $service["prix"], $service["duree"]]);
+            // ! UNE FOIS QUE C'EST ENREGISTRE IL FAUT ENVOYER LE MAIL
         // On récupère l'ID de la table "services" pour l'associer à la réservation
         // * On utilise $_SESSION["user_id"] pour récupérer l'ID de l'utilisateur
         // Rappel: le $_SESSION est un mécanisme de PHP pour conserver les données d'un utilisateur entre différentes pages de mon site.
