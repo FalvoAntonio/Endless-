@@ -66,6 +66,7 @@ $nom_complet = $user["firstname"] . " " . $user["lastname"];
 $email_user = $user["email"];
 $telephone_user = $user["phone_prefix"] . $user["phone"];
 
+
 // ! JE VEUX DESORMAIS GERER LA SOUMISSION DU FORMULAIRE DE RÉSERVATION
 // * C'est-à-dire que lorsque l'utilisateur soumet le formulaire de réservation,
 // * je vais enregistrer la réservation dans la base de données.
@@ -113,7 +114,19 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
         // * Vérifier que l'heure est au format HH:MM
         $error_message = "❌ L'heure doit être au format HH:MM.";
     }
-
+    $sql = $pdo->prepare("
+        SELECT heure_rdv 
+        FROM rendez_vous 
+        WHERE date_rdv = ? 
+        AND heure_rdv = ?
+        AND statut IN ('confirmé', 'en_attente')
+    ");
+    $sql->execute([$date_rdv, $heure_rdv]);
+    $creneauxOccupes = $sql->fetch();
+    if($creneauxOccupes)
+    {
+        $error_message = "Ce creneau n'est plus disponible";
+    }
 
 
     if(empty($error_message))
@@ -131,13 +144,24 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
         // * Ici, on insère les données de la réservation dans la table "rendez_vous"
         $sql_reservation->execute([$_SESSION["user_id"], $service_id, $date_rdv, $heure_rdv, $notes, $prothesiste,
             $service["nom"], $service["prix"], $service["duree"]]);
-            // ! UNE FOIS QUE C'EST ENREGISTRE IL FAUT ENVOYER LE MAIL
         // On récupère l'ID de la table "services" pour l'associer à la réservation
         // * On utilise $_SESSION["user_id"] pour récupérer l'ID de l'utilisateur
         // Rappel: le $_SESSION est un mécanisme de PHP pour conserver les données d'un utilisateur entre différentes pages de mon site.
-    
+
         // * On va rediriger l'utilisateur vers la page de confirmation de réservation
-        header("Location: ./Confirmation-RDV.php");
+        // header("Location: /PHP/Prise-de-rdv/Confirmation-RDV.php");
+
+
+        // ! le buffer "ob-start()" et "ob_get_clean() nous permet de récupérer toutes les variables ... de la page
+        // ! "/../../HTML/module/Mail-Confirmation-RDV.php"; sinon si je fais un require seulement ça va m'afficher tout le HTML en bas de ma page
+        ob_start();
+        require __DIR__."/../../HTML/module/Mail-Confirmation-RDV.php";
+        $mail_body = ob_get_clean();
+        require __DIR__."/../service/PHP_Mailer.php";
+        // ! UNE FOIS QUE C'EST ENREGISTRE IL FAUT ENVOYER LE MAIL
+        $email_sent = EnvoyerMail($_SESSION["user_email"], "Confirmation RDV", $mail_body);
+
+        require __DIR__."/Confirmation-RDV.php";
         exit;
 
     }

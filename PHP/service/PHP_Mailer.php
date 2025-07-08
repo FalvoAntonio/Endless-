@@ -30,7 +30,7 @@ use PHPMailer\PHPMailer\SMTP; // C'est la classe pour capturer les erreurs spéc
 require __DIR__ . '/../vendor/autoload.php'; // Chemin vers l'autoloader de Composer
 // ! C'est absolument indispensable : sans cette ligne Php ne sait pas ou trouver les classes PHPMailer.
 
-function EnvoyerMail(string $destinataire, string $sujet, string $message): string
+function EnvoyerMail(string $destinataire, string $sujet, string $message): bool
 // Je déclare ma fonction pour envoyer un e-mail avec PHPMailer, elle me retourne un string qui indique si l'envoi a réussi ou échoué.
 {
     try {
@@ -60,11 +60,11 @@ function EnvoyerMail(string $destinataire, string $sujet, string $message): stri
         $mail->Body = $message; // * Le corps du message
         
         $mail->send(); // * C'est pour envoyer l'envoi
-        return "E-mail envoyé avec succès."; // Il retourne un message d'erreur.
+        return true; // Il retourne un message d'erreur.
         
     } catch (Exception $error) {
         error_log("Erreur email : " . $error->getMessage());
-        return "Erreur lors de l'envoie du mail."; // Il retourne un message d'erreur.
+        return false; // Il retourne un message d'erreur.
     }
 }
 
