@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="./CSS/Creation-Compte.css">
     <link rel="stylesheet" href="./CSS/Modal-Recherche.css">
     <script type="module" src="./JS/script.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <!-- ! Cet import me permet de convertir la police qui se transforme en icone flag pour tous les moteurs de recherche  -->
 
@@ -76,7 +77,7 @@
                      
                 </div>
             </div>
-
+            <div class="g-recaptcha" data-sitekey="6LcfPX0rAAAAALoy2aJmHzColxMSuKbYlyKVF1hr"></div>
             <button type="submit" class="btn-form"  name="signup-form">Créer un compte</button>
         </form>
     </div>

@@ -62,6 +62,7 @@
                     <img class="LogoEyes2" src="./Images/noeyes.png" alt="Mot de passe non visible">
                 </div>
                 <?php MessagesErrorsFormulaire("mdp") ?>
+                <?php MessagesErrorsFormulaire("tentative") ?>
             </div>
             <input type="submit" value="Connectez-vous" name="boutonConnexion" class="btn-form">
             <a href="./HTML/Compte/Mot-de-passe-oublie/MDP-oublie.php">

@@ -82,38 +82,66 @@ if($_SERVER["REQUEST_METHOD"] === "POST")
         // vérifier si l'email à était confirmer !
         if($utilisateur)
         {
-            //Si le mot de passe est bon on va vérifier si c'est le même que dans la BDD.
-            if(password_verify($pass, $utilisateur["password"]))
-            // On utilise password_verify() pour vérifier si le mot de passe saisi correspond au mot de passe haché dans la base de données
+            if($utilisateur["login_attemps"] >= 5)
             {
-                if($utilisateur["email_verified"]===1)
-                // Je vérifie si l'email est confirmé, pour cela elle doit être = à 1 (TRUE)
+                $lastAttemps = new DateTime($utilisateur["last_login_attemps"]);
+                $now = new DateTime("-5 minutes");
+                if($lastAttemps > $now )
                 {
-                    // Authentifier l'utilisateur:
-                    $_SESSION["logged"] = true; 
-                    // Je stock toutes les informations de l'utilisateur dans la session
-                    // On crée une session pour l'utilisateur
-                    $_SESSION["user_id"] = $utilisateur["id"];           
-                    $_SESSION["user_email"] = $utilisateur["email"];     
-                    $_SESSION["user_firstname"] = $utilisateur["firstname"]; 
-                    $_SESSION["user_lastname"] = $utilisateur["lastname"];   
-                    $_SESSION["user_role"] = $utilisateur["role"];       
-
-
-                    // On crée une session pour l'utilisateur
-                    header("Location: /HTML/Compte/Page-mon-espace.php");
-                    exit;
-                    // On redirige l'utilisateur vers la page d'accueil
+                    $error["tentative"] = "Veuillez ressayer plus tard";
                 }
                 else
                 {
-                    $error["email"] = "Veuillez confirmer votre email.";
+                    $smtp = $pdo->prepare("UPDATE users SET login_attemps = 0, last_login_attemps = NULL WHERE email = ?");
+                    $smtp->execute([$email]);
                 }
             }
-            else
+
+            if(empty($error))
             {
-                $error["mdp"] = "Mot de passe incorrect.";
-                // Si le mot de passe est incorrect, on ajoute un message d'erreur dans le tableau $error
+
+                //Si le mot de passe est bon on va vérifier si c'est le même que dans la BDD.
+                if(password_verify($pass, $utilisateur["password"]))
+                // On utilise password_verify() pour vérifier si le mot de passe saisi correspond au mot de passe haché dans la base de données
+                {
+                    if($utilisateur["email_verified"]===1)
+                    // Je vérifie si l'email est confirmé, pour cela elle doit être = à 1 (TRUE)
+                    {
+                        // Authentifier l'utilisateur:
+                        $_SESSION["logged"] = true; 
+                        // Je stock toutes les informations de l'utilisateur dans la session
+                        // On crée une session pour l'utilisateur
+                        $_SESSION["user_id"] = $utilisateur["id"];           
+                        $_SESSION["user_email"] = $utilisateur["email"];     
+                        $_SESSION["user_firstname"] = $utilisateur["firstname"]; 
+                        $_SESSION["user_lastname"] = $utilisateur["lastname"];   
+                        $_SESSION["user_role"] = $utilisateur["role"];       
+                            
+                        $smtp = $pdo->prepare("UPDATE users SET login_attemps = 0, last_login_attemps = NULL WHERE email = ?");
+                        $smtp->execute([$email]);
+    
+                        // On crée une session pour l'utilisateur
+                        header("Location: /HTML/Compte/Page-mon-espace.php");
+                        exit;
+                        // On redirige l'utilisateur vers la page d'accueil
+                    }
+                    else
+                    {
+                        $error["email"] = "Veuillez confirmer votre email.";
+                    }
+                }
+                else
+                {
+                    $error["mdp"] = "Mot de passe incorrect.";
+                    $tentative = $utilisateur["login_attemps"] +1;
+    
+                    $smtp = $pdo->prepare("UPDATE users SET login_attemps = ?, last_login_attemps = CURRENT_TIMESTAMP() WHERE email = ?");
+                    $smtp->execute([$tentative,$email]);
+                    // petite secu supplémentaire au bruteforce, 3 secondes avant d'afficher la page
+                    // pour répérer le spam intensif des bots.
+                    sleep(3);
+                    // Si le mot de passe est incorrect, on ajoute un message d'erreur dans le tableau $error
+                }
             }
         }
         else

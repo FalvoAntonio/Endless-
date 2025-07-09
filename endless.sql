@@ -45,7 +45,9 @@ CREATE TABLE IF NOT EXISTS users (
     role ENUM('user', 'admin') DEFAULT 'user',
     -- Définit le rôle de l'utilisateur. ENUM signifie que seules deux valeurs sont autorisées :
     -- 'utilisateur' ou 'administrateur'. Par défaut, chaque nouveau compte est un 'utilisateur'.
-    email_verified BOOLEAN DEFAULT FALSE
+    email_verified BOOLEAN DEFAULT FALSE,
+    login_attempts NOT NULL INT DEFAULT 0,
+    last_login_attemps TIMESTAMP DEFAULT NULL
     -- Le mail n'est pas vérifié.
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 -- Termine la définition de la table.

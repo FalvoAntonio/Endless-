@@ -3,6 +3,8 @@
 // ! VERIFICATION DU FORMULAIRE
 require "../../service/Forme.php";
 require "../../service/PHP_Mailer.php";
+require "../../service/CAPTCHA-formulaire.php";
+
 // On inclut le fichier Forme.php qui contient la fonction cleanData
 if(session_status() !== PHP_SESSION_ACTIVE)
 // On vérifie si la session n'est pas déjà démarrée
@@ -222,7 +224,20 @@ if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["signup-form"])) // Le 
         $error["prefix"] = "Le préfixe doit commencer par + suivi de 1 à 4 chiffres";
     }
     }
+    // gestion du captcha :
+    $recaptchaResponse = $_POST['g-recaptcha-response'] ?? '';
+    $secretKey = '6LcfPX0rAAAAACQpe0kL6-rFS4rHhMQ8z4d2byA7'; 
 
+    $result = verifyRecaptcha($recaptchaResponse, $secretKey);
+    // var_dump($result); die;
+    if (isset($result['error'])) 
+    {
+        $error["captcha"] = "Erreur lors de l'envoi du captcha";
+    }
+     elseif ($result['success'] === false) 
+     {
+        $error["captcha"] = "Vous ne seriez pas un bot ?";
+     }
     // ! A NE PAS OUBLIER DE FAIRE
     // ! DONC si je n'ai aucunes erreurs je peux envoyer mon mail en utilisant ma fonction "EnvoyerMail"
     // ! qui se trouve dans le fichier "PHP_Mailer.php"
