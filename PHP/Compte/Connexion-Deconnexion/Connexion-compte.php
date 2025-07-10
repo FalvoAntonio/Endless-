@@ -69,6 +69,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST")
     // Si le tableau $error est vide, cela signifie que tous les champs sont valides
 
     {
+        // *  Protection contre le bruteforce.
 
         // ? Connexion à la base de données:
         // ? Récupérer l'utilisateur dans la base de données:
@@ -83,6 +84,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST")
         if($utilisateur)
         {
             if($utilisateur["login_attemps"] >= 5)
+            // "login_attemps" : l'utilisateur a-t-il confirmé son email ?
             {
                 $lastAttemps = new DateTime($utilisateur["last_login_attemps"]);
                 $now = new DateTime("-5 minutes");
@@ -134,6 +136,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST")
                 {
                     $error["mdp"] = "Mot de passe incorrect.";
                     $tentative = $utilisateur["login_attemps"] +1;
+                    // last_login_attemps : Quand a eu lieu la dernière tentative ?
     
                     $smtp = $pdo->prepare("UPDATE users SET login_attemps = ?, last_login_attemps = CURRENT_TIMESTAMP() WHERE email = ?");
                     $smtp->execute([$tentative,$email]);
