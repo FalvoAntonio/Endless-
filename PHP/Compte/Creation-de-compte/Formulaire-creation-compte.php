@@ -224,17 +224,38 @@ if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["signup-form"])) // Le 
         $error["prefix"] = "Le préfixe doit commencer par + suivi de 1 à 4 chiffres";
     }
     }
-    // gestion du captcha :
-    $recaptchaResponse = $_POST['g-recaptcha-response'] ?? '';
-    $secretKey = '6LcfPX0rAAAAACQpe0kL6-rFS4rHhMQ8z4d2byA7'; 
 
+    // GESTION DU CAPTCHA :
+
+    // Récupération de la réponse
+    $recaptchaResponse = $_POST['g-recaptcha-response'] ?? '';
+    // g-recaptcha-response : Nom automatique du champ généré par Google
+    // ?? = si ça existe, prend cette valeur, sinon prend ''
+
+    $secretKey = '6LcfPX0rAAAAACQpe0kL6-rFS4rHhMQ8z4d2byA7'; 
+   // Votre clé secrète fournie par Google quand vous avez créé le captcha
+   // ATTENTION : cette clé ne doit JAMAIS être visible côté client (dans le HTML)
+   // Elle prouve à Google que c'est bien votre serveur qui demande la vérification
+
+    // On appel notre fonction qui se trouve dans CAPTCHA-formulaire.php, elle permet de communiquer avec l'API Google pour vérifier la validité
     $result = verifyRecaptcha($recaptchaResponse, $secretKey);
+    // verifyRecaptcha() va contacter Google et nous dire si c'est valide
+    // $recaptchaResponse : Token reçu du formulaire ($_POST['g-recaptcha-response']), c'est lorsqu'on clique sur le captcha
+    // $secretKey : Clé privée Google (pour authentifier votre serveur)
+    // $userIp : IP de l'utilisateur (optionnel, pour analyse anti-fraude)
+    // $result va contenir la réponse de Google sous forme de tableau
     // var_dump($result); die;
     if (isset($result['error'])) 
-    {
+    // isset() vérifie si une clé existe dans un tableau
+    // Si $result contient une clé 'error', c'est qu'il y a eu un problème technique
+    // Exemples : pas d'internet, serveur Google en panne, clé secrète invalide
         $error["captcha"] = "Erreur lors de l'envoi du captcha";
     }
      elseif ($result['success'] === false) 
+     // elseif = "sinon si" (vérifie une autre condition)
+     // $result['success'] = réponse de Google : true si valide, false si invalide
+     // === = comparaison stricte (vérifier le type ET la valeur)
+     // Cette condition = "si Google dit que le captcha est faux"
      {
         $error["captcha"] = "Vous ne seriez pas un bot ?";
      }
@@ -307,7 +328,6 @@ if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["signup-form"])) // Le 
 
     */
 
-}// fin du bloc principal
 $_SESSION["error"] = $error;
 header('Location: /HTML/Compte/Creation-de-compte/Creation-Compte.php');
 // var_dump($error);

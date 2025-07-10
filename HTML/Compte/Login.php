@@ -61,7 +61,9 @@
                     <img class="LogoEyes1" src="./Images/eyes.png" alt="Mot de passe visible">
                     <img class="LogoEyes2" src="./Images/noeyes.png" alt="Mot de passe non visible">
                 </div>
+                <!-- La fonction MessagesErrorsFormulaire provient du fichier "Message-Flash.php" -->
                 <?php MessagesErrorsFormulaire("mdp") ?>
+                <!-- Pour le bruteforce -->
                 <?php MessagesErrorsFormulaire("tentative") ?>
             </div>
             <input type="submit" value="Connectez-vous" name="boutonConnexion" class="btn-form">

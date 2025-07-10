@@ -20,6 +20,9 @@
     <link rel="stylesheet" href="./CSS/Creation-Compte.css">
     <link rel="stylesheet" href="./CSS/Modal-Recherche.css">
     <script type="module" src="./JS/script.js"></script>
+
+    <!-- Je reprends bien le script de google pour mon captcha -->
+
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <!-- ! Cet import me permet de convertir la police qui se transforme en icone flag pour tous les moteurs de recherche  -->
@@ -77,6 +80,8 @@
                      
                 </div>
             </div>
+            <!-- Je reprends également la div de google et j'insère moi même la clef client -->
+            <!-- data-sitekey : Clé publique fournie par Google (visible côté client) -->
             <div class="g-recaptcha" data-sitekey="6LcfPX0rAAAAALoy2aJmHzColxMSuKbYlyKVF1hr"></div>
             <button type="submit" class="btn-form"  name="signup-form">Créer un compte</button>
         </form>
