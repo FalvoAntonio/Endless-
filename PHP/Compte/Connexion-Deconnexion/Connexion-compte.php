@@ -83,18 +83,18 @@ if($_SERVER["REQUEST_METHOD"] === "POST")
         // vérifier si l'email à était confirmer !
         if($utilisateur)
         {
-            if($utilisateur["login_attemps"] >= 5)
-            // "login_attemps" : l'utilisateur a-t-il confirmé son email ?
+            if($utilisateur["login_attempts"] >= 5)
+            // "login_attempts" : l'utilisateur a-t-il confirmé son email ?
             {
-                $lastAttemps = new DateTime($utilisateur["last_login_attemps"]);
+                $lastattempts = new DateTime($utilisateur["last_login_attempts"]);
                 $now = new DateTime("-5 minutes");
-                if($lastAttemps > $now )
+                if($lastattempts > $now )
                 {
                     $error["tentative"] = "Veuillez ressayer plus tard";
                 }
                 else
                 {
-                    $smtp = $pdo->prepare("UPDATE users SET login_attemps = 0, last_login_attemps = NULL WHERE email = ?");
+                    $smtp = $pdo->prepare("UPDATE users SET login_attempts = 0, last_login_attempts = NULL WHERE email = ?");
                     $smtp->execute([$email]);
                 }
             }
@@ -119,7 +119,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST")
                         $_SESSION["user_lastname"] = $utilisateur["lastname"];   
                         $_SESSION["user_role"] = $utilisateur["role"];       
                             
-                        $smtp = $pdo->prepare("UPDATE users SET login_attemps = 0, last_login_attemps = NULL WHERE email = ?");
+                        $smtp = $pdo->prepare("UPDATE users SET login_attempts = 0, last_login_attempts = NULL WHERE email = ?");
                         $smtp->execute([$email]);
     
                         // On crée une session pour l'utilisateur
@@ -135,10 +135,10 @@ if($_SERVER["REQUEST_METHOD"] === "POST")
                 else
                 {
                     $error["mdp"] = "Mot de passe incorrect.";
-                    $tentative = $utilisateur["login_attemps"] +1;
-                    // last_login_attemps : Quand a eu lieu la dernière tentative ?
+                    $tentative = $utilisateur["login_attempts"] +1;
+                    // last_login_attempts : Quand a eu lieu la dernière tentative ?
     
-                    $smtp = $pdo->prepare("UPDATE users SET login_attemps = ?, last_login_attemps = CURRENT_TIMESTAMP() WHERE email = ?");
+                    $smtp = $pdo->prepare("UPDATE users SET login_attempts = ?, last_login_attempts = CURRENT_TIMESTAMP() WHERE email = ?");
                     $smtp->execute([$tentative,$email]);
                     // petite secu supplémentaire au bruteforce, 3 secondes avant d'afficher la page
                     // pour répérer le spam intensif des bots.
