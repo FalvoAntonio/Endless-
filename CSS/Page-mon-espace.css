@@ -61,7 +61,11 @@ h2 {
     flex-direction: column;
     align-items: center;
 }
-
+.Tableaudebord-card a
+{
+    position: absolute;
+    inset: 0;
+}
 /* Effet hover */
 .Tableaudebord-card:hover {
     transform: translateY(-10px);
@@ -79,20 +83,24 @@ h2 {
     border-radius: 15px 15px 0 0;
 }
 
-.Tableaudebord-card.formations::before {
-    background: linear-gradient(90deg, #667eea, #764ba2);
+.Tableaudebord-card.rdv::before {
+    background: linear-gradient(90deg, #ebdac2, #b08d57);
 }
 
 .Tableaudebord-card.profil::before {
-    background: linear-gradient(90deg, #f093fb, #f5576c);
+    background: linear-gradient(90deg, #f1dfd1, #b97a57);
 }
 
 .Tableaudebord-card.achats::before {
-    background: linear-gradient(90deg, #4facfe, #00f2fe);
+    background: linear-gradient(90deg, #e6c8a1, #8c6239);
 }
 
 .Tableaudebord-card.documents::before {
-    background: linear-gradient(90deg, #43e97b, #38f9d7);
+    background: linear-gradient(90deg, #f8e6d1, #c49a6c);
+}
+
+.Tableaudebord-card.parametres::before {
+    background: linear-gradient(90deg, #dac3aa, #a47551);
 }
 
 /* Style des icônes */

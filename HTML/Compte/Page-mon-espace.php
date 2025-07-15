@@ -47,34 +47,46 @@
 
     <div class="Tableaudebord-container">
       <div class="Tableaudebord-Blocs">
-      <div class="Tableaudebord-card formations">
-      <img class="Icones-tableaudebord" src="../Images/Page Mon Espace/icone-formation.png" alt="Icone-formation">
-      <h3>Mes Formations</h3>
-      <p>Jetter un oeil sur mes formations</p>
-      </div>
-     
+
       <div class="Tableaudebord-card profil">
       <img class="Icones-tableaudebord" src="../Images/Page Mon Espace/icone-profil.png" alt="Icone-profil">
       <h3>Mon Profil</h3>
       <p>Gérer mes informations</p>
       </div>
 
+    <div class="Tableaudebord-card rdv">
+      <img class="Icones-tableaudebord" src="../Images/Page Mon Espace/icone-formation.png" alt="Icone-formation">
+      <h3>Mes RDV </h3>
+      <p>Jetter un oeil sur mes rendez-vous</p>
+      </div>
+      
+
       <div class="Tableaudebord-card achats">
       <img class="Icones-tableaudebord" src="../Images/Page Mon Espace/icone-achat.png" alt="Icone-achat">
       <h3>Mes Achats</h3>
       <p>Mes achats effectués</p>
       </div>
-     
+  
      <div class="Tableaudebord-card documents">
       <img class="Icones-tableaudebord" src="../Images/Page Mon Espace/icone-document.png" alt="Icone-document">
       <h3>Mes Documents</h3>
       <p>Ma documentation de formation</p>
       </div>
+      
+      
+      <div class="Tableaudebord-card parametres">
+        <a href="./HTML/Compte/Rubriques-espace/parametres.html"></a>
+      <img class="Icones-tableaudebord" src="../Images/Page Mon Espace/icone-document.png" alt="Icone-document">
+      <h3>Mes Paramètres</h3>
+      <p>Vous souhaitez modifier vos paramètres</p>
       </div>
-    </div>
-  
+
   <?php
     include "../module/footer.html"; 
     ?>
 </body>
 </html>
+
+
+//! Revoir les tables (le compte n'est pas bon)
+//! Mettre en place le CSRF et DELETE

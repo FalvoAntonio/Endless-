@@ -93,7 +93,7 @@ CREATE TABLE IF NOT EXISTS purchases (
 -- echoue : Paiement échoué
     payment_method VARCHAR(50) NOT NULL,
 --  Comment l'utilisateur a payé (ex: "carte bancaire", "PayPal").
-    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE NO ACTION,
 -- Cette ligne crée un lien (relation) entre cette table et la table utilisateurs.
 
 -- FOREIGN KEY : Indique que id_utilisateur est une clé étrangère
@@ -333,17 +333,7 @@ CREATE TABLE rendez_vous (
     FOREIGN KEY (service_id) REFERENCES services(id)
 );
 
--- Table des clients (optionnel pour historique)
-CREATE TABLE clients (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    nom VARCHAR(100) NOT NULL,
-    email VARCHAR(100) UNIQUE,
-    telephone VARCHAR(20),
-    date_premiere_visite DATE,
-    notes TEXT,
-    nouvelle_cliente BOOLEAN DEFAULT TRUE,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
+
 
 -- Table des paramètres du salon
 CREATE TABLE parametres_salon (
