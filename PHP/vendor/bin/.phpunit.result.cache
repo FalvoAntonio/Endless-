@@ -1,0 +1,1 @@
+{"version":1,"defects":{"FormeTest::testCleanData":7,"FormeTest::testMessagesErrorsFormulaire":7},"times":{"FormeTest::testCleanData":0.001,"FormeTest::testCSRFToken":0.001,"FormeTest::testMessagesErrorsFormulaire":0.001}}

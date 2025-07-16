@@ -7,10 +7,25 @@ require './../../../PHP/service/Forme.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <base href="/">
+    <script type="module" src="../../../JS/script.js"></script>
     <script src="../../../JS/confirm-supp-compte.js"></script>
+    <link rel="stylesheet" href="../../../CSS/paramètres.css">
+    <link rel="stylesheet" href="../../../CSS/header.css">
+    <link rel="stylesheet" href="../../../CSS/form.css">
+    <link rel="stylesheet" href="../../../CSS/footer.css">
+    <link rel="stylesheet" href="../../../CSS/Modal-Panier.css">
+    <link rel="stylesheet" href="../../../CSS/Modal-Recherche.css" />
+    <link rel="stylesheet" href="../../../CSS/Menu-utilisateur.css">
   </head>
   <body>
-    
+
+    <?php 
+    require "../../module/Menu-burger-compte.html";
+    include "../../module/header.php"; 
+    include "../../module/modal-recherche.html"; 
+    include "../../module/modal-panier.html"; 
+  ?>
   <div class="container">
     <h1>Paramètres du compte</h1>
 
@@ -48,7 +63,7 @@ require './../../../PHP/service/Forme.php';
     <!-- Suppression du compte -->
     <section>
       <h2>Supprimer mon compte</h2>
-      <p style="color: #c0392b;"><strong>Attention :</strong> cette action est irréversible. Toutes vos données seront supprimées définitivement.</p>
+      <p><strong>Attention :</strong> cette action est irréversible. Toutes vos données seront supprimées définitivement.</p>
       <form method="post" action="../../../PHP/Compte/Rubriques-espace/rubrique-paramètres.php" onsubmit="return confirmerSuppression()">
         <!-- onsubmit="return confirmerSuppressionAvancee()" J'utilise cette méthode, sinon j'aurais du faire le addeventListener dans ma
          fonction JS "confirm-supp-compte.js" -->
@@ -59,6 +74,8 @@ require './../../../PHP/service/Forme.php';
       </form>
     </section>
   </div>
-
+<?php
+    include "../../module/footer.html"; 
+    ?>
 </body>
 </html>
