@@ -1,9 +1,13 @@
-  <!DOCTYPE html>
+<?php
+require './../../../PHP/service/Forme.php';
+?>
+<!DOCTYPE html>
   <html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="../../../JS/confirm-supp-compte.js"></script>
   </head>
   <body>
     
@@ -45,7 +49,14 @@
     <section>
       <h2>Supprimer mon compte</h2>
       <p style="color: #c0392b;"><strong>Attention :</strong> cette action est irréversible. Toutes vos données seront supprimées définitivement.</p>
-      <button class="danger">Supprimer mon compte</button>
+      <form method="post" action="../../../PHP/Compte/Rubriques-espace/rubrique-paramètres.php" onsubmit="return confirmerSuppression()">
+        <!-- onsubmit="return confirmerSuppressionAvancee()" J'utilise cette méthode, sinon j'aurais du faire le addeventListener dans ma
+         fonction JS "confirm-supp-compte.js" -->
+        <input type="hidden" name="csrf_token" value="<?= creationCSRFToken() ?>">
+         <!-- Champ caché contenant le token CSRF -->
+         <!-- Utilisation de la fonction "creationCSRFToken()" pour comparer le token-->
+        <button class="danger" type="submit">Supprimer mon compte</button>
+      </form>
     </section>
   </div>
 

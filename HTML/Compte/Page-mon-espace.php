@@ -75,7 +75,7 @@
       
       
       <div class="Tableaudebord-card parametres">
-        <a href="./HTML/Compte/Rubriques-espace/parametres.html"></a>
+        <a href="./HTML/Compte/Rubriques-espace/parametres.php"></a>
       <img class="Icones-tableaudebord" src="../Images/Page Mon Espace/icone-document.png" alt="Icone-document">
       <h3>Mes Paramètres</h3>
       <p>Vous souhaitez modifier vos paramètres</p>
@@ -88,5 +88,3 @@
 </html>
 
 
-//! Revoir les tables (le compte n'est pas bon)
-//! Mettre en place le CSRF et DELETE

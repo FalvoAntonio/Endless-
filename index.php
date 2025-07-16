@@ -41,7 +41,8 @@
     <main class="main-content">
       <!-- Ici j'utilise ma fonction pour envoyer un message flash -->
       <?php
-      afficheMessageFlash("Message-confirmation-envoi-mail")
+      afficheMessageFlash("Message-confirmation-envoi-mail");
+      afficheMessageFlash("suppression-compte");
       ?>
       <section class="introduction">
         <h2>Bienvenue dans notre univers de formations beauté</h2>

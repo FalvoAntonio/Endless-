@@ -52,3 +52,25 @@ function MessagesErrorsFormulaire($champ)
   echo isset($error[$champ])?"<span class='error'>{$error[$champ]}</span>":"" ;
   // var_dump($error);
 }
+
+// Fonction création de token:
+
+function creationCSRFToken() {
+    if(!isset($_SESSION['csrf_token'])){
+        // Si il n'y a pas encore de token CSRF dans la session
+        $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+        // On en génère un nouveau 
+    }
+    return $_SESSION['csrf_token'];
+        // On retourne le token (nouveau ou existant)
+
+}
+
+// Fonction pour vérifier le token CSRF
+function verifierCSRFToken($token) {
+    return isset($_SESSION['csrf_token']) && hash_equals($_SESSION['csrf_token'], $token);
+    // vérifie si le token existe dans la session
+    // hash_equals() compare de manière sécurisée le token (évite les attaques timing)
+    // C'est le même token sauf qu'il est dans le session et dans le formulaire
+    // Retourne true si les tokens correspondent, false sinon
+}
