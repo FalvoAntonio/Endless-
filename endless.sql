@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS users (
     -- 'utilisateur' ou 'administrateur'. Par défaut, chaque nouveau compte est un 'utilisateur'.
     email_verified BOOLEAN DEFAULT FALSE,
     login_attempts NOT NULL INT DEFAULT 0,
-    last_login_attemps TIMESTAMP DEFAULT NULL
+    last_login_attempts TIMESTAMP DEFAULT NULL
     -- Le mail n'est pas vérifié.
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 -- Termine la définition de la table.
@@ -93,7 +93,7 @@ CREATE TABLE IF NOT EXISTS purchases (
 -- echoue : Paiement échoué
     payment_method VARCHAR(50) NOT NULL,
 --  Comment l'utilisateur a payé (ex: "carte bancaire", "PayPal").
-    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE NO ACTION,
 -- Cette ligne crée un lien (relation) entre cette table et la table utilisateurs.
 
 -- FOREIGN KEY : Indique que id_utilisateur est une clé étrangère
@@ -331,18 +331,6 @@ CREATE TABLE rendez_vous (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (service_id) REFERENCES services(id)
-);
-
--- Table des clients (optionnel pour historique)
-CREATE TABLE clients (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    nom VARCHAR(100) NOT NULL,
-    email VARCHAR(100) UNIQUE,
-    telephone VARCHAR(20),
-    date_premiere_visite DATE,
-    notes TEXT,
-    nouvelle_cliente BOOLEAN DEFAULT TRUE,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 -- Table des paramètres du salon
