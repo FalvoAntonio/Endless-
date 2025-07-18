@@ -1,6 +1,14 @@
+*, ::before, ::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Style pour le menu utilisateur - adapté à votre structure HTML */
+
 .container-menu-compte {
     position: absolute;
-    top: 100%; /* Se positionne juste en dessous du header */
+    top: 160px; /* Se positionne juste en dessous du header */
     right: 0;
     z-index: 1000;
     transform: scale(0);
@@ -10,3 +18,112 @@
     visibility: hidden;
 }
 
+/* Structure du menu utilisateur */
+.menu-compte {
+    background-color: rgba(255, 255, 255, 0.95);  /* Fond légèrement transparent */
+    border-left: 2px solid #b08d57;
+    border-bottom: 2px solid #b08d57;
+    width: 250px;
+    height: auto;
+    border-bottom-left-radius: 15px;
+    box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.1); /* Ombre adaptée pour un menu qui vient de la droite */
+    padding: 0; /* Supprime le padding par défaut */
+}
+
+/* Contenu du menu */
+.menu-content {
+    display: flex;
+    flex-direction: column; /* Empile les éléments verticalement */
+    padding: 30px 0; /* Ajoute 30px d'espace en haut et en bas */
+    gap: 30px; /* Espace de 30px entre chaque élément */
+}
+
+/* Style des liens du menu utilisateur */
+.menu-content a {
+    color: #333;
+    font-family: 'Playfair Display', serif; 
+    font-size: 1.1rem; /* Taille de police légèrement agrandie */
+    text-decoration: none; /* Supprime le soulignement par défaut des liens */
+    display: block; /* Transforme le lien en bloc */
+    padding: 5px 30px; /* Espace intérieur: 5px en haut/bas, 30px à gauche/droite */
+    transition: color 0.3s ease, transform 0.3s ease;
+    position: relative;
+}
+
+/* Effet hover sur les liens du menu utilisateur */
+.menu-content a:hover {
+    color: #b08d57; /* Change la couleur du texte en doré au survol */
+    transform: translateX(-5px); /* Déplace légèrement le texte vers la gauche */
+}
+
+/* Style pour l'icône utilisateur avec effet hover */
+.icon-login {
+    transition: transform 0.3s ease; /* Animation fluide */
+}
+
+.icon-login:hover {
+    transform: scale(1.2); /* Agrandit le logo à 120% */
+}
+
+/* Style spécifique pour l'état connecté */
+.icon-login.connected {
+    cursor: pointer;
+}
+
+.icon-login.connected:hover {
+    transform: scale(1.1); /* Agrandit légèrement l'icône au survol */
+    transition: transform 0.3s ease; /* Animation fluide */
+}
+
+/* Points décoratifs qui apparaissent au survol */
+.menu-content a::before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background-color: #b08d57;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.menu-content a:hover::before {
+    opacity: 1;
+}
+
+/* Style spécial pour le lien de déconnexion */
+.menu-content a[href*="Deconnexion"] {
+    color: #d32f2f;
+    border-top: 1px solid #e0e0e0;
+    margin-top: 10px;
+    padding-top: 20px;
+}
+
+.menu-content a[href*="Deconnexion"]:hover {
+    color: #b71c1c;
+    background-color: rgba(211, 47, 47, 0.1);
+}
+
+.menu-content a[href*="Deconnexion"]::before {
+    background-color: #d32f2f;
+}
+
+/* Responsive - adaptation pour les écrans plus petits */
+@media (max-width: 768px) {
+    .menu-compte {
+        width: 200px;
+    }
+    
+    .menu-content {
+        gap: 20px;
+        padding: 20px 0;
+    }
+    
+    .menu-content a {
+        font-size: 1rem;
+        padding: 5px 20px;
+    }
+}

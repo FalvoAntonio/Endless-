@@ -72,7 +72,7 @@
     </style>
 
   <?php
-    include "./module/footer.html"; 
+    include __DIR__."/../../module/footer.html"; 
     ?>
 
 </body>

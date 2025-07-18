@@ -1,0 +1,293 @@
+/* STYLE CSS POUR LA PAGE PARAMÈTRES */
+
+/* Reset de base */
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Container principal */
+.container {
+    max-width: 800px;
+    /* Limite la largeur pour garder une lecture confortable */
+    margin: 50px auto;
+    /* Centre la page et ajoute de l'espace en haut */
+    padding: 40px;
+    /* Espacement intérieur */
+    background: white;
+    border-radius: 15px;
+    /* Coins arrondis comme tes autres éléments */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    /* Ombre douce comme tes cartes */
+    border: 2px solid #b08d57;
+    /* Bordure dorée comme tes autres éléments */
+}
+
+/* Titre principal */
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    /* Couleur sombre pour le contraste */
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    font-weight: 700;
+    position: relative;
+    /* Pour le trait décoratif */
+    display: inline-block;
+    width: 100%;
+}
+
+/* Trait décoratif sous le titre principal */
+h1::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* Centre le trait */
+    width: 60%;
+    height: 3px;
+    background: linear-gradient(to right, transparent, #b08d57, transparent);
+    /* Dégradé doré comme tes autres éléments */
+    border-radius: 2px;
+}
+
+/* Sections individuelles */
+section {
+    background: #f9f7f4;
+    /* Fond légèrement coloré comme ta page d'accueil */
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 30px;
+    /* Espace entre chaque section */
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+    /* Animation douce */
+}
+
+/* Effet hover sur les sections */
+section:hover {
+    transform: translateY(-2px);
+    /* Léger mouvement vers le haut */
+    box-shadow: 0 4px 15px rgba(176, 141, 87, 0.15);
+    /* Ombre dorée au survol */
+}
+
+/* Titres des sections */
+h2 {
+    color: #b08d57;
+    /* Couleur dorée de ton thème */
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+    border-bottom: 2px solid #b08d57;
+    /* Ligne sous le titre */
+    padding-bottom: 8px;
+}
+
+/* Labels des champs */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Champs de saisie */
+input[type="email"],
+input[type="password"],
+select {
+    width: 100%;
+    /* Prend toute la largeur disponible */
+    padding: 12px 15px;
+    /* Espacement intérieur confortable */
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    /* Coins arrondis */
+    font-size: 16px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    /* Animation sur focus */
+    background-color: white;
+}
+
+/* Focus sur les champs */
+input[type="email"]:focus,
+input[type="password"]:focus,
+select:focus {
+    outline: none;
+    /* Supprime le contour par défaut */
+    border-color: #b08d57;
+    /* Bordure dorée au focus */
+    box-shadow: 0 0 0 3px rgba(176, 141, 87, 0.2);
+    /* Halo doré */
+    transform: translateY(-1px);
+    /* Léger mouvement vers le haut */
+}
+
+/* Boutons normaux */
+button {
+    background: linear-gradient(to right, #b08d57, #d4af37, #b08d57);
+    /* Dégradé doré comme tes autres boutons */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+    /* Espacement des lettres */
+}
+
+/* Hover sur les boutons normaux */
+button:hover {
+    background: linear-gradient(to right, #d4af37, #b08d57, #d4af37);
+    /* Inverse le dégradé */
+    transform: translateY(-2px);
+    /* Monte légèrement */
+    box-shadow: 0 4px 15px rgba(176, 141, 87, 0.3);
+    /* Ombre plus marquée */
+}
+
+/* SECTION DANGER - Suppression de compte */
+section:last-child {
+    background: #ffeaa7;
+    /* Fond jaune pour attirer l'attention */
+    border: 2px solid #e17055;
+    /* Bordure orange pour le danger */
+    position: relative;
+}
+
+/* Icône de danger */
+section:last-child::before {
+    content: "⚠️";
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+}
+
+/* Texte d'avertissement */
+section:last-child p {
+    color: #c0392b;
+    /* Rouge pour l'avertissement */
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+/* Bouton de suppression */
+.danger {
+    background: linear-gradient(to right, #d63031, #e74c3c, #d63031);
+    /* Dégradé rouge pour le danger */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+}
+
+/* Hover sur le bouton danger */
+.danger:hover {
+    background: linear-gradient(to right, #e74c3c, #d63031, #e74c3c);
+    /* Inverse le dégradé rouge */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+    /* Ombre rouge */
+}
+
+/* Animation de pulsation pour le bouton danger */
+.danger {
+    animation: subtle-pulse 3s infinite;
+}
+
+@keyframes subtle-pulse {
+    0%, 100% { 
+        box-shadow: 0 4px 15px rgba(231, 76, 60, 0.2); 
+    }
+    50% { 
+        box-shadow: 0 4px 20px rgba(231, 76, 60, 0.4); 
+    }
+}
+
+/* Responsive pour mobile */
+@media (max-width: 768px) {
+    .container {
+        margin: 20px;
+        /* Moins de marge sur mobile */
+        padding: 20px;
+        /* Moins de padding */
+    }
+    
+    h1 {
+        font-size: 2rem;
+        /* Titre plus petit sur mobile */
+    }
+    
+    section {
+        padding: 20px;
+        /* Moins de padding dans les sections */
+    }
+    
+    h2 {
+        font-size: 1.3rem;
+        /* Sous-titres plus petits */
+    }
+    
+    input[type="email"],
+    input[type="password"],
+    select,
+    button {
+        font-size: 16px;
+        /* Évite le zoom sur mobile */
+        padding: 15px;
+        /* Plus de padding tactile */
+    }
+}
+
+/* Messages d'erreur (pour ta fonction MessagesErrorsFormulaire) */
+.error {
+    color: #d63031;
+    /* Rouge pour les erreurs */
+    font-size: 14px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    display: block;
+    font-weight: bold;
+    background-color: #ffe6e6;
+    /* Fond rouge très clair */
+    padding: 8px 12px;
+    border-radius: 4px;
+    border-left: 4px solid #d63031;
+    /* Barre rouge à gauche */
+}
+
+/* Animation d'apparition pour les erreurs */
+.error {
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

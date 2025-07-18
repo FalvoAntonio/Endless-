@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./CSS/Modal-Panier.css" />
     <link rel="stylesheet" href="./CSS/form.css" />
     <link rel="stylesheet" href="./CSS/Modal-Recherche.css" />
+    <link rel="stylesheet" href="./CSS/Menu-utilisateur.css" />
     <script type="module" src="./JS/script.js"></script>
     <script src="./JS/Flash-Message.js" defer></script>
     <link rel="stylesheet" href="./CSS/formations.css">
@@ -40,7 +41,8 @@
     <main class="main-content">
       <!-- Ici j'utilise ma fonction pour envoyer un message flash -->
       <?php
-      afficheMessageFlash("Message-confirmation-envoi-mail")
+      afficheMessageFlash("Message-confirmation-envoi-mail");
+      afficheMessageFlash("suppression-compte");
       ?>
       <section class="introduction">
         <h2>Bienvenue dans notre univers de formations beauté</h2>

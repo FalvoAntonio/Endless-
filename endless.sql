@@ -333,6 +333,8 @@ CREATE TABLE rendez_vous (
     FOREIGN KEY (service_id) REFERENCES services(id)
 );
 
+
+
 -- Table des paramètres du salon
 CREATE TABLE parametres_salon (
     id INT PRIMARY KEY AUTO_INCREMENT,

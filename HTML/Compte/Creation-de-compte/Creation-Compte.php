@@ -91,7 +91,7 @@
 
 
   <?php
-    include "./module/footer.html"; 
+    include "../../module/footer.html"; 
     ?>
 </body>
 
